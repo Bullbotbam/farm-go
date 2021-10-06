@@ -5,12 +5,13 @@ import {
 	Marker,
 	InfoWindow,
 } from '@react-google-maps/api';
-import Locate, { panTo, on } from '../../utils/Locate';
+import Locate from '../../utils/Locate';
 import mapStyles from '../../utils/mapStyles';
-import usePlacesAutocomplete, {
-	getGeocode,
-	getLatLng,
-} from 'use-places-autocomplete';
+// import usePlacesAutocomplete, {
+// 	getGeocode,
+// 	getLatLng,
+// } from 'use-places-autocomplete';
+import './style.css';
 
 const libraries = ['places'];
 const mapContainerStyle = {
@@ -19,6 +20,7 @@ const mapContainerStyle = {
 };
 const options = {
 	styles: mapStyles,
+	disableDefaultUI: true,
 };
 const center = {
 	lat: 30.267153,

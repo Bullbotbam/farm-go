@@ -1,10 +1,13 @@
 import React from 'react';
-import usePlacesAutocomplete, {
-	getGeocode,
-	getLatLng,
-} from 'use-places-autocomplete';
 
-export default function Locate({ panTo }) {
+import mapStyles from './mapStyles';
+
+const options = {
+	styles: mapStyles,
+	disableDefaultUI: true,
+};
+
+export default function Locate() {
 	// Setting markers on map of vendor locations
 	const [markers, setMarkers] = React.useState([]);
 	const [selected, setSelected] = React.useState(null);
