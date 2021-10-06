@@ -3,7 +3,7 @@ import {
 	GoogleMap,
 	useLoadScript,
 	Marker,
-	InfoWindow,
+	// InfoWindow,
 } from '@react-google-maps/api';
 import Locate from '../../utils/Locate';
 import mapStyles from '../../utils/mapStyles';
@@ -84,7 +84,25 @@ function MapSearch() {
 				zoom={10}
 				center={center}
 				options={options}
-			></GoogleMap>
+				onClick={onMapClick}
+				onLoad={onMapLoad}
+			>
+				{markers.map((marker) => (
+					<Marker
+						key={marker.time.toISOString()}
+						position={{ lat: marker.lat, lng: marker.lng }}
+						icon={{
+							url: '/leaf.svg',
+							scaledSize: new window.google.maps.Size(30, 30),
+							origin: new window.google.maps.Point(0, 0),
+							anchor: new window.google.maps.Point(15, 15),
+						}}
+						onClick={() => {
+							setSelected(marker);
+						}}
+					/>
+				))}
+			</GoogleMap>
 		</div>
 	);
 }

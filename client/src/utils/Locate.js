@@ -7,31 +7,7 @@ const options = {
 	disableDefaultUI: true,
 };
 
-export default function Locate() {
-	// Setting markers on map of vendor locations
-	const [markers, setMarkers] = React.useState([]);
-	const [selected, setSelected] = React.useState(null);
-	const onMapClick = React.useCallback((event) => {
-		setMarkers((current) => [
-			...current,
-			{
-				lat: event.latLng.lat(),
-				lng: event.latLng.lng(),
-				time: new Date(),
-			},
-		]);
-	}, []);
-
-	//  alllowing the use of the current value to be stored so the state can easily be returned to that value
-	const mapRef = React.useRef();
-	const onMapLoad = React.useCallback((map) => {
-		mapRef.current = map;
-	}, []);
-	const panTo = React.useCallback(({ lat, lng }) => {
-		mapRef.current.panTo({ lat, lng });
-		mapRef.current.setZoom(14);
-	}, []);
-
+export default function Locate({ panTo }) {
 	return (
 		<button
 			className="locate"
