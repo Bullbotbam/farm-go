@@ -7,10 +7,7 @@ import {
 } from '@react-google-maps/api';
 import Locate from '../../utils/Locate';
 import mapStyles from '../../utils/mapStyles';
-// import usePlacesAutocomplete, {
-// 	getGeocode,
-// 	getLatLng,
-// } from 'use-places-autocomplete';
+
 import './style.css';
 
 const libraries = ['places'];

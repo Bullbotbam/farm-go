@@ -4,7 +4,6 @@ import mapStyles from './mapStyles';
 
 const options = {
 	styles: mapStyles,
-	disableDefaultUI: true,
 };
 
 export default function Locate({ panTo }) {
