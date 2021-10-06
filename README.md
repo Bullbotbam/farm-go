@@ -64,7 +64,7 @@ THEN I am logged in to the site
 
 ## Contributing / Credits
 
-[chasemcquown] (https://github.com/chasemcquown)
-[RiveraDenisse](https://github.com/RiveraDenisse)
-[Bullbotbam]https://github.com/Bullbotbam
-[mariamv29](https://github.com/mariamv29/README-generator.git)
+* [chasemcquown](https://github.com/chasemcquown)
+* [RiveraDenisse](https://github.com/RiveraDenisse)
+* [Bullbotbam](https://github.com/Bullbotbam)
+* [mariamv29](https://github.com/mariamv29/README-generator.git)
