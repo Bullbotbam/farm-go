@@ -28,7 +28,7 @@ export default function ({ panTo }) {
 	});
 	// create a search box for the map
 	return (
-		<div>
+		<div className="search">
 			<Combobox
 				onSelect={async (address) => {
 					setValue(address, false);
