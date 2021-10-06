@@ -8,6 +8,7 @@ import {
 
 import mapStyles from '../../utils/mapStyles';
 
+const libraries = ['places'];
 const mapContainerStyle = {
 	width: '100vw',
 	height: '100vh',
@@ -21,6 +22,14 @@ const center = {
 };
 
 function MapSearch() {
+	const { isLoaded, loadError } = useLoadScript({
+		googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+		libraries,
+	});
+
+	if (loadError) return 'Error loading Maps';
+	if (!isLoaded) return 'Loading Maps';
+
 	return (
 		<div>
 			<h1>
