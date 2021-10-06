@@ -32,7 +32,7 @@ export default function ({ panTo }) {
 			<Combobox
 				onSelect={async (address) => {
 					setValue(address, false);
-					clearSuggestions;
+					clearSuggestions();
 
 					try {
 						const results = await getGeocode({ address });
@@ -54,9 +54,9 @@ export default function ({ panTo }) {
 				<ComboboxPopover>
 					<ComboboxList>
 						{status === 'OK' &&
-							data.map(({ id, description }) => {
-								<ComboboxOption key={id} value={description} />;
-							})}
+							data.map(({ id, description }) => (
+								<ComboboxOption key={id} value={description} />
+							))}
 					</ComboboxList>
 				</ComboboxPopover>
 			</Combobox>
