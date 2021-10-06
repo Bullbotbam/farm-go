@@ -3,12 +3,13 @@ import {
 	GoogleMap,
 	useLoadScript,
 	Marker,
-	// InfoWindow,
+	InfoWindow,
 } from '@react-google-maps/api';
 import Locate from '../../utils/Locate';
 import mapStyles from '../../utils/mapStyles';
 
 import './style.css';
+import Search from '../../utils/Search';
 
 const libraries = ['places'];
 const mapContainerStyle = {
@@ -74,6 +75,7 @@ function MapSearch() {
 				</span>
 			</h1>
 
+			<Search panTo={panTo} />
 			<Locate panTo={panTo} />
 
 			<GoogleMap
@@ -85,6 +87,7 @@ function MapSearch() {
 				onLoad={onMapLoad}
 			>
 				{markers.map((marker) => (
+					// providing a way to create markers to show vendor locations
 					<Marker
 						key={marker.time.toISOString()}
 						position={{ lat: marker.lat, lng: marker.lng }}
@@ -99,6 +102,23 @@ function MapSearch() {
 						}}
 					/>
 				))}
+
+				{selected ? (
+					// create a modal to provide information on markers when clicked
+					<InfoWindow
+						position={{ lat: selected.lat, lng: selected.lng }}
+						onCloseClick={() => {
+							setSelected(null);
+						}}
+					>
+						<div>
+							<h2>FarmGo Market</h2>
+							<p>Location Address</p>
+							<p>Location Hours 8 AM - Noon</p>
+							<p>Pick-up Location</p>
+						</div>
+					</InfoWindow>
+				) : null}
 			</GoogleMap>
 		</div>
 	);
