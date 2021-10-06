@@ -1,13 +1,14 @@
-# farm-go
 
+# ![Farm-Go](client/src/assets/logo.jpg)
 
 
 
 ## Description 
  Farm Go Market is an ecommerce app that allows a user to search for a farmer's market location and save it. By creating an account the user will be able to select their products and save them for checkout. This application is built using the MERN sack and REACT front end. The database is composed with MONGODB and Node.js/ Express.js server and API. The app is also constructed with a GraphQL using RESTful API through Apollo Server. 
 
-![screeshot](
+![gif]
 * [Heroku Link]()
+
 
 ## User Story 
 As a user
