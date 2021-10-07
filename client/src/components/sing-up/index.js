@@ -11,12 +11,18 @@ function SignUp() {
             Register</h2> 
           <TextField
           id="outlined-basic"
-          label="Email"
+          label="Username"
           variant="outlined"
           style={{ margin: "5%", display:"grid"}}
         />
 
         <TextField 
+          id="outlined-basic"
+          label="Email"
+          variant="outlined"
+          style={{ margin: "5%", display:"grid"}}
+        />
+         <TextField 
           id="outlined-basic"
           label="Password"
           variant="outlined"
