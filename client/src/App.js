@@ -1,9 +1,12 @@
 import React from 'react';
 import MapSearch from './components/MapSearch';
+import SearchNavBar from './components/Nav';
+
 function App() {
 	return (
 		<div>
-			<MapSearch />
+			<SearchNavBar />
+			{/* <MapSearch /> */}
 		</div>
 	);
 }
