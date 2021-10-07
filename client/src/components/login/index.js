@@ -1,24 +1,40 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
+import { Stack, Button } from "@mui/material";
 
 function Login() {
   return (
     <React.Fragment>
-      <form className="root" style={{ background: "red", margin: "50px", border: "solid"}}>
-          <h2>Login</h2>
+      <form className="root" style={{ border: "solid",  borderWidth: "1px 1px",
+  maxWidth: "50%", margin: "0 auto"}}>
+        <h2
+          style={{
+            color: "white",
+            background: "green",
+            padding: "15px 15px",
+            textAlign: "center",
+          }}
+        >
+          Login
+        </h2>
         <TextField
           id="outlined-basic"
           label="Email"
           variant="outlined"
-          style={{ width: "70%", margin: "5%" }}
+          style={{ margin: "5%",display:"grid"}}
         />
 
         <TextField
           id="outlined-basic"
           label="Password"
           variant="outlined"
-          style={{ width: "70%", margin: "5%"  }}
+          style={{ margin: "5%", display:"grid"}}
         />
+        <Stack direction="row" >
+          <Button variant="contained" color="success" style={{ margin: "5%", alignSelf: "center", display:"grid"}} >
+            Login
+          </Button>
+        </Stack>
       </form>
     </React.Fragment>
   );

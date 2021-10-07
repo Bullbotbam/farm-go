@@ -4,11 +4,12 @@ import SignUp from "./components/sing-up";
 
 function App() {
   return (
-	  <>
-  <Login></Login>
-  <div>FarmGo Market</div>
-  <SignUp></SignUp>
-  </>
+    <>
+      <SignUp></SignUp>
+      <div>FarmGo Market</div>
+
+      <Login></Login>
+    </>
   );
 }
 
