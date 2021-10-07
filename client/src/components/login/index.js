@@ -1,9 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import TextField from "@mui/material/TextField";
 import { Stack, Button } from "@mui/material";
 
 function Login() {
-  return (
+  const [userData, setUserData] = useState({ email: "", password: ''});
+
+
+  const handleInputChange = (event) => {
+    const {name, value } = event.target;
+    setUserData({ ...userData, [name]: value })
+  }
+
+  // setUserData({
+  //   username: "",
+  //   email: "",
+  //   password: ""
+  // })
+
+   return (
     <React.Fragment>
       <form className="root" style={{ border: "solid",  borderWidth: "1px 1px",
   maxWidth: "50%", margin: "0 auto"}}>
@@ -21,6 +35,9 @@ function Login() {
           id="outlined-basic"
           label="Email"
           variant="outlined"
+          onChange={handleInputChange} 
+          value={userData.email}
+          required
           style={{ margin: "5%",display:"grid"}}
         />
 
@@ -28,6 +45,8 @@ function Login() {
           id="outlined-basic"
           label="Password"
           variant="outlined"
+          onChange={handleInputChange} 
+          value={userData.password}
           style={{ margin: "5%", display:"grid"}}
         />
         <Stack direction="row" >
