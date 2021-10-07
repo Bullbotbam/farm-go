@@ -1,16 +1,28 @@
 import React, {useState} from "react";
 import TextField from "@mui/material/TextField";
 import { Stack, Button } from "@mui/material";
+import Modal from 'react-modal';
+
+
+
+
 
 function Login() {
   const [userData, setUserData] = useState({ email: "", password: ''});
+
+  const [modalIsOpen, setIsOpen] = React.useState(false);
 
 
   const handleInputChange = (event) => {
     const {name, value } = event.target;
     setUserData({ ...userData, [name]: value })
   }
-
+  
+//sign up modal 
+  function openModal() {
+    setIsOpen(true);
+  }
+ 
   // setUserData({
   //   username: "",
   //   email: "",
@@ -53,6 +65,7 @@ function Login() {
           <Button variant="contained" color="success" style={{ margin: "5%", alignSelf: "center", display:"grid"}} >
             Login
           </Button>
+        
         </Stack>
       </form>
     </React.Fragment>
