@@ -1,11 +1,11 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
 
-function Login() {
+function SignUp() {
   return (
     <React.Fragment>
       <form className="root" style={{ background: "red", margin: "50px", border: "solid"}}>
-          <h2>Login</h2>
+          <h2>SignUp</h2>
         <TextField
           id="outlined-basic"
           label="Email"
@@ -24,4 +24,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default SignUp;
