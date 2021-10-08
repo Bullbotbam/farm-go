@@ -1,9 +1,14 @@
-import React, { createContext, useContext} from 'react';
+// import React, { createContext, useContext} from 'react';
 
-const StateContext = createContext()
+// const StateContext = createContext()
 
-const useStoreContext = () => {
-    return useContext(StoreContext)
-}
 
-export { useStoreContext};
+// const StoreProvider = ({ value = [], ...props }) => {
+  
+// }
+
+// const useStoreContext = () => {
+//     return useContext(StoreContext)
+// }
+
+// export { useStoreContext};

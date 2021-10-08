@@ -69,7 +69,8 @@ function MapSearch() {
 	return (
 		<div>
 			<h1>
-				FarmGo Market
+				FarmGo 
+				<span className="market">-market </span>
 				<span role="img" aria-label="leaf">
 					🌿
 				</span>
