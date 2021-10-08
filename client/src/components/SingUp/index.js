@@ -3,15 +3,14 @@ import TextField from "@mui/material/TextField";
 import { Stack, Button } from "@mui/material";
 import Modal from "react-modal";
 import CloseIcon from "@mui/icons-material/Close";
-import Login from "../Login";
+import Login from "../login";
 import photo from "../../assets/groceries/greens.jpg";
 
 const customStyles = {
   content: {
     top: "50%",
     left: "50%",
-    padding: "50px 50px",
-    marginRight: "-50%",
+    width: "80%",
     transform: "translate(-50%, -50%)",
     backgroundImage: `url(${photo})`,
     backgroundSize: "cover",
@@ -19,7 +18,6 @@ const customStyles = {
 };
 
 function SignUp() {
-
   const [modalIsOpen, setIsOpen] = React.useState(false);
   //sign up modal
 
@@ -40,7 +38,7 @@ function SignUp() {
         style={customStyles}
         contentLabel="signUp Modal"
       >
-        <CloseIcon onClick={closeModal} style= {{color: "red"}}/>
+        <CloseIcon onClick={closeModal} style={{ color: "red" }} />
 
         <div>
           <Login handleModalClose={() => setIsOpen(false)} />
