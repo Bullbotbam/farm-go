@@ -1,7 +1,7 @@
 import React from 'react';
 import MapSearch from './components/MapSearch';
 import SearchNavBar from './components/Nav';
-import ProductCard from './components/ProductCard/ProductCard';
+import MarketItem from './components/MarketItem';
 import SignUp from './pages/SignUp';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
 		<div>
 			<SearchNavBar />
 			{/* <MapSearch /> */}
-			<ProductCard />
+			<MarketItem />
 			{/* <SignUp /> */}
 		</div>
 	);

@@ -1,21 +1,21 @@
-export function plualize(name, count) {
+export function pluralize(name, count) {
 	if (count === 1) {
 		return name;
 	}
-	return name + s;
+	return name + 's';
 }
 
 // creating an object to store key value pairs of information to retrieve in the browser should the user need to access the information without internet.
 export function idbPromise(storeName, method, object) {
 	return new Promise((resolve, reject) => {
-		const request = window.indexedDB.open(farm - go, 1);
+		const request = window.indexedDB.open('farm-go', 1);
 		let db, tx, store;
 
 		request.onupgradeneeded = function (e) {
 			const db = request.result;
-			db.createObjectStore(products, { keyPath: '_id' });
-			db.createObjectStore(categories, { keyPath: '_id' });
-			db.createObjectStore(cart, { keyPath: '_id' });
+			db.createObjectStore('products', { keyPath: '_id' });
+			db.createObjectStore('categories', { keyPath: '_id' });
+			db.createObjectStore('cart', { keyPath: '_id' });
 		};
 		request.onerror = function (e) {
 			console.log(
@@ -24,8 +24,8 @@ export function idbPromise(storeName, method, object) {
 		};
 		request.onsuccess = function (e) {
 			db = request.result;
-			tx: db.transaction(storeName, 'readwrite');
-			store = tx.objectStore(storename);
+			tx = db.transaction(storeName, 'readwrite');
+			store = tx.objectStore(storeName);
 
 			db.onerror = function (e) {
 				console.log('error', e);
