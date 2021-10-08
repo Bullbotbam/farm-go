@@ -1,6 +1,16 @@
-import React from 'react';
-function App() {
-	return <div>FarmGo Market</div>;
-}
+import React from "react";
+import SingUp from "./components/SingUp";
+import Cart from "./components/Cart";
+import MapSearch from "./components/MapSearch"
 
+
+function App() {
+  return (
+    <div>
+     <SingUp />
+     <MapSearch />
+      <Cart />
+    </div>
+  );
+}
 export default App;
