@@ -1,14 +1,51 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
 import { Stack, Button } from "@mui/material";
-import LoginModal from "../LoginModal";
+import Modal from "react-modal";
+import CloseIcon from "@mui/icons-material/Close";
+import Login from "../Login";
+import photo from "../../assets/groceries/greens.jpg";
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    padding: "50px 50px",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    backgroundImage: `url(${photo})`,
+    backgroundSize: "cover",
+  },
+};
 
 function SignUp() {
 
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+  //sign up modal
 
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   return (
     <React.Fragment>
+      <Modal
+        fluid
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="signUp Modal"
+      >
+        <CloseIcon onClick={closeModal} style= {{color: "red"}}/>
+
+        <div>
+          <Login handleModalClose={() => setIsOpen(false)} />
+        </div>
+      </Modal>
       <form
         className="root"
         style={{
@@ -56,10 +93,7 @@ function SignUp() {
           >
             Submit
           </Button>
-          <Button
-           onClick={<LoginModal />}
-          >
-            Have an account? Login</Button>
+          <Button onClick={openModal}>Have an account? Login</Button>
         </Stack>
       </form>
     </React.Fragment>

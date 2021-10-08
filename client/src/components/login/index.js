@@ -12,6 +12,7 @@ function Login() {
     const { name, value } = event.target;
     setUserData({ ...userData, [name]: value });
   };
+
   // setUserData({
   //   username: "",
   //   email: "",
@@ -26,7 +27,7 @@ function Login() {
           border: "solid",
           borderWidth: "1px 1px",
           maxWidth: "50%",
-          margin: "0 15px 15px 0 ",
+          margin: "0 auto",
           background: "white"
         }}
       >
@@ -35,7 +36,7 @@ function Login() {
             display: "block",
             color: "white",
             background: "green",
-            // padding: "10px",
+            padding: "10px",
             textAlign: "center",
           }}
         >
