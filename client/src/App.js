@@ -1,18 +1,15 @@
 import React from 'react';
+import SingUp from './components/SingUp';
+import Cart from './components/Cart';
 import MapSearch from './components/MapSearch';
-import SearchNavBar from './components/Nav';
-import MarketItem from './components/MarketItem';
-import SignUp from './pages/SignUp';
 
 function App() {
 	return (
 		<div>
-			<SearchNavBar />
-			{/* <MapSearch /> */}
-			<MarketItem />
-			{/* <SignUp /> */}
+			<SingUp />
+			<MapSearch />
+			<Cart />
 		</div>
 	);
 }
-
 export default App;
