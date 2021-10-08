@@ -1,5 +1,5 @@
 import React from "react";
-import SignUp from "./components/Sing-up";
+import SingUp from "./components/SingUp";
 import Cart from "./components/Cart";
 import MapSearch from "./components/MapSearch"
 
@@ -7,7 +7,7 @@ import MapSearch from "./components/MapSearch"
 function App() {
   return (
     <div>
-     <SignUp />
+     <SingUp />
      <MapSearch />
       <Cart />
     </div>
