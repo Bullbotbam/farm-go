@@ -5,6 +5,8 @@
 	"proxy": "http://localhost:3001/",
 	"dependencies": {
 		"@apollo/client": "^3.3.7",
+		"@reach/combobox": "^0.16.1",
+		"@react-google-maps/api": "^2.4.1",
 		"@stripe/stripe-js": "^1.19.0",
 		"@testing-library/jest-dom": "^4.2.4",
 		"@testing-library/react": "^9.5.0",
@@ -14,7 +16,9 @@
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
 		"react-router-dom": "^5.1.2",
-		"react-scripts": "3.4.1"
+		"react-scripts": "3.4.1",
+		"use-places-autocomplete": "^1.9.4",
+		"web-vitals": "^2.1.0"
 	},
 	"scripts": {
 		"start": "react-scripts start",

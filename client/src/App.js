@@ -1,6 +1,11 @@
 import React from 'react';
+import MapSearch from './components/MapSearch';
 function App() {
-	return <div>FarmGo Market</div>;
+	return (
+		<div>
+			<MapSearch />
+		</div>
+	);
 }
 
 export default App;
