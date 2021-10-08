@@ -10,7 +10,7 @@ function App() {
 			<SearchNavBar />
 			{/* <MapSearch /> */}
 			<ProductCard />
-			<SignUp />
+			{/* <SignUp /> */}
 		</div>
 	);
 }
