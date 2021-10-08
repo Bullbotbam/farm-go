@@ -13,6 +13,7 @@ import {
 	Button,
 	CardActionArea,
 	CardActions,
+	Container,
 } from '@mui/material';
 
 function MarketItem(item) {
@@ -46,32 +47,34 @@ function MarketItem(item) {
 	const { image, name, _id, price, quantity } = item;
 
 	return (
-		<Card sx={{ maxWidth: 345 }}>
-			<CardActionArea>
-				<Link to={`/products/${image}`}>
-					<CardMedia
-						component="img"
-						height="140"
-						image={`/images/${image}`}
-						alt={name}
-					/>
-					<Typography gutterBottom variant="h5" component="div">
-						{name}
-					</Typography>
-				</Link>
-				<CardContent>
-					<Typography variant="body2" color="text.secondary">
-						{quantity} {pluralize('item', quantity)} in stock
-						<span>${price}</span>
-					</Typography>
-				</CardContent>
-			</CardActionArea>
-			<CardActions>
-				<Button size="small" color="primary" onClick={addToCart}>
-					Send to cart
-				</Button>
-			</CardActions>
-		</Card>
+		<Container>
+			<Card sx={{ maxWidth: 345 }}>
+				<CardActionArea>
+					<Link to={`/products/${image}`}>
+						<CardMedia
+							component="img"
+							height="140"
+							image={`/images/${image}`}
+							alt={name}
+						/>
+						<Typography gutterBottom variant="h5" component="div">
+							{name}
+						</Typography>
+					</Link>
+					<CardContent>
+						<Typography variant="body2" color="text.secondary">
+							{quantity} {pluralize('item', quantity)} in stock
+							<span>${price}</span>
+						</Typography>
+					</CardContent>
+				</CardActionArea>
+				<CardActions>
+					<Button size="small" color="primary" onClick={addToCart}>
+						Send to cart
+					</Button>
+				</CardActions>
+			</Card>
+		</Container>
 	);
 }
 
