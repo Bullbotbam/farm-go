@@ -1,6 +1,7 @@
 import React from 'react';
 import SingUp from './components/SingUp';
 import Cart from './components/Cart';
+import { NoMatch } from './pages/NoMatch';
 import SearchBar from './components/SearchBar';
 import MapSearch from './components/MapSearch';
 import ProductDetail from './pages/ProductDetail';
@@ -32,11 +33,11 @@ function App() {
 					<StoreProvider>
 						<SearchBar />
 						<Switch>
-							<Route exact path="/signup" component={SingUp} />
+							{/* <Route exact path="/signup" component={SingUp} />
 							<Route exact path="/search" component={MapSearch} />
 							<Route exact path="/cart" component={Cart} />
 							<Route exact path="/products" component={MarketItem} />
-							<Route exact path="/details" component={ProductDetail} />
+							<Route exact path="/details" component={ProductDetail} /> */}
 							<Route component={NoMatch} />
 						</Switch>
 					</StoreProvider>

@@ -6,10 +6,8 @@ export const NoMatch = () => {
 	return (
 		<Container>
 			<Jumbotron>
-				<Paper className={classes.paper}>
-					<Typography variant="h1">404 Nothing to see here,</Typography>
-					<Typography variant="h1">go on and head back!</Typography>
-				</Paper>
+				<Typography variant="h1">404 Nothing to see here,</Typography>
+				<Typography variant="h1">go on and head back!</Typography>
 			</Jumbotron>
 		</Container>
 	);

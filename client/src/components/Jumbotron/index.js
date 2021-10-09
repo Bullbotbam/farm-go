@@ -1,6 +1,7 @@
 import React from 'react';
 import { textAlign } from '@mui/system';
-import { makeStyles } from '@mui/material';
+import { Paper } from '@mui/material';
+import { makeStyles } from '@mui/stlyes';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -20,5 +21,9 @@ const useStyles = makeStyles((theme) => ({
 export default function Jumbotron(children) {
 	const classes = useStyles();
 
-	return <>{children}</>;
+	return (
+		<>
+			<Paper className={classes.paper}>{children}</Paper>
+		</>
+	);
 }
