@@ -5,8 +5,6 @@ import TableBody from "@mui/material/TableBody";
 import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import { Button } from "@mui/material";
 import Summary from "../components/Summary/Index";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -23,56 +21,31 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   },
 }));
 
-const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  "&:nth-of-type(odd)": {
-    backgroundColor: theme.palette.action.hover,
-    fontFamily: "Gabriela , serif",
-  },
-  "&:last-child td, &:last-child th": {
-    border: 0,
-  },
-}));
-
 function Cart() {
   return (
     <>
-      <div className="cart">
-        <h2 style={{ fontSize: "50px" }}>My Cart</h2>
-        <TableContainer>
-          <Table sx={{ minWidth: "80%" }} aria-label="customized table">
+      <h2 style={{ fontSize: "50px" }}>Users Cart</h2>
+      <section>
+        <TableContainer className="table" style={{width: "220%"}}>
+          <Table 
+          >
             <TableHead>
-              <TableRow>
-                <StyledTableCell>Total Items</StyledTableCell>
-                <StyledTableCell align="right"></StyledTableCell>
-                <StyledTableCell align="right">Quantity</StyledTableCell>
-              </TableRow>
+                <StyledTableCell>Products</StyledTableCell>
+                <StyledTableCell align="right">item-Price</StyledTableCell>
             </TableHead>
             <TableBody>
-              <StyledTableRow>
-                {" "}
-                Products
-                <StyledTableCell component="th" scope="row">
-                  Products
-                </StyledTableCell>
-                <StyledTableCell align="right"></StyledTableCell>
-                <StyledTableCell align="right"></StyledTableCell>
-              </StyledTableRow>
+              <StyledTableCell component="th" scope="row">
+                Images/description
+              </StyledTableCell>
+              <StyledTableCell align="right">QTY</StyledTableCell>
             </TableBody>
-            <Button
-              variant="contained"
-              color="success"
-              style={{
-                margin: "5%",
-                alignSelf: "center",
-                display: "grid",
-              }}
-            >
-              Checkout
-            </Button>
           </Table>
         </TableContainer>
-        <Summary />
-      </div>
+           <Summary />
+        <div className="cart">
+       
+        </div>
+      </section>
     </>
   );
 }

@@ -1,30 +1,31 @@
 import React from "react";
-// import photo from "../../assets/cupons/almond.png"
+import "./style.css"
 
 function Coupons() {
   const sales = [
     {
-      src: require("../../assets/cupons/almond.png").default,
+        
+      src: require("../../assets/cupons/almond.png"),
     },
     {
 
-      src: require("../../assets/cupons/apples.png").default,
+      src: require("../../assets/cupons/apples.png"),
     },
     {
 
-      src: require("../../assets/cupons/pears.png").default,
+      src: require("../../assets/cupons/pears.png"),
     },
     {
 
-      src: require("../../assets/cupons/peppers.png").default,
+      src: require("../../assets/cupons/peppers.png"),
     },
     {
 
-      src: require("../../assets/cupons/pumpkins.png").default,
+      src: require("../../assets/cupons/pumpkins.png"),
     },
     {
 
-      src: require("../../assets/cupons/salmon.png").default,
+      src: require("../../assets/cupons/salmon.png"),
     },
   ];
   return (
@@ -35,7 +36,6 @@ function Coupons() {
             <img
               src={src}
               alt="hello"
-              style={{ width: "400px", height: "250px" }}
             ></img>
           </ul>
         ))}
