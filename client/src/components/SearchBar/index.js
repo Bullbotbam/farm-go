@@ -1,16 +1,21 @@
 import * as React from 'react';
-import { styled, alpha } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import InputBase from '@mui/material/InputBase';
+import { styled, alpha, createTheme } from '@mui/material/styles';
+import {
+	AppBar,
+	Toolbar,
+	IconButton,
+	Typography,
+	InputBase,
+	Menu,
+	MenuItem,
+	Box,
+} from '@mui/material';
+
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-
-import { createTheme } from '@mui/material/styles';
 import { orange } from '@material-ui/core/colors';
+import { Link } from 'react-router-dom';
+import SignUp from '../SingUp';
 
 const theme = createTheme({
 	palette: {
@@ -65,10 +70,32 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 	},
 }));
 
+const MenuOptions = [
+	'Home',
+	'SignUp',
+	'Login',
+	'FarmerGo Markets',
+	'Farm Fresh Products',
+	'Order History',
+	'Log Out',
+];
+
 export default function SearchBar() {
+	const [anchorEl, setAnchorEl] = React.useState(null);
+	const open = Boolean(anchorEl);
+	const handleClick = (event) => {
+		setAnchorEl(event.currentTarget);
+	};
+	const handleClose = () => {
+		setAnchorEl(null);
+	};
+	const signup = () => {
+		setAnchorEl('/signup');
+	};
+
 	return (
 		<Box sx={{ flexGrow: 1 }}>
-			<AppBar position="static">
+			<AppBar position="static" style={{ backgroundColor: '#ed764a' }}>
 				<Toolbar>
 					<IconButton
 						size="large"
@@ -76,16 +103,55 @@ export default function SearchBar() {
 						color="inherit"
 						aria-label="open drawer"
 						sx={{ mr: 2 }}
+						onClick={handleClick}
 					>
 						<MenuIcon />
 					</IconButton>
+					<Menu
+						id="basic-menu"
+						anchorEl={anchorEl}
+						open={open}
+						onClose={handleClose}
+						MenuListProps={{
+							'aria-labelledby': 'basic-button',
+						}}
+					>
+						{MenuOptions.map((option) => (
+							<MenuItem
+								key={option}
+								selected={option === 'Growers'}
+								onClick={handleClose}
+							>
+								{option}
+							</MenuItem>
+						))}
+					</Menu>
 					<Typography
 						variant="h6"
 						noWrap
 						component="div"
 						sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
 					>
-						MUI
+						<Link
+							to="/"
+							style={{
+								fontFamily: 'fantasy',
+								fontSize: '2rem',
+								textDecoration: 'none',
+								padding: '0.25rem 1rem',
+								borderRadius: '.5rem',
+								border: 'none',
+								outline: 'none',
+								cursor: 'pointer',
+								margin: '0 1px',
+								color: '#fff',
+							}}
+						>
+							FarmGo Market
+							<span role="img" aria-label="leaf">
+								🌿
+							</span>
+						</Link>
 					</Typography>
 					<Search>
 						<SearchIconWrapper>

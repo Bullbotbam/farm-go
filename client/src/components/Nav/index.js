@@ -36,10 +36,10 @@ function Nav() {
 		<header>
 			<Typography variant="h1">
 				<Link to="/">
+					FarmGo Market
 					<span role="img" aria-label="leaf">
 						🌿
 					</span>
-					-FarmGo Market
 				</Link>
 			</Typography>
 			<nav>{showNavigation()}</nav>
