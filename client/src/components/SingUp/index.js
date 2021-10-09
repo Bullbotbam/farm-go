@@ -6,6 +6,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import Login from "../login";
 import photo from "../../assets/groceries/greens.jpg";
 
+
 const customStyles = {
   content: {
     top: "50%",
@@ -94,6 +95,7 @@ function SignUp() {
           <Button onClick={openModal}>Have an account? Login</Button>
         </Stack>
       </form>
+
     </React.Fragment>
   );
 }
