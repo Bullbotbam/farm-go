@@ -2,6 +2,7 @@ import React from 'react';
 import SingUp from './components/SingUp';
 import Cart from './components/Cart';
 import MapSearch from './components/MapSearch';
+import ProductDetail from './pages/ProductDetail';
 import MarketItem from './components/MarketItem/MarketItem';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { StoreProvider } from './utils/GlobalState';
@@ -31,6 +32,7 @@ function App() {
 						{/* <MapSearch /> */}
 						<Cart />
 						<MarketItem />
+						<ProductDetail />
 					</StoreProvider>
 				</div>
 			</Router>

@@ -13,6 +13,7 @@ import {
 import { idbPromise } from '../utils/helpers';
 import { Button, Container, Typography } from '@mui/material';
 import Cart from '../components/Cart';
+import loadspin from './assets/loadspin.gif';
 
 function ProductDetail() {
 	const [state, dispatch] = useStoreContext();
@@ -109,3 +110,4 @@ function ProductDetail() {
 		</>
 	);
 }
+export default ProductDetail;
