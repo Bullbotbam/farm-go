@@ -9,12 +9,26 @@ import {
 	Card,
 	CardContent,
 	CardMedia,
+	Grid,
 	Typography,
 	Button,
 	CardActionArea,
 	CardActions,
 	Container,
 } from '@mui/material';
+import { margin } from '@mui/system';
+
+const productInfo = [
+	{
+		Item: 1,
+		name: 'Apples',
+		category: categories[1]._id,
+		img: apples,
+		description: 'red delicious',
+		price: 2.99,
+		quantity: 200,
+	},
+];
 
 function MarketItem(item) {
 	const [state, dispatch] = useStoreContext();
@@ -48,32 +62,38 @@ function MarketItem(item) {
 
 	return (
 		<Container>
-			<Card sx={{ maxWidth: 345 }}>
-				<CardActionArea>
-					<Link to={`/products/${image}`}>
-						<CardMedia
-							component="img"
-							height="140"
-							image={`/images/${image}`}
-							alt={name}
-						/>
-						<Typography gutterBottom variant="h5" component="div">
-							{name}
-						</Typography>
-					</Link>
-					<CardContent>
-						<Typography variant="body2" color="text.secondary">
-							{quantity} {pluralize('item', quantity)} in stock
-							<span>${price}</span>
-						</Typography>
-					</CardContent>
-				</CardActionArea>
-				<CardActions>
-					<Button size="small" color="primary" onClick={addToCart}>
-						Send to cart
-					</Button>
-				</CardActions>
-			</Card>
+			<Grid container spacing={3} style={{ marginTop: '3rem' }}>
+				{productInfo.map((item, index) => (
+					<Grid item key={index} xs={12} sm={6} md={4}>
+						<Card sx={{ maxWidth: 345 }}>
+							<CardActionArea>
+								<Link to={`/products/${image}`}>
+									<CardMedia
+										component="img"
+										height="140"
+										image={`/images/${image}`}
+										alt={name}
+									/>
+									<Typography gutterBottom variant="h5" component="div">
+										{name}
+									</Typography>
+								</Link>
+								<CardContent>
+									<Typography variant="body2" color="text.secondary">
+										{quantity} {pluralize('item', quantity)} in stock
+										<span>${price}</span>
+									</Typography>
+								</CardContent>
+							</CardActionArea>
+							<CardActions>
+								<Button size="small" color="primary" onClick={addToCart}>
+									Send to cart
+								</Button>
+							</CardActions>
+						</Card>
+					</Grid>
+				))}
+			</Grid>
 		</Container>
 	);
 }
