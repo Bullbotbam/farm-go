@@ -3,10 +3,12 @@ import TextField from "@mui/material/TextField";
 import { Stack, Button } from "@mui/material";
 import Modal from "react-modal";
 import CloseIcon from "@mui/icons-material/Close";
-import Login from "../login";
+import Login from "../Login";
 import photo from "../../assets/groceries/greens.jpg";
+import Auth from "../../utils/auth"
 
 
+//modal styles
 const customStyles = {
   content: {
     top: "50%",
@@ -20,8 +22,7 @@ const customStyles = {
 
 function SignUp() {
   const [modalIsOpen, setIsOpen] = React.useState(false);
-  //sign up modal
-
+//login modal
   function openModal() {
     setIsOpen(true);
   }
@@ -29,6 +30,14 @@ function SignUp() {
   function closeModal() {
     setIsOpen(false);
   }
+
+  //signup functionality
+const handleSignSubmit = async (event) => {
+  event.preventDefault();
+  Auth.Login()
+}
+
+
 
   return (
     <React.Fragment>
@@ -45,7 +54,7 @@ function SignUp() {
           <Login handleModalClose={() => setIsOpen(false)} />
         </div>
       </Modal>
-      <form
+      <form onSubmit={handleSignSubmit}
         className="root"
         style={{
           border: "solid",

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import { Stack, Button } from "@mui/material";
+import Auth from "../../utils/auth";
 
 function Login() {
   const [userData, setUserData] = useState({ email: "", password: "" });
@@ -10,8 +11,18 @@ function Login() {
     setUserData({ ...userData, [name]: value });
   };
 
+  //submit login
+  const handleLoginSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      Auth();
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   // setUserData({
-  //   username: "",
   //   email: "",
   //   password: ""
   // })
@@ -19,13 +30,14 @@ function Login() {
   return (
     <React.Fragment>
       <form
+        onSubmit={handleLoginSubmit}
         className="root"
         style={{
           border: "solid",
           borderWidth: "1px 1px",
           maxWidth: "50%",
           margin: "0 auto",
-          background: "white"
+          background: "white",
         }}
       >
         <h2
