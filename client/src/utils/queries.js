@@ -38,3 +38,35 @@ export const QUERY_ALL_PRODUCTS = gql`
     }
   }
 `;
+
+export const QUERY_CATEGORIES = gql`
+  {
+    categories {
+      _id
+      title
+    }
+  }
+`;
+
+export const QUERY_CUSTOMER = gql`
+  {
+    customer {
+      firstName
+      lastName
+      email
+      orders {
+        _id
+        purchaseDate
+        products {
+          _id
+          productName
+          description
+          price
+          count
+          image
+          category
+        }
+      }
+    }
+  }
+`;
