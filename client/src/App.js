@@ -1,9 +1,10 @@
 import React from 'react';
 import SingUp from './components/SingUp';
 import Cart from './components/Cart';
+import SearchBar from './components/SearchBar';
 import MapSearch from './components/MapSearch';
-import ProductDetail from './pages/ProductDetail';
-import MarketItem from './components/MarketItem/MarketItem';
+// import ProductDetail from './pages/ProductDetail';
+import MarketItem from './components/MarketItem';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { StoreProvider } from './utils/GlobalState';
 import {
@@ -28,11 +29,13 @@ function App() {
 			<Router>
 				<div>
 					<StoreProvider>
+						<SearchBar />
 						{/* <SingUp /> */}
 						{/* <MapSearch /> */}
 						<Cart />
 						<MarketItem />
-						<ProductDetail />
+
+						{/* <ProductDetail /> */}
 					</StoreProvider>
 				</div>
 			</Router>

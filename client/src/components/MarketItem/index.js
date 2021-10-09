@@ -164,7 +164,7 @@ function MarketItem(item) {
 	return (
 		<div>
 			<Link to={`/products/${_id}`}>
-				<img src={`images/${image}`} alt={name} />
+				<img src={`/images/${image}`} alt={name} />
 			</Link>
 			<div>
 				<div>
