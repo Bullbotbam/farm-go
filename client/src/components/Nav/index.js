@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
@@ -31,4 +32,19 @@ function Nav() {
 			);
 		}
 	}
+	return (
+		<header>
+			<Typography variant="h1">
+				<Link to="/">
+					<span role="img" aria-label="leaf">
+						🌿
+					</span>
+					-FarmGo Market
+				</Link>
+			</Typography>
+			<nav>{showNavigation()}</nav>
+		</header>
+	);
 }
+
+export default Nav;
