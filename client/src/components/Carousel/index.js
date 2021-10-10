@@ -1,6 +1,6 @@
 import React from 'react';
 import Carousel from 'react-material-ui-carousel';
-import { Paper } from '@material-ui/core';
+import { Card } from '@material-ui/core';
 
 import market1 from '../../assets/images/market1.jpg';
 import market2 from '../../assets/images/market2.jpg';
@@ -42,7 +42,7 @@ export default function CarouselImages(props) {
 
 function Item(props) {
 	return (
-		<Paper>
+		<Card style={{ marginLeft: '25%' }}>
 			<img
 				className="imageCarousel"
 				src={props.item.image}
@@ -56,6 +56,6 @@ function Item(props) {
 			>
 				{props.item.description}
 			</h2>
-		</Paper>
+		</Card>
 	);
 }
