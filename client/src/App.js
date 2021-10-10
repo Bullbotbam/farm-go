@@ -31,7 +31,7 @@ function App() {
 			<Router>
 				<div>
 					<StoreProvider>
-						<SearchBar />
+						{/* <SearchBar /> */}
 						<Switch>
 							{/* <Route exact path="/signup" component={SingUp} />
 							<Route exact path="/search" component={MapSearch} />

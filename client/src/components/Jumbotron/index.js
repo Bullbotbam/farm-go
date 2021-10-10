@@ -1,29 +1,50 @@
+// import React from 'react';
+// import { Container, Paper } from '@mui/material';
+// // import { makeStyles } from '@mui/styles';
+
+// // const useStyles = makeStyles((theme) => ({
+// // 	root: {
+// // 		flexGrow: 1,
+// // 	},
+// // 	paper: {
+// // 		// padding: theme.spacing(1),
+// // 		textAlign: 'center',
+// // 		color: theme.palette.text.secondary,
+// // 		height: 560,
+// // 		clear: 'both',
+// // 		paddingTop: 120,
+// // 	},
+// // }));
+
+// export default function Jumbotron({ children }) {
+// 	// const classes = useStyles();
+
+// 	return (
+// 		<Container
+// 			style={{
+// 				height: 560,
+// 				clear: 'both',
+// 				paddingTop: '10rem',
+// 				textAlign: 'center',
+// 			}}
+// 		></Container>
+// 	);
+// }
 import React from 'react';
-import { textAlign } from '@mui/system';
-import { Paper } from '@mui/material';
-import { makeStyles } from '@mui/stlyes';
 
-const useStyles = makeStyles((theme) => ({
-	root: {
-		flexGrow: 1,
-	},
-	paper: {
-		padding: theme.spacing(1),
-		textAlign: 'center',
-		color: theme.palette.text.secondary,
-		height: 560,
-		clear: 'both',
-		paddingTop: 120,
-		textAlign: 'center',
-	},
-}));
-
-export default function Jumbotron(children) {
-	const classes = useStyles();
-
+function Jumbotron({ children }) {
 	return (
-		<>
-			<Paper className={classes.paper}>{children}</Paper>
-		</>
+		<div
+			style={{
+				height: 1200,
+				clear: 'both',
+				// paddingTop: 20,
+				textAlign: 'center',
+			}}
+		>
+			{children}
+		</div>
 	);
 }
+
+export default Jumbotron;
