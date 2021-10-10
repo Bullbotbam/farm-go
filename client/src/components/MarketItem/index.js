@@ -20,7 +20,7 @@ import { idbPromise } from '../../utils/helpers';
 
 // const categories = await Category.insertMany([
 // 	{ name: 'Fruit' },
-// 	{ name: 'Vegatable' },
+// 	{ name: 'Vegetable' },
 // 	{ name: 'Dairy' },
 // 	{ name: 'Sea Food' },
 // 	{ name: 'Bulk' },

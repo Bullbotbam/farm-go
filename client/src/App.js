@@ -31,13 +31,13 @@ function App() {
 			<Router>
 				<div>
 					<StoreProvider>
-						{/* <SearchBar /> */}
+						<SearchBar />
 						<Switch>
-							{/* <Route exact path="/signup" component={SingUp} />
-							<Route exact path="/search" component={MapSearch} />
+							<Route exact path="/signup" component={SingUp} />
+							<Route component={MapSearch} />
 							<Route exact path="/cart" component={Cart} />
 							<Route exact path="/products" component={MarketItem} />
-							<Route exact path="/details" component={ProductDetail} /> */}
+							<Route component={ProductDetail} />
 							<Route component={NoMatch} />
 						</Switch>
 					</StoreProvider>
