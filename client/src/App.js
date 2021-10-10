@@ -16,6 +16,7 @@ import {
 } from '@apollo/client';
 import CarouselImages from './components/Carousel';
 import CategoryMenu from './pages/CategoryMenu';
+import Footer from './components/Footer';
 
 const httpLink = createHttpLink({
 	url: '/graphql',
@@ -43,6 +44,7 @@ function App() {
 							<Route component={ProductDetail} />
 							<Route component={NoMatch} />
 						</Switch> */}
+						<Footer />
 					</StoreProvider>
 				</div>
 			</Router>
