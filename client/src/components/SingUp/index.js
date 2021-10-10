@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import { Stack, Button } from "@mui/material";
 import Modal from "react-modal";
 import CloseIcon from "@mui/icons-material/Close";
 import Login from "../Login";
 import photo from "../../assets/groceries/greens.jpg";
-import Auth from "../../utils/auth"
-
+import Auth from "../../utils/auth";
+import { useMutation } from "@apollo/client";
+import { ADD_CUSTOMER } from "../../utils/mutations";
 
 //modal styles
 const customStyles = {
@@ -21,8 +22,46 @@ const customStyles = {
 };
 
 function SignUp() {
+  //setting up inital form state
+  const [customerFormData, setCustomerFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  });
+
+  const [validated] = useState(false);
+  // const [showAlert, setShowAlert ] = useState(false)
+  const [addCustomer, { error }] = useMutation(ADD_CUSTOMER);
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setCustomerFormData({ ...customerFormData, [name]: value });
+  };
+  //signup functionality
+  const handleSignSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const { data } = await addCustomer({
+        varibales: { ...customerFormData },
+      });
+      Auth.login(data.addCustomer.token);
+    } catch (e) {
+      console.error(e);
+    }
+
+    try {
+      const { data } = await addCustomer({
+        variables: { ...customerFormData },
+      });
+      console.log(data);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   const [modalIsOpen, setIsOpen] = React.useState(false);
-//login modal
+  //login modal
   function openModal() {
     setIsOpen(true);
   }
@@ -31,11 +70,6 @@ function SignUp() {
     setIsOpen(false);
   }
 
-  //signup functionality
-const handleSignSubmit = async (event) => {
-  event.preventDefault();
-  Auth.Login()
-}
   return (
     <React.Fragment>
       <Modal
@@ -51,7 +85,10 @@ const handleSignSubmit = async (event) => {
           <Login handleModalClose={() => setIsOpen(false)} />
         </div>
       </Modal>
-      <form onSubmit={handleSignSubmit}
+      <form
+        noValidate
+        validated={validated}
+        onSubmit={handleSignSubmit}
         className="root"
         style={{
           border: "solid",
@@ -73,25 +110,53 @@ const handleSignSubmit = async (event) => {
         </h2>
         <TextField
           id="outlined-basic"
-          label="Username"
+          label="First Name"
+          name="firstName"
+          onChange={handleInputChange}
+          value={customerFormData.firstName}
           variant="outlined"
           style={{ margin: "5%", display: "grid" }}
         />
 
         <TextField
           id="outlined-basic"
-          label="Email"
+          label="Last Name"
+          name="lastName"
+          onChange={handleInputChange}
+          value={customerFormData.lastName}
           variant="outlined"
           style={{ margin: "5%", display: "grid" }}
         />
         <TextField
           id="outlined-basic"
-          label="Password"
+          label="Email Address"
+          name="email"
+          onChange={handleInputChange}
+          value={customerFormData.email}
           variant="outlined"
+          require
+          style={{ margin: "5%", display: "grid" }}
+        />
+        <TextField
+          id="outlined-basic"
+          label="Password"
+          name="password"
+          onChange={handleInputChange}
+          value={customerFormData.password}
+          variant="outlined"
+          required
           style={{ margin: "5%", display: "grid" }}
         />
         <Stack direction="row">
           <Button
+            disabled={
+              !(
+                customerFormData.firstName &&
+                customerFormData.lastName &&
+                customerFormData.email &&
+                customerFormData.password
+              )
+            }
             variant="contained"
             color="success"
             style={{ margin: "5%", alignSelf: "center", display: "grid" }}
@@ -101,7 +166,7 @@ const handleSignSubmit = async (event) => {
           <Button onClick={openModal}>Have an account? Login</Button>
         </Stack>
       </form>
-
+      {error && <div>Sign up failed</div>}
     </React.Fragment>
   );
 }

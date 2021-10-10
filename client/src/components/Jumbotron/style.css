@@ -1,10 +1,10 @@
 .header {
   color: white;
-  font-size: 120px;
-  padding: 300px 35px;
+  font-size: 50px;
+  padding: 120px 35px;
   display: flex;
   background-image: url("../../assets/groceries/care.jpg");
   background-size: cover;
-  background-position: 55%;
+  background-position: 50%;
  
 }

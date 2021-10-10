@@ -15,7 +15,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import { orange } from '@material-ui/core/colors';
 import { Link } from 'react-router-dom';
-import SignUp from '../SingUp';
+// import SignUp from '../SingUp';
 
 const theme = createTheme({
 	palette: {
