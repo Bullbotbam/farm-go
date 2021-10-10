@@ -30,12 +30,13 @@ function Coupons() {
   ];
   return (
     <>
+    <h2 style={{ alignText: "center"}}>Check out this weeks deals</h2>
       <div className="cards">
       {sales.map(({ src }) => (
           <ul className="projects" key={{ src}}>
             <img
               src={src}
-              alt="hello"
+              alt="coupons"
             ></img>
           </ul>
         ))}

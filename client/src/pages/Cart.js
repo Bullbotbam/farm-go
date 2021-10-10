@@ -26,6 +26,7 @@ function Cart() {
     <>
       <h2 style={{ fontSize: "50px" }}>Users Cart</h2>
       <section>
+          
         <TableContainer className="table" style={{width: "220%"}}>
           <Table 
           >

@@ -36,9 +36,6 @@ const handleSignSubmit = async (event) => {
   event.preventDefault();
   Auth.Login()
 }
-
-
-
   return (
     <React.Fragment>
       <Modal
