@@ -2,36 +2,33 @@ import React from 'react';
 import Carousel from 'react-material-ui-carousel';
 import { Paper } from '@material-ui/core';
 
-import market1 from './market1.jpg';
-import market2 from './market2.jpg';
-import market3 from './market3.jpg';
-import market4 from './market4.jpg';
-import { Typography } from '@mui/material';
+import market1 from '../../assets/images/market1.jpg';
+import market2 from '../../assets/images/market2.jpg';
+import market3 from '../../assets/images/market3.jpg';
+import market4 from '../../assets/images/market4.jpg';
 
 export default function CarouselImages(props) {
 	const items = [
 		{
 			name: 'Christian Mackie',
-			description: 'FarGo Market',
+			description: 'FarmGo Market South',
 			image: market1,
 		},
 		{
 			name: 'Clem Onojeghuo',
-			description: 'FarGo Market',
+			description: 'FarmGo Market North',
 			image: market2,
 		},
 		{
 			name: 'Daniel Fazio',
-			description: 'FarGo Market',
+			description: 'FarmGo Market East',
 			image: market3,
 		},
 		{
 			name: 'Davor Nisevic',
-			description: 'FarGo Market',
+			description: 'FarmGo Market West',
 			image: market4,
 		},
-
-		console.log(market1),
 	];
 
 	return (
@@ -46,8 +43,19 @@ export default function CarouselImages(props) {
 function Item(props) {
 	return (
 		<Paper>
-			<Typography variant="h2">{props.item.name}</Typography>
-			<Typography variant="h4">{props.item.description}</Typography>
+			<img
+				className="imageCarousel"
+				src={props.item.image}
+				alt={props.item.name}
+			/>
+
+			<h2
+				onClick={() => {
+					window.location.href = props.item.link;
+				}}
+			>
+				{props.item.description}
+			</h2>
 		</Paper>
 	);
 }
