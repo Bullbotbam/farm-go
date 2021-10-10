@@ -47,7 +47,7 @@ function Cart() {
               <StyledTableCell align="right">item-Price</StyledTableCell>
             </TableHead>
             <TableBody>
-              <StyledTableCell component="th" scope="row">
+              <StyledTableCell >
                 Images/description
               </StyledTableCell>
               <StyledTableCell align="right">QTY</StyledTableCell>

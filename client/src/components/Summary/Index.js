@@ -24,15 +24,13 @@ function Summary() {
 
   return (
     <TableContainer className="summary">
-      <Table
-  
-      >
+      <Table>
         <TableHead>
           <StyledTableCell>Order Summary</StyledTableCell>
           {/* <StyledTableCell align="right">Quantity</StyledTableCell> */}
         </TableHead>
         <TableBody>
-          <StyledTableCell component="th" scope="row">
+          <StyledTableCell>
             Total: $
           </StyledTableCell>
         </TableBody>

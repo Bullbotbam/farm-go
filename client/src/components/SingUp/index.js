@@ -3,7 +3,7 @@ import TextField from "@mui/material/TextField";
 import { Stack, Button } from "@mui/material";
 import Modal from "react-modal";
 import CloseIcon from "@mui/icons-material/Close";
-import Login from "../Login";
+import Login from "../Login/loginIndex";
 import photo from "../../assets/groceries/greens.jpg";
 import Auth from "../../utils/auth";
 import { useMutation } from "@apollo/client";
@@ -30,7 +30,7 @@ function SignUp() {
     password: "",
   });
 
-  const [validated] = useState(false);
+  // const [validated] = useState(false);
   // const [showAlert, setShowAlert ] = useState(false)
   const [addCustomer, { error }] = useMutation(ADD_CUSTOMER);
 
@@ -39,7 +39,7 @@ function SignUp() {
     setCustomerFormData({ ...customerFormData, [name]: value });
   };
   //signup functionality
-  const handleSignSubmit = async (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
       const { data } = await addCustomer({
@@ -87,9 +87,9 @@ function SignUp() {
       </Modal>
       <form
         noValidate
-        validated={validated}
-        onSubmit={handleSignSubmit}
-        className="root"
+        validated="false"
+        onSubmit={handleFormSubmit}
+        className="signRoot"
         style={{
           border: "solid",
           borderWidth: "1px 1px",
@@ -109,7 +109,7 @@ function SignUp() {
           Register
         </h2>
         <TextField
-          id="outlined-basic"
+           type="text"
           label="First Name"
           name="firstName"
           onChange={handleInputChange}
@@ -119,7 +119,7 @@ function SignUp() {
         />
 
         <TextField
-          id="outlined-basic"
+         type="text"
           label="Last Name"
           name="lastName"
           onChange={handleInputChange}
@@ -128,26 +128,26 @@ function SignUp() {
           style={{ margin: "5%", display: "grid" }}
         />
         <TextField
-          id="outlined-basic"
+          type="email"
           label="Email Address"
           name="email"
           onChange={handleInputChange}
           value={customerFormData.email}
           variant="outlined"
-          require
+          required={true}
           style={{ margin: "5%", display: "grid" }}
         />
         <TextField
-          id="outlined-basic"
-          label="Password"
+          type="password"
+          label="Create Password"
           name="password"
           onChange={handleInputChange}
           value={customerFormData.password}
           variant="outlined"
-          required
+          required={true}
           style={{ margin: "5%", display: "grid" }}
         />
-        <Stack direction="row">
+        <Stack >
           <Button
             disabled={
               !(
