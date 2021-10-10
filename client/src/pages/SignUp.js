@@ -1,24 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import TextField from '@mui/material/TextField';
 import { Stack, Button } from '@mui/material';
-// import Modal from "react-modal";
-// import SignUp from "../Sing-up";
-// import CloseIcon from "@mui/icons-material/Close";
+import LoginModal from '../components/LoginModal';
 
-function Login() {
-	const [userData, setUserData] = useState({ email: '', password: '' });
-
-	const handleInputChange = (event) => {
-		const { name, value } = event.target;
-		setUserData({ ...userData, [name]: value });
-	};
-
-	// setUserData({
-	//   username: "",
-	//   email: "",
-	//   password: ""
-	// })
-
+function SignUp() {
 	return (
 		<React.Fragment>
 			<form
@@ -28,36 +13,36 @@ function Login() {
 					borderWidth: '1px 1px',
 					maxWidth: '50%',
 					margin: '0 auto',
-					background: 'white',
 				}}
 			>
 				<h2
 					style={{
-						display: 'block',
 						color: 'white',
 						background: 'green',
-						padding: '10px',
+						padding: '15px 15px',
 						textAlign: 'center',
+						backgroundSize: 'cover',
 					}}
 				>
-					Login
+					Register
 				</h2>
 				<TextField
 					id="outlined-basic"
-					label="Email"
+					label="Username"
 					variant="outlined"
-					onChange={handleInputChange}
-					value={userData.email}
-					required
 					style={{ margin: '5%', display: 'grid' }}
 				/>
 
 				<TextField
 					id="outlined-basic"
+					label="Email"
+					variant="outlined"
+					style={{ margin: '5%', display: 'grid' }}
+				/>
+				<TextField
+					id="outlined-basic"
 					label="Password"
 					variant="outlined"
-					onChange={handleInputChange}
-					value={userData.password}
 					style={{ margin: '5%', display: 'grid' }}
 				/>
 				<Stack direction="row">
@@ -66,12 +51,13 @@ function Login() {
 						color="success"
 						style={{ margin: '5%', alignSelf: 'center', display: 'grid' }}
 					>
-						Login
+						Submit
 					</Button>
+					<Button onClick={<LoginModal />}>Have an account? Login</Button>
 				</Stack>
 			</form>
 		</React.Fragment>
 	);
 }
 
-export default Login;
+export default SignUp;

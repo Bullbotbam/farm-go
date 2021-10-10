@@ -5,13 +5,15 @@ import Modal from "react-modal";
 import CloseIcon from "@mui/icons-material/Close";
 import Login from "../Login";
 import photo from "../../assets/groceries/greens.jpg";
+import Auth from "../../utils/auth"
 
+
+//modal styles
 const customStyles = {
   content: {
     top: "50%",
     left: "50%",
-    padding: "50px 50px",
-    marginRight: "-50%",
+    width: "80%",
     transform: "translate(-50%, -50%)",
     backgroundImage: `url(${photo})`,
     backgroundSize: "cover",
@@ -19,10 +21,8 @@ const customStyles = {
 };
 
 function SignUp() {
-
   const [modalIsOpen, setIsOpen] = React.useState(false);
-  //sign up modal
-
+//login modal
   function openModal() {
     setIsOpen(true);
   }
@@ -31,6 +31,11 @@ function SignUp() {
     setIsOpen(false);
   }
 
+  //signup functionality
+const handleSignSubmit = async (event) => {
+  event.preventDefault();
+  Auth.Login()
+}
   return (
     <React.Fragment>
       <Modal
@@ -40,13 +45,13 @@ function SignUp() {
         style={customStyles}
         contentLabel="signUp Modal"
       >
-        <CloseIcon onClick={closeModal} style= {{color: "red"}}/>
+        <CloseIcon onClick={closeModal} style={{ color: "red" }} />
 
         <div>
           <Login handleModalClose={() => setIsOpen(false)} />
         </div>
       </Modal>
-      <form
+      <form onSubmit={handleSignSubmit}
         className="root"
         style={{
           border: "solid",
@@ -96,6 +101,7 @@ function SignUp() {
           <Button onClick={openModal}>Have an account? Login</Button>
         </Stack>
       </form>
+
     </React.Fragment>
   );
 }
