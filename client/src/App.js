@@ -15,6 +15,7 @@ import {
 	ApolloProvider,
 } from '@apollo/client';
 import CarouselImages from './components/Carousel';
+import CategoryMenu from './pages/CategoryMenu';
 
 const httpLink = createHttpLink({
 	url: '/graphql',
@@ -33,6 +34,7 @@ function App() {
 					<StoreProvider>
 						<SearchBar />
 						<CarouselImages />
+						<CategoryMenu />
 						{/* <Switch>
 							<Route exact path="/signup" component={SingUp} />
 							<Route component={MapSearch} />
