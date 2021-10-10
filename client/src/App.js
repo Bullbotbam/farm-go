@@ -1,6 +1,6 @@
 import React from 'react';
 import SingUp from './components/SingUp';
-import Cart from './components/Cart';
+import Cart from './pages/Cart';
 import { NoMatch } from './pages/NoMatch';
 import SearchBar from './components/SearchBar';
 import MapSearch from './components/MapSearch';
