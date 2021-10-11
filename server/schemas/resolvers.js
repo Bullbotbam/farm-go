@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Product, Category, Order } = require("../models");
+const { Customer, Product, Category, Order } = require("../models");
 const { signToken } = require("../utils/auth");
 const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 
@@ -8,16 +8,16 @@ const resolvers = {
     categories: async () => {
       return await Category.find();
     },
-    products: async (parent, { category, ProductName }) => {
+    products: async (parent, { category, name }) => {
       const params = {};
 
       if (category) {
         params.category = category;
       }
 
-      if (ProductName) {
-        params.ProductName = {
-          $regex: ProductName,
+      if (name) {
+        params.name = {
+          $regex: name,
         };
       }
 
@@ -65,7 +65,7 @@ const resolvers = {
 
       for (let i = 0; i < products.length; i++) {
         const product = await stripe.products.create({
-          name: products[i].Productname,
+          name: products[i].name,
           description: products[i].description,
           images: [`${url}/images/${products[i].image}`],
         });
@@ -123,12 +123,12 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
-    updateProduct: async (parent, { _id, count }) => {
-      const decrement = Math.abs(count) * -1;
+    updateProduct: async (parent, { _id, quantity }) => {
+      const decrement = Math.abs(quantity) * -1;
 
       return await Product.findByIdAndUpdate(
         _id,
-        { $inc: { count: decrement } },
+        { $inc: { quantity: decrement } },
         { new: true }
       );
     },
