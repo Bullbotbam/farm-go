@@ -52,7 +52,7 @@ function App() {
 						<ProductCard />
 						<Switch>
 							<Route exact path="/signup" component={SingUp} />
-							<Route exact path="/product" component={ProductCard} />
+							<Route exact path="/produce" component={Produce} />
 							{/* <Route component={MapSearch} />
 							<Route exact path="/cart" component={Cart} />
 							<Route exact path="/products" component={MarketItem} />
