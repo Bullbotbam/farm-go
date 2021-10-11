@@ -68,13 +68,13 @@ function MapSearch() {
 
 	return (
 		<div>
-			<h1>
+			{/* <h1>
 				FarmGo 
 				<span className="market">-market </span>
 				<span role="img" aria-label="leaf">
 					🌿
 				</span>
-			</h1>
+			</h1> */}
 
 			<Search panTo={panTo} />
 			<Locate panTo={panTo} />

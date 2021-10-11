@@ -95,10 +95,10 @@ const resolvers = {
   },
   Mutation: {
     addCustomer: async (parent, args) => {
-      const user = await Customer.create(args);
-      const token = signToken(user);
+      const customer = await Customer.create(args);
+      const token = signToken(customer);
 
-      return { token, user };
+      return { token, customer };
     },
     addOrder: async (parent, { products }, context) => {
       console.log(context);
@@ -133,21 +133,21 @@ const resolvers = {
       );
     },
     login: async (parent, { email, password }) => {
-      const user = await Customer.findOne({ email });
+      const customer = await Customer.findOne({ email });
 
-      if (!user) {
+      if (!customer) {
         throw new AuthenticationError("Incorrect credentials");
       }
 
-      const correctPw = await user.isCorrectPassword(password);
+      const correctPw = await customer.isCorrectPassword(password);
 
       if (!correctPw) {
         throw new AuthenticationError("Incorrect credentials");
       }
 
-      const token = signToken(user);
+      const token = signToken(customer);
 
-      return { token, user };
+      return { token, customer };
     },
   },
 };

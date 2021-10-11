@@ -1,5 +1,5 @@
 import React from 'react';
-import SingUp from './components/SingUp';
+import SingUp from './pages/SignUp';
 import Jumbotron from './components/Jumbotron/jumboIndex';
 import Cart from './pages/Cart';
 import { NoMatch } from './pages/NoMatch';
@@ -10,6 +10,7 @@ import ProductDetail from './pages/ProductDetail';
 import MarketItem from './components/MarketItem';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { StoreProvider } from './utils/GlobalState';
+import { setContext } from '@apollo/client/link/context';
 import {
 	ApolloClient,
 	createHttpLink,
@@ -18,11 +19,21 @@ import {
 } from '@apollo/client';
 
 const httpLink = createHttpLink({
-	url: '/graphql',
+	uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
 });
 
 const client = new ApolloClient({
-	// link: authLink.concat(httpLink),
+	link: authLink.concat(httpLink),
 	cache: new InMemoryCache(),
 });
 
@@ -36,6 +47,7 @@ function App() {
             <Jumbotron />
             <SingUp />
             <Cart />
+    
 						<Switch>
 							<Route exact path="/signup" component={SingUp} />
 							<Route component={MapSearch} />

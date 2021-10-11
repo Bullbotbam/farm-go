@@ -1,4 +1,5 @@
 import React from "react";
+import CartItem from "../components/CartItem/cartIndex"
 import { styled } from "@mui/material/styles";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
