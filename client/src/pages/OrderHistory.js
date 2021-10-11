@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_CUSTOMER } from '../utils/queries';
 
+import bananas from '../assets/groceries/bananas.jpg'
+import coffee from '../assets/groceries/coffee.jpg'
+
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -11,15 +14,70 @@ import Typography from '@mui/material/Typography';
 
 function OrderHistory() {
 
-    const { customerData } = useQuery(QUERY_CUSTOMER);
-    let customer;
+    // const { customerData } = useQuery(QUERY_CUSTOMER);
+    // let customer;
 
-    if (customerData) {
-        customer = data.customer
-    }
+    // if (customerData) {
+    //     customer = data.customer
+    // }
 
   return (
-    <div>
+      <>
+    <div className='container my-1'>
+        <Link to="/">
+            ← Back to Products
+        </Link>
+    <div className="my-2">  
+    <div className='flex-row'>
+    <Card  sx={{ maxWidth: 345 }}>
+      <CardMedia
+        component="img"
+        height="140"
+        image={bananas}
+        alt="bananas"
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          Bananas
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          $2.99
+        </Typography>
+      </CardContent>
+    </Card>
+    </div>  
+    </div>
+    </div>
+    <div className='container my-1'>
+    <div className="my-2">  
+    <div className='flex-row'>
+    <Card  sx={{ maxWidth: 345 }}>
+      <CardMedia
+        component="img"
+        height="140"
+        width="140"
+        image={coffee}
+        alt="bananas"
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          Coffee
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          $2.99
+        </Typography>
+      </CardContent>
+    </Card>
+    </div>  
+    </div>
+    </div>
+
+</>
+  );
+}
+
+
+{/* <div>
         <Link to="/">
             ← Back to Products
         </Link>
@@ -45,61 +103,6 @@ function OrderHistory() {
     ))}
     </>
     ) : null}
-    </div>
-    
-    
-  );
-}
-
-
-// function OrderHistory() {
-
-//     // const { customerData } = useQuery(QUERY_CUSTOMER);
-//     // let customer;
-
-//     // if (customerData) {
-//     //     customer = data.customer
-//     // }
-
-//     return (
-//         <>
-//           <div className="container my-1">
-//             <Link to="/">
-//               ← Back to Farm Go
-//               </Link>
-    
-//                 <h2>Showing history for Chase</h2>
-//                   <div  className="my-2">
-//                     <h3>Oct. 10th, 2021</h3>
-//                     <div className="flex-row">
-//                         <div className="card px-1 py-1">
-//                           <p>your products</p>
-//                           <div>
-//                             <span>$100</span>
-//                           </div>
-//                         </div>
-                     
-//                     </div>
-//                   </div>
-//                   <div class="row">
-//     <div class="col s12 m6">
-//       <div class="card">
-//         <div class="card-image">
-//           {/* <img src="images/sample-1.jpg"> */}
-//           <span class="card-title">Card Title</span>
-//           <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-//         </div>
-//         <div class="card-content">
-//           <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-//         </div>
-//       </div>
-//     </div>
-//   </div>
-    
-//           </div>
-    
-//         </>)
-
-// };
+    </div> */}
 
 export default OrderHistory;
