@@ -46,7 +46,12 @@ function Footer() {
 						>
 							<GitHubIcon fontSize="large" />
 						</IconButton>
-						<Typography variant="button">Maria Mireles</Typography>
+						<Typography
+							variant="button"
+							onClick={() => window.open('https://github.com/mariamv29')}
+						>
+							Maria Mireles
+						</Typography>
 						<IconButton
 							className="icon-btn"
 							aria-label="GitHub.com"
@@ -54,7 +59,12 @@ function Footer() {
 						>
 							<GitHubIcon fontSize="large" />
 						</IconButton>
-						<Typography variant="button">Denisse Rivera</Typography>
+						<Typography
+							variant="button"
+							onClick={() => window.open('https://github.com/RiveraDenisse')}
+						>
+							Denisse Rivera
+						</Typography>
 						<br />
 						<Typography
 							variant="body1"
@@ -70,7 +80,12 @@ function Footer() {
 							</span>
 						</Typography>
 						<br />
-						<Typography variant="button">Chase McQuown</Typography>
+						<Typography
+							variant="button"
+							onClick={() => window.open('https://github.com/chasemcquown')}
+						>
+							Chase McQuown
+						</Typography>
 						<IconButton
 							className="icon-btn"
 							aria-label="GitHub.com"
@@ -78,7 +93,12 @@ function Footer() {
 						>
 							<GitHubIcon fontSize="large" />
 						</IconButton>
-						<Typography variant="button">Donald Bull</Typography>
+						<Typography
+							variant="button"
+							onClick={() => window.open('https://github.com/Bullbotbam')}
+						>
+							Donald Bull
+						</Typography>
 
 						<IconButton
 							className="icon-btn"

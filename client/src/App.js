@@ -37,6 +37,7 @@ function App() {
 
 						<CategoryMenu />
 						<Switch>
+							<Route exact path="/" component={Cart} />
 							<Route exact path="/signup" component={SingUp} />
 							<Route component={MapSearch} />
 							<Route exact path="/cart" component={Cart} />

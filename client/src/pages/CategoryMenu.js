@@ -104,7 +104,7 @@ const CategoryMenu = () => {
 								<Card
 									className={classes.card}
 									style={{ alignContent: 'center' }}
-									onClick={'sayHello'}
+									onClick={() => window.open('/')}
 								>
 									<CardMedia
 										className={classes.cardMedia}
