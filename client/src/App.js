@@ -5,14 +5,11 @@ import Cart from './pages/Cart';
 import Coupons from './components/Coupons/couponsIndex';
 import { NoMatch } from './pages/NoMatch';
 import SearchBar from './components/SearchBar';
-import ProductCard from './components/ProductCard/ProductCard';
 // import MapSearch from "./components/MapSearch";
 // import ProductDetail from "./pages/ProductDetail";
 // import ProductDetail from './pages/ProductDetail';
 import MarketItem from './components/MarketItem';
 import CategoryMenu from './pages/CategoryMenu';
-import ProductCard from './components/ProductCard/ProductCard';
-
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { StoreProvider } from './utils/GlobalState';
 import { setContext } from '@apollo/client/link/context';
@@ -22,6 +19,7 @@ import {
 	InMemoryCache,
 	ApolloProvider,
 } from '@apollo/client';
+import Nav from './components/Nav';
 
 const httpLink = createHttpLink({
 	uri: '/graphql',
@@ -48,14 +46,14 @@ function App() {
 			<Router>
 				<div>
 					<StoreProvider>
-						<SearchBar />
+						<Nav />
 						<Jumbotron />
 						<SingUp />
 						<Cart />
 						<Coupons />
+						<CategoryMenu />
 						<Switch>
 							<Route exact path="/signup" component={SingUp} />
-							<Route exact path="/product" component={ProductCard} />
 							{/* <Route component={MapSearch} />
 							<Route exact path="/cart" component={Cart} />
 							<Route exact path="/products" component={MarketItem} />
