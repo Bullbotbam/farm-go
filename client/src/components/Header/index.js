@@ -4,9 +4,17 @@ import { AppBar, IconButton, Toolbar } from '@mui/material';
 import SortIcon from '@mui/icons-material/Sort';
 
 const useStyles = makeStyles((theme) => ({
+	root: {
+		display: 'flex',
+		justifyContent: 'center',
+		alignItems: 'center',
+		testAlign: 'center',
+		fontSize: '3rem',
+		heirght: '100vh',
+		fontFamily: 'Gabriela',
+	},
 	appbar: {
 		background: 'none',
-		fontFamily: 'Gabriela',
 	},
 	appbarTitle: {
 		flexGrow: '1',

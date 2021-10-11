@@ -18,6 +18,7 @@ import {
 import CarouselImages from './components/Carousel';
 import CategoryMenu from './pages/CategoryMenu';
 import Footer from './components/Footer';
+// import ProductCard from './components/ProductCard/ProductCard';
 
 const httpLink = createHttpLink({
 	url: '/graphql',
@@ -33,6 +34,7 @@ function App() {
 		<ApolloProvider client={client}>
 			<Router>
 				<div>
+					{/* <ProductCard /> */}
 					<StoreProvider>
 						<Switch>
 							<Route exact path="/" component={Homepage} />
