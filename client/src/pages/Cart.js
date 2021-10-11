@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import CartItem from "../components/CartItem/cartIndex";
 import TableContainer from "@mui/material/TableContainer";
 import { styled } from "@mui/material/styles";
@@ -9,7 +9,7 @@ import { Button } from "@mui/material";
 // import Auth from "../utils/auth";
 import { useStoreContext } from "../utils/GlobalState";
 // import { useParams } from "react-router";
-import { useQuery } from "@apollo/client";
+// import { useQuery } from "@apollo/client";
 import { useLazyQuery } from '@apollo/client';
 import { QUERY_CHECKOUT } from "../utils/queries";
 
@@ -28,8 +28,13 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 }));
 
 const Cart = () => {
-  const [checkout, {data}] = useLazyQuery()
+  const [checkout, {data}] = useLazyQuery(QUERY_CHECKOUT)
   const [state, dispatch] = useStoreContext();
+
+useEffect(() => {
+    ast
+})
+
   function total() {
     let sum = 0;
     state.cart.forEach((item) => {
