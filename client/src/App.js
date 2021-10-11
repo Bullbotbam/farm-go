@@ -40,9 +40,9 @@ function App() {
 							<Route exact path="/" component={Homepage} />
 							<Route exact path="/menu" component={CategoryMenu} />
 							<Route exact path="/products" component={MarketItem} />
-							{/* <Route exact path="/signup" component={SingUp} />
-							<Route component={MapSearch} />
-							<Route exact path="/cart" component={Cart} />
+							<Route exact path="/signup" component={SingUp} />
+							<Route exact path="search" component={MapSearch} />
+							{/* <Route exact path="/cart" component={Cart} />
 							
 							<Route component={ProductDetail} />
 							<Route component={NoMatch} /> */}

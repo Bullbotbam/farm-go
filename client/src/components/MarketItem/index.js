@@ -18,7 +18,7 @@ import {
 } from '@mui/material';
 import { margin } from '@mui/system';
 
-const categories = await category.insertMany([
+const categories = await Category.insertMany([
 	{ name: 'Fruit' },
 	{ name: 'Vegetable' },
 	{ name: 'Dairy' },
