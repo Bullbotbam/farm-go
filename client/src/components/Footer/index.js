@@ -71,21 +71,23 @@ function Footer() {
 							color="inherit"
 							style={{ paddingLeft: '2rem', paddingRight: '2rem' }}
 						>
-							<span role="img" aria-label="leaf">
+							<span
+								role="img"
+								aria-label="leaf"
+								style={{ paddingLeft: '.5rem', paddingRight: '.5rem' }}
+							>
 								🌿
 							</span>
 							<Typography variant="button"> ©2021 FarmGo Market </Typography>
-							<span role="img" aria-label="leaf">
+							<span
+								role="img"
+								aria-label="leaf"
+								style={{ paddingLeft: '.5rem', paddingRight: '.5rem' }}
+							>
 								🌿
 							</span>
 						</Typography>
 						<br />
-						<Typography
-							variant="button"
-							onClick={() => window.open('https://github.com/chasemcquown')}
-						>
-							Chase McQuown
-						</Typography>
 						<IconButton
 							className="icon-btn"
 							aria-label="GitHub.com"
@@ -95,9 +97,9 @@ function Footer() {
 						</IconButton>
 						<Typography
 							variant="button"
-							onClick={() => window.open('https://github.com/Bullbotbam')}
+							onClick={() => window.open('https://github.com/chasemcquown')}
 						>
-							Donald Bull
+							Chase McQuown
 						</Typography>
 
 						<IconButton
@@ -107,6 +109,12 @@ function Footer() {
 						>
 							<GitHubIcon fontSize="large" />
 						</IconButton>
+						<Typography
+							variant="button"
+							onClick={() => window.open('https://github.com/Bullbotbam')}
+						>
+							Donald Bull
+						</Typography>
 					</Toolbar>
 				</Container>
 			</AppBar>

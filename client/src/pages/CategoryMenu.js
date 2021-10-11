@@ -1,10 +1,7 @@
 import * as React from 'react';
 import { makeStyles } from '@mui/styles';
 
-// import { experimentalStyled as styled } from '@mui/material/styles';
-// import Box from '@mui/material/Box';
-// import Paper from '@mui/material/Paper';
-// import Grid from '@mui/material/Grid';
+import SearchBar from '../components/SearchBar';
 
 import {
 	Typography,
@@ -93,7 +90,7 @@ const CategoryMenu = () => {
 	return (
 		<>
 			<CssBaseline />
-
+			<SearchBar />
 			<maim>
 				<Container className={classes.cardGrid} maxWidth="xl">
 					<Typography variant="h2">Categories</Typography>

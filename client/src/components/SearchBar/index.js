@@ -13,14 +13,14 @@ import {
 
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import { orange } from '@material-ui/core/colors';
+import { green } from '@material-ui/core/colors';
 import { Link } from 'react-router-dom';
 import SignUp from '../SingUp';
 
 const theme = createTheme({
 	palette: {
 		primary: {
-			main: orange[500],
+			main: green[500],
 		},
 		secondary: {
 			main: '#ffac33',
@@ -37,6 +37,8 @@ const Search = styled('div')(({ theme }) => ({
 	},
 	marginLeft: 0,
 	width: '100%',
+	fontSize: 20,
+	fontFamily: 'Gabriela , serif',
 	[theme.breakpoints.up('sm')]: {
 		marginLeft: theme.spacing(1),
 		width: 'auto',
@@ -95,7 +97,7 @@ export default function SearchBar() {
 
 	return (
 		<Box sx={{ flexGrow: 1 }}>
-			<AppBar position="static" style={{ backgroundColor: '#ed764a' }}>
+			<AppBar position="static" style={{ backgroundColor: 'green' }}>
 				<Toolbar>
 					<IconButton
 						size="large"

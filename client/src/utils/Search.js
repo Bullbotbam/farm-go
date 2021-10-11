@@ -49,7 +49,7 @@ export default function ({ panTo }) {
 						setValue(e.target.value);
 					}}
 					disabled={!ready}
-					placeholder="Enter an address"
+					placeholder="Search by ZIP code, city or state"
 				/>
 				<ComboboxPopover>
 					<ComboboxList>
