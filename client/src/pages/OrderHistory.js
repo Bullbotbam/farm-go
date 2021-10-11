@@ -13,30 +13,41 @@ import Typography from '@mui/material/Typography';
 
 function OrderHistory() {
 
-    // const { customerData } = useQuery(QUERY_CUSTOMER);
-    // let customer;
+    const { customerData } = useQuery(QUERY_CUSTOMER);
+    let customer;
 
-    // if (customerData) {
-    //     customer = data.customer
-    // }
+    if (customerData) {
+        customer = data.customer
+    }
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <div>
+        <Link to="/">
+            ← Back to Products
+        </Link>
+    {customer ? (
+        <>
+    {customer.order.products.map(({ image, productName, price }, index) => (
+    <Card key={index} sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="140"l
-        // image="assets/groceries/bananas.jpq"
+        image={image}
         alt="bananas"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Bananas
+          {productName}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          $4.99
+          {price}
         </Typography>
       </CardContent>
     </Card>
+    ))}
+    </>
+    ) : null}
+    </div>
     
     
   );
