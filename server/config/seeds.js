@@ -1,7 +1,7 @@
-const db = require('./connection');
-const { User, Product, Category } = require('../models');
+import { once } from './connection';
+import { User, Product, Category } from '../models';
 
-db.once('open', async () => {
+once('open', async () => {
 	await Category.deleteMany();
 
 	const categories = await Category.insertMany([

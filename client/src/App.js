@@ -9,6 +9,7 @@ import ProductDetail from './pages/ProductDetail';
 // import ProductDetail from './pages/ProductDetail';
 import MarketItem from './components/MarketItem';
 import CategoryMenu from './pages/CategoryMenu';
+import ProductCard from './components/ProductCard/ProductCard';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { StoreProvider } from './utils/GlobalState';
@@ -48,10 +49,12 @@ function App() {
 					<Jumbotron />
 					<StoreProvider>
 						<CategoryMenu />
+						<ProductCard />
 						<Switch>
 							<Route exact path="/signup" component={SingUp} />
+							<Route exact path="/product" component={ProductCard} />
 							{/* <Route component={MapSearch} />
-							{/* <Route exact path="/cart" component={Cart} /> 
+							<Route exact path="/cart" component={Cart} />
 							<Route exact path="/products" component={MarketItem} />
 							<Route component={ProductDetail} />
 							<Route component={NoMatch} /> */}

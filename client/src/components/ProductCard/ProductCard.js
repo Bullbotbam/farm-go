@@ -8,17 +8,13 @@ import {
 	CardActionArea,
 	CardActions,
 } from '@mui/material';
+import image1 from '../../assets/groceries/watermelon.jpg';
 
 export default function ProductCard() {
 	return (
 		<Card sx={{ maxWidth: 345 }}>
 			<CardActionArea>
-				<CardMedia
-					component="img"
-					height="140"
-					image="/client/src/images/pexels-brian-van-den-heuvel-1313267.jpg"
-					alt="fruit"
-				/>
+				<CardMedia component="img" height="140" image={image1} alt="fruit" />
 				<CardContent>
 					<Typography gutterBottom variant="h5" component="div">
 						Watermelon
