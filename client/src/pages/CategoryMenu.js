@@ -2,7 +2,7 @@ import * as React from 'react';
 import { makeStyles } from '@mui/styles';
 
 import SearchBar from '../components/SearchBar';
-
+// import Jumbotron from '../components/Jumbotron';
 import {
 	Typography,
 	Card,
@@ -15,15 +15,15 @@ import {
 } from '@material-ui/core';
 import useStyles from '../utils/styles';
 
-import Meat from '../../public/images/Meat.jpg';
-import Produce from '../../public/images/Produce.jpg';
-import Dairy from '../../public/images/Dairy.jpg';
-import Flowers from '../../public/images/Flowers.jpg';
-import SpecialtyFoods from '../../public/images/SpecialtyFoods.jpg';
-import Crafts from '../../public/images/Crafts.jpg';
-import BathBody from '../../public/images/BathBody.jpg';
-import Clothing from '../../public/images/Clothing.jpg';
-import Art from '../../public/images/Art.jpg';
+import Meat from '../assets/Meat.jpg';
+import Produce from '../assets/Produce.jpg';
+import Dairy from '../assets/Dairy.jpg';
+import Flowers from '../assets/Flowers.jpg';
+import SpecialtyFoods from '../assets/SpecialtyFoods.jpg';
+import Crafts from '../assets/Crafts.jpg';
+import BathBody from '../assets/BathBody.jpg';
+import Clothing from '../assets/Clothing.jpg';
+import Art from '../assets/Art.jpg';
 
 const categories = [
 	{
@@ -90,7 +90,7 @@ const CategoryMenu = () => {
 	return (
 		<>
 			<CssBaseline />
-			<SearchBar />
+
 			<maim>
 				<Container className={classes.cardGrid} maxWidth="xl">
 					<Typography variant="h2">Categories</Typography>

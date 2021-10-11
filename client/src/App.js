@@ -44,9 +44,9 @@ function App() {
 		<ApolloProvider client={client}>
 			<Router>
 				<div>
+					<SearchBar />
+					<Jumbotron />
 					<StoreProvider>
-						<SearchBar />
-						<Jumbotron />
 						<CategoryMenu />
 						<Switch>
 							<Route exact path="/signup" component={SingUp} />
