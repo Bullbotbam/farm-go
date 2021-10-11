@@ -21,10 +21,10 @@ code {
 section {
   display: flex;
   align-items: flex-start;
-  margin: 10px 10px;
+  margin: 10px 35px;
 }
 
 .table {
-  margin-right: 30px;
+  margin-right: 40px;
 
 }

@@ -19,6 +19,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   },
 }));
 
+
 const CartItem = ({ item }) => {
   return (
 
@@ -29,7 +30,7 @@ const CartItem = ({ item }) => {
         </TableHead>
         <TableBody>
           <StyledTableCell>
-            <img style={ {width: "40%"}}
+            <img style={ {width: "30%"}}
             src={`/images/${item.image}`} alt="" />
           </StyledTableCell>
           <StyledTableCell align="right">
