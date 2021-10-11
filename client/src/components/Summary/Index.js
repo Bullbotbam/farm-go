@@ -6,6 +6,7 @@ import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import { Button } from "@mui/material";
 import TableContainer from "@mui/material/TableContainer";
+import Auth from "../../utils/auth"
 
 function Summary() {
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -35,6 +36,8 @@ function Summary() {
           </StyledTableCell>
         </TableBody>
       </Table>
+      {
+              Auth.loggedIn() ?
       <Button
         variant="contained"
         color="success"
@@ -46,6 +49,9 @@ function Summary() {
       >
         Checkout
       </Button>
+      :
+      <span>(log in to check out)</span>
+  }
     </TableContainer>
   );
 }
