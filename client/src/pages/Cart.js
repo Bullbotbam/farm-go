@@ -26,13 +26,11 @@ function Cart() {
     <>
       <h2 style={{ fontSize: "50px" }}>Users Cart</h2>
       <section>
-          
-        <TableContainer className="table" style={{width: "220%"}}>
-          <Table 
-          >
+        <TableContainer className="table" style={{ width: "220%" }}>
+          <Table>
             <TableHead>
-                <StyledTableCell>Products</StyledTableCell>
-                <StyledTableCell align="right">item-Price</StyledTableCell>
+              <StyledTableCell>Products</StyledTableCell>
+              <StyledTableCell align="right">item-Price</StyledTableCell>
             </TableHead>
             <TableBody>
               <StyledTableCell component="th" scope="row">
@@ -42,10 +40,8 @@ function Cart() {
             </TableBody>
           </Table>
         </TableContainer>
-           <Summary />
-        <div className="cart">
-       
-        </div>
+        <Summary />
+        <div className="cart"></div>
       </section>
     </>
   );
