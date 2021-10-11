@@ -19,6 +19,7 @@ import {
 	InMemoryCache,
 	ApolloProvider,
 } from '@apollo/client';
+import Nav from './components/Nav';
 
 const httpLink = createHttpLink({
 	uri: '/graphql',
@@ -45,7 +46,7 @@ function App() {
 			<Router>
 				<div>
 					<StoreProvider>
-						<SearchBar />
+						<Nav />
 						<Jumbotron />
 						<SingUp />
 						<Cart />
