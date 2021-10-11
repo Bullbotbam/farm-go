@@ -1,5 +1,5 @@
 import React from 'react';
-import Carousel from 'react-material-ui-carousel';
+import { Carousel } from 'react-material-ui-carousel';
 import { Card } from '@material-ui/core';
 
 import market1 from '../../assets/images/market1.jpg';
