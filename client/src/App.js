@@ -2,10 +2,12 @@ import React from 'react';
 import SingUp from './pages/SignUp';
 import Jumbotron from './components/Jumbotron/jumboIndex';
 import Cart from './pages/Cart';
+import Coupons from './components/Coupons/couponsIndex';
 import { NoMatch } from './pages/NoMatch';
 import SearchBar from './components/SearchBar';
-import MapSearch from './components/MapSearch';
-import ProductDetail from './pages/ProductDetail';
+import ProductCard from './components/ProductCard/ProductCard';
+// import MapSearch from "./components/MapSearch";
+// import ProductDetail from "./pages/ProductDetail";
 // import ProductDetail from './pages/ProductDetail';
 import MarketItem from './components/MarketItem';
 import CategoryMenu from './pages/CategoryMenu';
@@ -45,14 +47,15 @@ function App() {
 		<ApolloProvider client={client}>
 			<Router>
 				<div>
-					<SearchBar />
-					<Jumbotron />
 					<StoreProvider>
-						<CategoryMenu />
-						<ProductCard />
+						<SearchBar />
+						<Jumbotron />
+						<SingUp />
+						<Cart />
+						<Coupons />
 						<Switch>
 							<Route exact path="/signup" component={SingUp} />
-							<Route exact path="/produce" component={Produce} />
+							<Route exact path="/product" component={ProductCard} />
 							{/* <Route component={MapSearch} />
 							<Route exact path="/cart" component={Cart} />
 							<Route exact path="/products" component={MarketItem} />
