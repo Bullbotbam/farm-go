@@ -28,33 +28,6 @@ import BathBody from '../assets/images/BathBody.jpg';
 import Clothing from '../assets/images/Clothing.jpg';
 import Art from '../assets/images/Art.jpg';
 
-// const Item = styled(Paper)(({ theme }) => ({
-// 	...theme.typography.body2,
-// 	padding: theme.spacing(2),
-// 	textAlign: 'center',
-// 	color: theme.palette.text.secondary,
-// }));
-// <Box sx={{ flexGrow: 1 }}>
-// 	<Grid
-// 		container
-// 		spacing={{ xs: 2, md: 3 }}
-// 		columns={{ xs: 4, sm: 8, md: 12 }}
-// 	>
-// 		{Array.from(categories).map((_category, index) => (
-// 			<Grid item xs={3} sm={4} md={4} key={index}>
-// 				<Item>
-// 					{' '}
-// 					<img
-// 						className="category"
-// 						src={props.item.image}
-// 						alt={props.item.name}
-// 					/>
-// 					{props.item.description}
-// 				</Item>
-// 			</Grid>
-// 		))}
-// 	</Grid>
-// </Box>
 const categories = [
 	{
 		category: 'Produce',
@@ -131,6 +104,7 @@ const CategoryMenu = () => {
 								<Card
 									className={classes.card}
 									style={{ alignContent: 'center' }}
+									onClick={'sayHello'}
 								>
 									<CardMedia
 										className={classes.cardMedia}
@@ -153,4 +127,15 @@ const CategoryMenu = () => {
 		</>
 	);
 };
+function ChooseCategory() {
+	function handleClick(e) {
+		e.preventDefault();
+		console.log('The link was clicked');
+	}
+	return (
+		<form onClick={handleClick}>
+			<button type="submit">Submit</button>
+		</form>
+	);
+}
 export default CategoryMenu;
