@@ -17,17 +17,17 @@ import { loadStripe } from "@stripe/stripe-js";
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
-  [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.success.main,
-    color: theme.palette.common.white,
-    fontSize: 25,
-    fontFamily: "Gabriela , serif",
-  },
+	[`&.${tableCellClasses.head}`]: {
+		backgroundColor: theme.palette.success.main,
+		color: theme.palette.common.white,
+		fontSize: 25,
+		fontFamily: 'Gabriela , serif',
+	},
 
-  [`&.${tableCellClasses.body}`]: {
-    fontSize: 20,
-    fontFamily: "Gabriela , serif",
-  },
+	[`&.${tableCellClasses.body}`]: {
+		fontSize: 20,
+		fontFamily: 'Gabriela , serif',
+	},
 }));
 
 const Cart = () => {
