@@ -48,16 +48,16 @@ function App() {
 					<SearchBar />
 					<Jumbotron />
 					<StoreProvider>
-						<CategoryMenu />
-						<ProductCard />
+						{/* <CategoryMenu />
+						<ProductCard /> */}
 						<Switch>
-							<Route exact path="/signup" component={SingUp} />
-							<Route exact path="/produce" component={Produce} />
-							{/* <Route component={MapSearch} />
-							<Route exact path="/cart" component={Cart} />
+							{/* <Route exact path="/signup" component={SingUp} /> */}
+							{/* <Route exact path="/produce" component={Produce} /> */}
+							{/* <Route component={MapSearch} /> */}
+							{/* <Route exact path="/cart" component={Cart} /> */}
 							<Route exact path="/products" component={MarketItem} />
-							<Route component={ProductDetail} />
-							<Route component={NoMatch} /> */}
+							{/* <Route component={ProductDetail} /> */}
+							{/* <Route component={NoMatch} /> */}
 						</Switch>
 					</StoreProvider>
 				</div>

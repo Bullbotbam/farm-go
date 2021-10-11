@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-// import { useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 
 import { useStoreContext } from '../utils/GlobalState';
 import {
@@ -9,7 +9,7 @@ import {
 	ADD_TO_CART,
 	UPDATE_CART_QUANTITY,
 } from '../utils/actions';
-// import{QUERY_PRODUCTS} from ''
+import { QUERY_PRODUCTS } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
 import { Button, Container, Typography } from '@mui/material';
 import Cart from '../components/Cart';
@@ -21,7 +21,7 @@ function ProductDetail() {
 
 	const [currentProduct, setCurrentProduct] = useState({});
 
-	// const { loading, data } = useQuery(QUERY_PRODUCTS);
+	const { loading, data } = useQuery(QUERY_PRODUCTS);
 
 	const { products, cart } = state;
 	useEffect(() => {
