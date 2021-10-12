@@ -5,6 +5,7 @@ import { styled } from '@mui/material/styles';
 import TableBody from '@mui/material/TableBody';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
+import Table from "@mui/material/Table";
 import { Button } from '@mui/material';
 import Auth from '../utils/auth';
 import { useStoreContext } from '../utils/GlobalState';
@@ -57,18 +58,18 @@ const Cart = () => {
 		state.cart.forEach((item) => {
 			sum += item.price * item.purchaseQuantity;
 		});
-		return sum.toFixed;
+		return sum.toFixed(2);
 	}
 
 	function submitCheckout() {
-		const productsIds = [];
+		const productIds = [];
 
 		state.cart.forEach((item) => {
 			for (let i = 0; i < item.purchaseQuantity; i++) {
-				productsIds.push(item._id);
+				productIds.push(item._id);
 			}
 			checkout({
-				variables: { products: productsIds },
+				variables: { products: productIds },
 			});
 		});
 	}
@@ -78,13 +79,16 @@ const Cart = () => {
 			<h2 style={{ fontSize: '50px' }}> Your Cart</h2>
 
 			{state.cart.length ? (
-				<TableContainer className="table">
+				<TableContainer className="cart" 
+				>
 					{state.cart.map((item) => (
 						<CartItem key={item._id} item={item} />
 					))}
-					<div className="summary" style={{ width: '25%' }}>
-						<TableHead style={{ width: '70%' }}>
-							<StyledTableCell>Order Summary</StyledTableCell>
+						<Table  className="summary"
+						style={{width: "55%"}}
+						>
+						<TableHead>
+						<StyledTableCell >Order Summary</StyledTableCell>
 						</TableHead>
 						<TableBody>
 							<StyledTableCell>Total: ${total()}</StyledTableCell>
@@ -105,7 +109,7 @@ const Cart = () => {
 						) : (
 							<span>(log in to check out)</span>
 						)}
-					</div>
+					</Table>
 				</TableContainer>
 			) : (
 				<h3>

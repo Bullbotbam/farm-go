@@ -44,11 +44,11 @@ function App() {
 	return (
 		<ApolloProvider client={client}>
 			<Router>
-				<div>
+				<div >
 					<StoreProvider>
 						<Nav />
 						<Jumbotron />
-						<SingUp />
+						{/* <SingUp /> */}
 						<Cart />
 					<ProductList />
 						<CategoryMenu />

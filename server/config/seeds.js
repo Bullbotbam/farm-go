@@ -49,7 +49,7 @@ db.once('open', async () => {
 			category: categories[0]._id,
 			description:
 				'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
-			image: 'bananas.jpg',
+			image: 'toilet-paper.jpg',
 			price: 3.99,
 			quantity: 50,
 		},
