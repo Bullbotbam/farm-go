@@ -72,7 +72,7 @@ const CartItem = ({ item }) => {
         </StyledTableCell>
       </TableBody>
       <span role="img" aria-label="trash" onClick={() => deleteFromCart(item)}>
-        🗑️
+       delete
       </span>
     </Table>
   );
