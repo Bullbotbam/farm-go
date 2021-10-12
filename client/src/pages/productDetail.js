@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useStoreContext } from "../../utils/GlobalState";
 import {
   UPDATE_PRODUCTS,
@@ -9,11 +9,11 @@ import {
 import { useParams } from "react-router";
 import { useQuery } from "@apollo/client";
 import { QUERY_PRODUCTS } from "../../utils/queries";
-import { Link } from "react-router-dom";
-import CartItem from "../../components/CartItem/cartIndex";
+import { Link, useParams } from "react-router-dom";
+// import CartItem from "../../components/CartItem/cartIndex";
 
 function ProductDetail() {
-  const [state, dispatch] = useStoreContext;
+  const [state, dispatch] = useStoreContext();
   const { id } = useParams();
   const [currentProduct, setCurrentProduct] = useState({});
   const { loading, data } = useQuery(QUERY_PRODUCTS);
@@ -22,39 +22,56 @@ function ProductDetail() {
 
   useEffect(() => {
     if (products.length) {
-      setCurrentProduct(
-        product.find(product.find((product) => product._id === id))
-      );
-    } else if (data) {
+      setCurrentProduct(products.find(product => product._id === id));
+    } 
+    else if (data) {
       dispatch({
         type: UPDATE_PRODUCTS,
-        products: data.products,
+        products: data.products
+      });
+  
+      data.products.forEach((product) => {
+        idbPromise('products', 'put', product);
       });
     }
-  }, [products, data, dispatch, id]);
+    else if (!loading) {
+      idbPromise('products', 'get').then((indexedProducts) => {
+        dispatch({
+          type: UPDATE_PRODUCTS,
+          products: indexedProducts
+        });
+      });
+    }
+  }, [products, data, loading, dispatch, id]);
+
 
   const addItem = () => {
-    const itemInCart = cart.find((cartItem) => cartItem._id === id);
-
+    const itemInCart = cart.find((cartItem) => cartItem._id === id)
     if (itemInCart) {
       dispatch({
         type: UPDATE_CART_QUANTITY,
         _id: id,
-        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
+      });
+      idbPromise("cart", "put", {
+        ...itemInCart,
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) +1
       });
     } else {
       dispatch({
         type: ADD_TO_CART,
         product: { ...currentProduct, purchaseQuantity: 1 },
       });
+      idbPromise("cart", "put", { ...currentProduct, purchaseQuantity: 1})
     }
-  };
+  }
 
   const deleteFromCart = () => {
     dispatch({
       type: REMOVE_FROM_CART,
       _id: currentProduct._id,
     });
+    idbPromise("cart", "put", { ...currentProduct})
   };
 
   return (
@@ -64,11 +81,11 @@ function ProductDetail() {
           <Link to="/">See all products</Link>
           <p>{currentProduct.name}</p>
           <p>{currentProduct.description}</p>
-          <p>{currentProduct.price}</p>
+          <p>${currentProduct.price}</p>
           <button onClick={addItem}>Add to cart</button>
           <button
             disabled={!cart.find((p) => p._id === currentProduct._id)}
-            onClick={removeFromCart}
+            onClick={deleteFromCart}
           >
             Delete item
           </button>
