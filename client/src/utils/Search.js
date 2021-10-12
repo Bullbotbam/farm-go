@@ -11,54 +11,44 @@ import {
 	ComboboxOption,
 } from '@reach/combobox';
 import '@reach/combobox/styles.css';
-import { getToolbarUtilityClass } from '@mui/material';
+// import { getToolbarUtilityClass } from '@mui/material';
 
 export default function ({ panTo }) {
-
-	// get nearest location 
+	// get nearest location
 	function getLocation(location) {
-		
 		fetch(
-			"http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + location,
+			'http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=' +
+				location
 		)
-		.then(function(response) {
-			return response.json()
-		})
-		.then(function(data) {
+			.then(function (response) {
+				return response.json();
+			})
+			.then(function (data) {
+				console.log(data);
+				const ID = data.results[0].id;
 
-			console.log(data)
-			const ID = data.results[0].id
-
-			getLocationAddress(ID)
-		})
-		.catch(error => 
-			console.log(error)
-		);
-	};
+				getLocationAddress(ID);
+			})
+			.catch((error) => console.log(error));
+	}
 
 	// get nearest location's products
 	function getLocationAddress(ID) {
 		fetch(
-			"http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + ID
+			'http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=' + ID
 		)
-		.then(function(response) {
-			return response.json()
-		})
-		.then(function(data) {
+			.then(function (response) {
+				return response.json();
+			})
+			.then(function (data) {
+				const location = data.marketdetails.Address;
 
-			const location = data.marketdetails.Address
+				console.log(data.marketdetails.Address);
 
-			console.log(data.marketdetails.Address)
-
-			console.log(location) 
-
-			getTo(location);
-
-		})
-		.catch(error => 
-			console.log(error)
-		);
-	};
+				console.log(location);
+			})
+			.catch((error) => console.log(error));
+	}
 
 	// set up a perimeter of where to find searchable places
 	const {
@@ -77,7 +67,8 @@ export default function ({ panTo }) {
 	return (
 		<div className="search">
 			<Combobox
-				onSelect={ async (address) => {
+				onSelect={async (address) => {
+					console.log(address);
 					setValue(address, false);
 					clearSuggestions();
 
@@ -94,7 +85,7 @@ export default function ({ panTo }) {
 					value={value}
 					onChange={(e) => {
 						// setValue(e.target.value);
-						getLocation(e.target.value)
+						getLocation(e.target.value);
 					}}
 					disabled={!ready}
 					placeholder="Search by ZIP code, city or state"
