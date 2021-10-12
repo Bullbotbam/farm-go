@@ -79,7 +79,7 @@ function ProductDetail() {
 
 	return (
 		<>
-			{currentProduct && cart ? (
+			{/* {currentProduct && cart ? (
 				<Container>
 					<Link to="/">
 						<span role="img"> 🔙</span>
@@ -104,6 +104,34 @@ function ProductDetail() {
 						/>
 					</Typography>
 				</Container>
+			) : null}
+			{loading ? <img src={loadspin} alt="loading" /> : null}
+			<Cart /> */}
+
+			{currentProduct && cart ? (
+				<div className="container my-1">
+					<Link to="/">← Back to Products</Link>
+
+					<h2>{currentProduct.name}</h2>
+
+					<p>{currentProduct.description}</p>
+
+					<p>
+						<strong>Price:</strong>${currentProduct.price}{' '}
+						<button onClick={addToCart}>Add to Cart</button>
+						<button
+							disabled={!cart.find((p) => p._id === currentProduct._id)}
+							onClick={removeFromCart}
+						>
+							Remove from Cart
+						</button>
+					</p>
+
+					<img
+						src={`/images/${currentProduct.image}`}
+						alt={currentProduct.name}
+					/>
+				</div>
 			) : null}
 			{loading ? <img src={loadspin} alt="loading" /> : null}
 			<Cart />
