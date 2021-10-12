@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { useStoreContext } from "../../utils/GlobalState";
-import { UPDATE_PRODUCTS } from "../../utils/actions";
+import {
+  UPDATE_PRODUCTS,
+  ADD_TO_CART,
+  REMOVE_FROM_CART,
+  UPDATE_CART_QUANTITY,
+} from "../../utils/actions";
 import { useParams } from "react-router";
 import { useQuery } from "@apollo/client";
 import { QUERY_PRODUCTS } from "../../utils/queries";
@@ -26,6 +31,13 @@ function ProductDetail() {
       });
     }
   }, [products, data, dispatch, id]);
+
+  const addItem = () => {
+    dispatch({
+      type: ADD_TO_CART,
+      product: { ...currentProduct, purchaseQuantity: 1 },
+    });
+  };
 
   return (
     <>

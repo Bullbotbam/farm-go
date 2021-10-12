@@ -4,7 +4,6 @@ import { QUERY_PRODUCTS } from "../../utils/queries";
 import ProductItem from "../ProductItem/productItemIndex";
 import { useStoreContext } from "../../utils/GlobalState";
 import { UPDATE_PRODUCTS } from "../../utils/actions";
-import { Product } from "../../../../server/models";
 
 
 function ProductList() {
@@ -34,7 +33,7 @@ function filterProducts() {
 
     return (
         <div className="productList">
-            {products.length ? (
+            {state.products.length ? (
                 <div>
                     {filterProducts().map((product) => (
                         <ProductItem 
