@@ -1,5 +1,5 @@
 import { once } from './connection';
-import { User, Product, Category } from '../models';
+import { Customer, Product, Category } from '../models';
 
 once('open', async () => {
 	await Category.deleteMany();
@@ -102,9 +102,9 @@ once('open', async () => {
 
 	console.log('products seeded');
 
-	await User.deleteMany();
+	await Customer.deleteMany();
 
-	await User.create({
+	await Customer.create({
 		firstName: 'Pamela',
 		lastName: 'Washington',
 		email: 'pamela@testmail.com',
@@ -116,14 +116,14 @@ once('open', async () => {
 		],
 	});
 
-	await User.create({
+	await Customer.create({
 		firstName: 'Elijah',
 		lastName: 'Holt',
 		email: 'eholt@testmail.com',
 		password: 'password12345',
 	});
 
-	console.log('users seeded');
+	console.log('Customers seeded');
 
 	process.exit();
 });
