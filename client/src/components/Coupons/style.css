@@ -1,8 +1,6 @@
-.cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+/* .cards {
+    object-fit: cover;
+} */
 
 .projects{
     margin-top: 10vw;
@@ -16,14 +14,7 @@
     font-size: 25px;
 }
 
-.sale {
-    color: red;
-    font-weight: bold;
-}
 
-.regularPrice {
-    font-size: 15px;
-}
 
 .offerTime {
     font-size: 10px;
