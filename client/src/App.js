@@ -1,15 +1,15 @@
 import React from 'react';
-import SingUp from './pages/SignUp';
-import Jumbotron from './components/Jumbotron/jumboIndex';
-import Cart from './pages/Cart';
-import Coupons from './components/Coupons/couponsIndex';
-import { NoMatch } from './pages/NoMatch';
-import SearchBar from './components/SearchBar';
+// import SingUp from './pages/SignUp';
+// import Jumbotron from './components/Jumbotron/jumboIndex';
+// import Cart from './pages/Cart';
+// import Coupons from './components/Coupons/couponsIndex';
+// import { NoMatch } from './pages/NoMatch';
+// import SearchBar from './components/SearchBar';
 import MapSearch from './components/MapSearch';
 // import ProductDetail from "./pages/ProductDetail";
-import ProductDetail from './pages/ProductDetail';
-import MarketItem from './components/MarketItem';
-import CategoryMenu from './pages/CategoryMenu';
+// import ProductDetail from './pages/ProductDetail';
+// import MarketItem from './components/MarketItem';
+// import CategoryMenu from './pages/CategoryMenu';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { StoreProvider } from './utils/GlobalState';
 import { setContext } from '@apollo/client/link/context';
@@ -19,7 +19,7 @@ import {
 	InMemoryCache,
 	ApolloProvider,
 } from '@apollo/client';
-import Nav from './components/Nav';
+// import Nav from './components/Nav';
 
 const httpLink = createHttpLink({
 	uri: '/graphql',
