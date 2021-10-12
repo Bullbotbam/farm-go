@@ -7,7 +7,7 @@ import { NoMatch } from './pages/NoMatch';
 import SearchBar from './components/SearchBar';
 // import MapSearch from "./components/MapSearch";
 // import ProductDetail from "./pages/ProductDetail";
-// import ProductDetail from './pages/ProductDetail';
+import ProductDetail from './pages/ProductDetail';
 import MarketItem from './components/MarketItem';
 import CategoryMenu from './pages/CategoryMenu';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -56,9 +56,9 @@ function App() {
 							<Route exact path="/signup" component={SingUp} />
 							{/* <Route component={MapSearch} />
 							<Route exact path="/cart" component={Cart} />
-							<Route exact path="/products" component={MarketItem} />
+							<Route exact path="/products" component={MarketItem} />*/}
 							<Route component={ProductDetail} />
-							<Route component={NoMatch} /> */}
+							<Route component={NoMatch} />
 						</Switch>
 					</StoreProvider>
 				</div>
