@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { styled, alpha, createTheme } from '@mui/material/styles';
 import {
 	AppBar,
@@ -13,17 +13,17 @@ import {
 
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import { orange } from '@material-ui/core/colors';
+import { green } from '@material-ui/core/colors';
 import { Link } from 'react-router-dom';
 // import SignUp from '../SingUp';
 
 const theme = createTheme({
 	palette: {
 		primary: {
-			main: orange[500],
+			main: green[500],
 		},
 		secondary: {
-			main: '#ffac33',
+			main: '#38761d',
 		},
 	},
 });
@@ -73,7 +73,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const MenuOptions = [
 	'Home',
 	'SignUp',
-	'Login',
 	'FarmerGo Markets',
 	'Farm Fresh Products',
 	'Order History',
@@ -81,9 +80,14 @@ const MenuOptions = [
 ];
 
 export default function SearchBar() {
+	const classes = useState();
 	const [anchorEl, setAnchorEl] = React.useState(null);
 	const open = Boolean(anchorEl);
+
 	const handleClick = (event) => {
+		setAnchorEl(event.currentTarget);
+	};
+	const handleOpen = (event) => {
 		setAnchorEl(event.currentTarget);
 	};
 	const handleClose = () => {
@@ -116,15 +120,34 @@ export default function SearchBar() {
 							'aria-labelledby': 'basic-button',
 						}}
 					>
-						{MenuOptions.map((option) => (
+						{/* {MenuOptions.map((option) => (
 							<MenuItem
 								key={option}
-								selected={option === 'Growers'}
+								selected={option === 'Home'}
 								onClick={handleClose}
 							>
 								{option}
 							</MenuItem>
-						))}
+						))} */}
+						<Link to="/CategoryMenu">
+							<MenuItem>Home</MenuItem>
+						</Link>
+						<Link to="/signup">
+							<MenuItem>SignUp</MenuItem>
+						</Link>
+						<Link to="/history">
+							<MenuItem> Order History </MenuItem>
+						</Link>
+						<MenuItem>
+							<Link to="/categories">
+								<MenuItem> MapSearch </MenuItem>
+							</Link>
+						</MenuItem>
+						<MenuItem>
+							<Link to="/cart">
+								<MenuItem>Coupons</MenuItem>
+							</Link>
+						</MenuItem>
 					</Menu>
 					<Typography
 						variant="h6"

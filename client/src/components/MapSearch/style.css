@@ -12,12 +12,12 @@ h1 {
 .market {
 	color: #ed764a;
 	font-family: 'SignPainter', serif;
-	font-size: 40px;	
+	font-size: 40px;
 }
 
 .locate {
 	position: absolute;
-	top: 1rem;
+	top: 5rem;
 	right: 1rem;
 	background: none;
 	border: none;
@@ -30,7 +30,7 @@ h1 {
 }
 .search {
 	position: absolute;
-	top: 1rem;
+	top: 5rem;
 	left: 50%;
 	transform: translateX(-50%);
 	width: 100%;
