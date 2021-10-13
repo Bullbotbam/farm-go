@@ -57,18 +57,18 @@ const Cart = () => {
     state.cart.forEach((item) => {
       sum += item.price * item.purchaseQuantity;
     });
-    return sum.toFixed;
+    return sum.toFixed(2);
   }
 
   function submitCheckout() {
-    const productsIds = [];
+    const productIds = [];
 
     state.cart.forEach((item) => {
       for (let i = 0; i < item.purchaseQuantity; i++) {
-        productsIds.push(item._id);
+        productIds.push(item._id);
       }
       checkout({
-        variables: { products: productsIds },
+        variables: { products: productIds },
       });
     });
   }

@@ -26,8 +26,8 @@ const startServer = async () => {
 
 startServer();
 
-// app.use(express.urlencoded({ extended: false }));
-// app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 // Serve up static assets
 if (process.env.NODE_ENV === "production") {
