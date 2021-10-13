@@ -6,7 +6,7 @@ import Coupons from "./components/Coupons/couponsIndex";
 import { NoMatch } from "./pages/NoMatch";
 import SearchBar from "./components/SearchBar";
 // import MapSearch from "./components/MapSearch";
-
+import Success from "./pages/Success";
 // import ProductDetail from "./pages/ProductDetail";
 import MarketItem from "./components/MarketItem";
 import ProductList from "./components/ProductList/productListIndex";
@@ -55,6 +55,7 @@ function App() {
             <CategoryMenu />
             <Switch>
               <Route exact path="/signup" component={SingUp} />
+              <Route exact path="/success" component={Success} />
               {/* <Route component={MapSearch} />
 							<Route exact path="/cart" component={Cart} />
 							<Route exact path="/products" component={MarketItem} />*/}
