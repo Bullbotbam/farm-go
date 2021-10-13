@@ -116,10 +116,9 @@ export default function SearchBar() {
 							'aria-labelledby': 'basic-button',
 						}}
 					>
-						<MenuItem>
-							<Link to="/"> Home</Link>
-						</MenuItem>
-
+						<Link to="/">
+							<MenuItem>Home</MenuItem>
+						</Link>
 						<Link to="/signup">
 							<MenuItem>SignUp</MenuItem>
 						</Link>
