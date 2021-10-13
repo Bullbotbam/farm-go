@@ -2,16 +2,11 @@ import React from "react";
 import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
-import useStyles from "../../utils/styles";
 import { Link } from "react-router-dom";
-import {
-  Typography,
-  CardContent,
-} from "@material-ui/core";
+import { Typography, CardContent } from "@material-ui/core";
 import { Button, CardActions } from "@mui/material";
 
 function ProductItem(item) {
-  const classes = useStyles();
   const { image, name, _id, price, quantity } = item;
 
   const [state, dispatch] = useStoreContext();
