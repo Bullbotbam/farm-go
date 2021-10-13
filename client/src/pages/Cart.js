@@ -88,7 +88,7 @@ const Cart = () => {
             </TableHead>
             <TableBody>
               {/* TODO: REMOVE HARD CODED TOTAL VALUE WITH TOTAL FUNCTION (total()) */}
-              <StyledTableCell>Total: ${4}</StyledTableCell>
+              <StyledTableCell>Total: ${total()}</StyledTableCell>
             </TableBody>
             <Button
               onClick={submitCheckout}
@@ -101,7 +101,7 @@ const Cart = () => {
               }}
             >
               {" "}
-              Checkouts
+              Checkout
             </Button>
           </div>
         </TableContainer>
