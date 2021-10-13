@@ -40,7 +40,7 @@ db.once('open', async () => {
 			category: categories[1]._id,
 			description:
 				'Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.',
-			image: 'toilet-paper.jpg',
+			image: 'avocado.jpg',
 			price: 1.99,
 			quantity: 20,
 		},
@@ -94,8 +94,8 @@ db.once('open', async () => {
 			category: categories[0]._id,
 			description:
 				'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
-			image: 'spinning-top.jpg',
-			price: 1.99,
+			image: 'pears.jpg',
+			price: 4.99,
 			quantity: 1000,
 		},
 	]);

@@ -2,13 +2,19 @@ import React from "react";
 import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
-import useStyles from "../../utils/styles";
 import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 import {
   Typography,
+  Card,
   CardContent,
+  CardMedia,
+  CssBaseline,
+  Grid,
+  Container,
+  // CardActions,
 } from "@material-ui/core";
-import { Button, CardActions } from "@mui/material";
+import useStyles from "../../utils/styles";
 
 function ProductItem(item) {
   const classes = useStyles();
@@ -39,33 +45,44 @@ function ProductItem(item) {
   };
   return (
     <>
-      <form spacing={2} xs={12} sm={6} md={4}>
-        <Link to={`/products/${_id}`}>
-          <img alt={name} src={`/images/${image}`} />
-          <p>{name}</p>
-        </Link>
-        <CardContent>
-          <Typography variant="h5">{name}</Typography>
+      <CssBaseline />
 
-          <Typography>${price}</Typography>
-          {quantity}
-        </CardContent>
-        <CardActions>
-          <Button
-            size="small"
-            style={{
-              color: "green",
-              margin: "5%",
-              display: "grid",
-            }}
-            onClick={addItem}
-          >
-            Add to cart
-          </Button>
-        </CardActions>
-      </form>
+      <main>
+        <Container className="card px-1 py-1" maxWidth="xl">
+          <Grid container spacing={2} style={{ marginTop: "3rem" }}>
+            <Grid xs={12} sm={6} md={4}>
+              <Card className={classes.card} style={{ alignContent: "center" }}>
+                <Link to={`/products/${_id}`}>
+                  <CardMedia
+                    className={classes.cardMedia}
+                    image={`/images/${image}`}
+                    title="Image title"
+                    alt={name}
+                  />
+                </Link>
+                <CardContent>
+                  <Typography gutterBottom variant="h5">
+                    <h4>{name}</h4>${price}
+                  </Typography>
+
+                  <Typography>{quantity}</Typography>
+                </CardContent>
+                <Button
+                  style={{
+                    color: "green",
+                  }}
+                  onClick={addItem}
+                >
+                  Add to cart
+                </Button>
+              </Card>
+            </Grid>
+          </Grid>
+        </Container>
+      </main>
     </>
   );
 }
 
 export default ProductItem;
+

@@ -6,7 +6,6 @@ import Coupons from './components/Coupons/couponsIndex';
 import { NoMatch } from './pages/NoMatch';
 import SearchBar from './components/SearchBar';
 // import MapSearch from "./components/MapSearch";
-// import ProductDetail from "./pages/ProductDetail";
 import MarketItem from './components/MarketItem';
 import ProductList from './components/ProductList/productListIndex';
 import CategoryMenu from './pages/CategoryMenu';
@@ -39,7 +38,6 @@ const client = new ApolloClient({
 	link: authLink.concat(httpLink),
 	cache: new InMemoryCache(),
 });
-
 function App() {
 	return (
 		<ApolloProvider client={client}>
@@ -51,6 +49,7 @@ function App() {
 						{/* <SingUp /> */}
 						<Cart />
 					<ProductList />
+					<Coupons />
 						<CategoryMenu />
 						<Switch>
 							<Route exact path="/signup" component={SingUp} />

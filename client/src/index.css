@@ -15,16 +15,58 @@ body {
 code {
   font-family: "Gabriela", serif;
 }
+/*HEADER STYLES*/
+.header {
+	color: white;
+	font-size: 50px;
+	padding: 120px 35px;
+	display: flex;
+	background-image: url('./assets/groceries/care.jpg');
+	background-size: cover;
+	background-position: 50%;
+	margin: 0;
+}
 
-.cart {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-padding: 25px 25px;
-margin-top: 5vw;
-} 
 
-.productCards {
-  display: block;
-  background-size: cover;
+/*CART STYLES*/
+/* .yourCart {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 10px;
+  justify-content: stretch;
+}  */
+
+/* .summary { */
+  /* border-style: solid;
+  border-width: 1px; */
+  /* padding: 35px; */
+  /* margin: 10px 10px;
+  font-weight: none; */
+/* } */
+/* .productCards {
+  margin-top: 10vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+ /*COUPON STYLES*/
+ .saleHeader {
+  text-align: center;
+  font-size: 33px;
+ }
+
+ .projects{
+  margin-top: 10vw;
+  text-align: center;
+}
+.deals {
+  font-size: 40px;
+  text-align: center;
+}
+.couponName {
+  font-size: 25px;
+}
+
+.offerTime {
+  font-size: 10px;
 }

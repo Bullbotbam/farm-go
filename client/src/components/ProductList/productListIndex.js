@@ -47,7 +47,7 @@ function filterProducts() {
 }
 
     return (
-        <div className="productList">
+        <div className="my-2">
             {state.products.length ? (
                 <div>
                     {filterProducts().map((product) => (

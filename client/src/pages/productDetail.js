@@ -10,7 +10,6 @@ import { useParams } from "react-router";
 import { useQuery } from "@apollo/client";
 import { QUERY_PRODUCTS } from "../../utils/queries";
 import { Link, useParams } from "react-router-dom";
-// import CartItem from "../../components/CartItem/cartIndex";
 
 function ProductDetail() {
   const [state, dispatch] = useStoreContext();
@@ -71,7 +70,7 @@ function ProductDetail() {
       type: REMOVE_FROM_CART,
       _id: currentProduct._id,
     });
-    idbPromise("cart", "put", { ...currentProduct})
+    idbPromise("cart", "delete", { ...currentProduct})
   };
 
   return (
@@ -96,6 +95,7 @@ function ProductDetail() {
         </div>
       ) : null}
       {loading ? <img src={currentProduct.image} alt="loading" /> : null}
+      <Cart />
     </>
   );
 }
