@@ -86,8 +86,9 @@ const resolvers = {
         payment_method_types: ["card"],
         line_items,
         mode: "payment",
-        success_url: `https://stripe.com/docs/payments/accept-a-payment-synchronously?platform=web#web-send-to-server/success?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `https://stripe.com/docs/payments/accept-a-payment-synchronously?platform=web#web-send-to-server/`,
+        success_url:
+          "http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}",
+        cancel_url: "https://example.com/cancel",
       });
 
       return { session: session.id };
