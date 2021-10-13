@@ -31,9 +31,15 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 }));
 
 const Cart = () => {
-  const [checkout, { data }] = useLazyQuery(QUERY_CHECKOUT);
   const [state, dispatch] = useStoreContext();
-
+  const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
+  useEffect(() => {
+    if (data) {
+      stripePromise.then((res) => {
+        res.redirectToCheckout({ sessionId: data.checkout.session });
+      });
+    }
+  }, [data]);
   useEffect(() => {
     async function getCart() {
       const cart = await idbPromise("cart", "get");
@@ -45,13 +51,6 @@ const Cart = () => {
     }
   }, [state.cart.length, dispatch]);
 
-  useEffect(() => {
-    if (data) {
-      stripePromise.then((res) => {
-        res.redirectToCheckout({ sessionId: data.checkout.session });
-      });
-    }
-  }, [data]);
   function total() {
     let sum = 0;
     state.cart.forEach((item) => {
@@ -67,7 +66,7 @@ const Cart = () => {
       for (let i = 0; i < item.purchaseQuantity; i++) {
         productIds.push(item._id);
       }
-      checkout({
+      getCheckout({
         variables: { products: productIds },
       });
     });
