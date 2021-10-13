@@ -24,3 +24,7 @@ padding: 25px 25px;
 margin-top: 5vw;
 } 
 
+.productCards {
+  display: block;
+  background-size: cover;
+}
