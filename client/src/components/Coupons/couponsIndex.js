@@ -5,10 +5,10 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Grid } from "@mui/material";
 import { Container } from "@mui/material";
+import photo from "../../assets/cupons/coupon.jpg";
 
 function Coupons() {
   const sales = [
-  
     {
       name: "Civni Apples",
       sale: "SALE 4 for $5.00",
@@ -16,7 +16,7 @@ function Coupons() {
       offer: "Valid 10/08- 10/15",
       src: require("../../assets/cupons/apples.jpg"),
     },
-  
+
     {
       name: "Chinook Salmon",
       sale: "SALE $17.00",
@@ -77,12 +77,14 @@ function Coupons() {
   return (
     <>
       <main>
-        <Container maxWidth="xl">
-          <div className="saleHeader">
-
+        <div className="saleHeader">
           <h2>Checkout this week's deals!</h2>
           <h2>Available instore only</h2>
-</div>
+        </div>
+        <div>
+          <img src={photo} className="market" />
+        </div>
+        <Container maxWidth="xl">
           <Grid container spacing={2} style={{ marginTop: "3rem" }}>
             {sales.map(({ name, sale, price, offer, src }) => (
               <Grid
@@ -92,11 +94,14 @@ function Coupons() {
                 sm={6}
                 md={4}
               >
-                <Card className="box" style={{ alignContent: "center"}}>
+                <Card
+                  className="box"
+                  style={{ alignContent: "center", display: "flex" }}
+                >
                   <CardMedia
                     component="img"
                     height="400"
-                    objectFit="cover" 
+                    objectFit="fill"
                     image={src}
                     alt="sales"
                   />
@@ -113,7 +118,9 @@ function Coupons() {
                       {sale}
                     </Typography>
                     <p className="regularPrice">{price}</p>
-                    <p className="offerTime" style={{ fontSize: "13px"}}>{offer}</p>
+                    <p className="offerTime" style={{ fontSize: "13px" }}>
+                      {offer}
+                    </p>
                   </CardContent>
                 </Card>
               </Grid>

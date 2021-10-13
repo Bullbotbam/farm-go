@@ -34,7 +34,7 @@ import React from 'react';
 
 function Jumbotron({ children }) {
 	return (
-		<div
+		<div 
 			style={{
 				height: 1200,
 				clear: 'both',

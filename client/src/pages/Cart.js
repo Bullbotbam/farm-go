@@ -9,7 +9,7 @@ import { QUERY_CHECKOUT } from "../utils/queries";
 import { ADD_MULTIPLE_TO_CART } from "../utils/actions";
 import { idbPromise } from "../utils/helpers";
 import { loadStripe } from "@stripe/stripe-js";
-import photo from "../assets/cupons/coupon.png";
+// import photo from "../assets/cupons/coupon.jpg";
 
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
@@ -89,9 +89,7 @@ const Cart = () => {
             You haven't added anything to your cart yet!
           </h3>
         )}
-        <div>
-          <img src={photo} style={{ width: "40%" }}></img>
-        </div>
+      
       </div>
     </React.Fragment>
   );

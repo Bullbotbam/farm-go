@@ -60,7 +60,7 @@ code {
   text-align: center;
 }
 .deals {
-  font-size: 40px;
+  font-size: 30px;
   text-align: center;
 }
 .couponName {
@@ -69,4 +69,11 @@ code {
 
 .offerTime {
   font-size: 10px;
+}
+
+.market {
+  width: 100%;
+  margin-left: 4px;
+  height: 50vh;
+  margin-top: 5vw;
 }
