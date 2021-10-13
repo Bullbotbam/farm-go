@@ -101,7 +101,7 @@ const Cart = () => {
               }}
             >
               {" "}
-              Checkout
+              Checkouts
             </Button>
           </div>
         </TableContainer>

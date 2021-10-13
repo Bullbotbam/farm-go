@@ -18,7 +18,7 @@ const startServer = async () => {
   });
 
   await server.start();
-
+  //integrate our Apollo server with the Express application as middleware
   server.applyMiddleware({ app });
 
   console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
