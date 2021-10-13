@@ -4,6 +4,7 @@ import Jumbotron from "../components/Jumbotron";
 import { ADD_ORDER } from "../utils/mutations";
 import { idbPromise } from "../utils/helpers";
 
+//TODO : REMOVE COMMENTS AFTER DONE WITH REST
 function Success() {
   //    const [addOrder] = useMutation(ADD_ORDER);
 

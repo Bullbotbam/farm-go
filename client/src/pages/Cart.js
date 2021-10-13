@@ -89,6 +89,26 @@ const Cart = () => {
               {/* TODO: REMOVE HARD CODED TOTAL VALUE WITH TOTAL FUNCTION (total()) */}
               <StyledTableCell>Total: ${total()}</StyledTableCell>
             </TableBody>
+            {/* TODO: UNCOMMENT FROM HERE */}
+            {/* {Auth.loggedIn() ? (
+              <Button
+                onClick={submitCheckout}
+                variant="contained"
+                color="success"
+                style={{
+                  margin: "5%",
+                  alignSelf: "center",
+                  display: "grid",
+                }}
+              >
+                Checkout
+              </Button>
+            ) : (
+              <span>(log in to check out)</span>
+            )} */}
+            {/* TODO: TO HERE */}
+
+            {/* TODO: REMOVE FROM HERE  */}
             <Button
               onClick={submitCheckout}
               variant="contained"
@@ -102,6 +122,7 @@ const Cart = () => {
               {" "}
               Checkout
             </Button>
+            {/* TODO: TO HERE  */}
           </div>
         </TableContainer>
       ) : (
