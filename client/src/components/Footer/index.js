@@ -6,7 +6,7 @@ import {
 	Typography,
 	Box,
 } from '@mui/material';
-import { styled, alpha, createTheme } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 import { orange } from '@material-ui/core/colors';
 import React from 'react';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -30,12 +30,15 @@ function Footer(theme) {
 			<AppBar
 				position="static"
 				style={{
-					display: 'flex',
-					justifyContent: 'center',
 					backgroundColor: '#ed7649',
-					alignContent: 'space-between',
-					padding: '0',
-					margin: '0',
+					position: "fixed",
+					left: "0px",
+					bottom: "0px",
+					zIndex: "1",
+					width: "100%",
+					textAlign: "center",
+					textDecoration: "none"
+					
 				}}
 			>
 				<Container maxWidth="xl">

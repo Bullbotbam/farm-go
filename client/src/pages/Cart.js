@@ -8,6 +8,8 @@ import { QUERY_CHECKOUT } from "../utils/queries";
 import { ADD_MULTIPLE_TO_CART } from "../utils/actions";
 import { idbPromise } from "../utils/helpers";
 import { loadStripe } from "@stripe/stripe-js";
+import image from "../assets/cupons/deal.jpg";
+import { Typography, Card, CardContent, CardMedia } from "@material-ui/core";
 
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
@@ -70,7 +72,10 @@ const Cart = () => {
   return (
     <React.Fragment>
       <div className="shoppingCart">
-        <h2 style={{ fontSize: "50px", padding: "40px 40px", color: "white"}}> Shopping Cart</h2>
+        <h2 style={{ fontSize: "50px", padding: "40px 40px", color: "white" }}>
+          {" "}
+          Shopping Cart
+        </h2>
         {state.cart.length ? (
           <div className="cart">
             {state.cart.map((item) => (
@@ -116,7 +121,17 @@ const Cart = () => {
             )}
           </div>
         ) : (
-          <h3>You haven't added anything to your cart yet!</h3>
+          // <img src={image} alt="sale" style={{ width: "60%"}}/>
+          // <h3>You haven't added anything to your cart yet!</h3>
+          <Card style={{ alignContent: "center", backgroundColor: "transparent" }}>
+             <Typography gutterBottom variant="h5">
+                <h4 style={{marginLeft: "3.5vw", color: "white"}}>Your cart is empty</h4>
+              </Typography>
+            <img src={image} alt="sale" style={{width: "70%"}}/>
+            <CardContent>
+          
+            </CardContent>
+          </Card>
         )}
       </div>
     </React.Fragment>

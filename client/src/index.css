@@ -29,6 +29,10 @@ code {
 /*CART STYLES*/
 .shoppingCart {
   background-image: url("./assets/logo/shelf.jpg");
+  background-size: cover;
+  margin: 0;
+  display:block;
+  padding: 150px 35px;
   
 }
 

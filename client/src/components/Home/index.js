@@ -1,8 +1,9 @@
 import React from 'react';
-import Image from 'material-ui-image';
+// import Image from 'material-ui-image';
 import { Container, Paper, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import FarmersMessage from '../FarmersMessage';
+import Landing from "../Landing"
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -25,6 +26,7 @@ export default function Home({ children }) {
 	const classes = useStyles();
 
 	return (
+		<>
 		<Container className="homebox">
 			<Paper
 				style={{
@@ -42,5 +44,8 @@ export default function Home({ children }) {
 				<FarmersMessage />
 			</Paper>
 		</Container>
+
+		<Landing />
+		</>
 	);
 }
