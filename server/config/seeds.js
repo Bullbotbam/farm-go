@@ -5,21 +5,11 @@ db.once("open", async () => {
   await Category.deleteMany();
 
   const categories = await Category.insertMany([
-    { title: "Fruit",
-    image: "Produce.jpg"
-   },
-    { title: "Vegetable",
-    image: "Flowers.jpg"
-   },
-    { title: "Dairy",
-    image: "Dairy.jpg"
-   },
-    { title: "Sea Food",
-    image: "SpecialtyFoods.jpg"
-   },
-    { title: "Bulk",
-    image: "Art.jpg"
-   },
+    { title: "Fruit", image: "Produce.jpg" },
+    { title: "Vegetable", image: "Flowers.jpg"},
+    { title: "Dairy", image: "Dairy.jpg"},
+    { title: "Sea Food", image: "SpecialtyFoods.jpg"},
+    { title: "Bulk", image: "Art.jpg" },
   ]);
 
   console.log("categories seeded");
@@ -31,7 +21,7 @@ db.once("open", async () => {
       name: "Watermelon",
       description:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-      image: "watermelon.jpg",
+      image: "",
       category: categories[1]._id,
       price: 5.99,
       quantity: 500,
@@ -114,7 +104,7 @@ db.once("open", async () => {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare diam quis eleifend rutrum. Aliquam nulla est, volutpat non enim nec, pharetra gravida augue. Donec vitae dictum neque. Pellentesque arcu lorem, fringilla non ligula ac, tristique bibendum erat. Ut a semper nibh. Quisque a mi et mi tempor ultricies. Maecenas eu ipsum eu enim hendrerit accumsan at euismod urna.",
       image: "jelly.jpg",
-      price: 3.50,
+      price: 3.5,
       quantity: 60,
     },
     {
@@ -132,7 +122,7 @@ db.once("open", async () => {
       description:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       image: "butter.jpg",
-      price: 4.50,
+      price: 4.5,
       quantity: 50,
     },
     {
@@ -141,7 +131,7 @@ db.once("open", async () => {
       description:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       image: "cheese.jpg",
-      price: 3.00,
+      price: 3.0,
       quantity: 100,
     },
     {
@@ -159,7 +149,7 @@ db.once("open", async () => {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare diam quis eleifend rutrum. Aliquam nulla est, volutpat non enim nec, pharetra gravida augue. Donec vitae dictum neque. Pellentesque arcu lorem, fringilla non ligula ac, tristique bibendum erat. Ut a semper nibh. Quisque a mi et mi tempor ultricies. Maecenas eu ipsum eu enim hendrerit accumsan at euismod urna.",
       image: "potato.jpg",
-      price: .99,
+      price: 0.99,
       quantity: 1000,
     },
   ]);
