@@ -32,18 +32,12 @@ code {
   
 }
 
-/* .summary { */
-/* border-style: solid;
-  border-width: 1px; */
-/* padding: 35px; */
-/* margin: 10px 10px;
-  font-weight: none; */
-/* } */
-/* .productCards {
-  margin-top: 10vw;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+.cart {
+  margin-left: 10vw;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+}
+
 
  /*COUPON STYLES*/
 .saleHeader {
