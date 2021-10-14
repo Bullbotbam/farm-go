@@ -1,5 +1,6 @@
 import React from 'react';
 import SingUp from './pages/SignUp';
+import OrderHistory from './pages/OrderHistory'
 import Jumbotron from './components/Jumbotron/jumboIndex';
 import Cart from './pages/Cart';
 import Coupons from './components/Coupons/couponsIndex';
@@ -53,6 +54,7 @@ function App() {
 							<Route exact path="/category" component={CategoryMenu} />
 							<Route exact path="/sales" component={Coupons} />
 							<Route exact path="/cart" component={Cart} />
+							<Route exact path="/history" component={OrderHistory} />
 							<Route component={NoMatch} />
 						</Switch>
 					</StoreProvider>

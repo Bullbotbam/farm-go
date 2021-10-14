@@ -21,7 +21,7 @@ function OrderHistory() {
     let customer;
 
     if (customerData) {
-        customer = data.customer
+        customer = customerData.customer
     }
 
   return (

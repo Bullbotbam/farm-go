@@ -17,6 +17,8 @@ import {
 import useStyles from '../../utils/styles';
 
 function ProductItem(item) {
+
+	const classes = useStyles
 	const { image, name, _id, price, quantity } = item;
 
 	const [state, dispatch] = useStoreContext();
