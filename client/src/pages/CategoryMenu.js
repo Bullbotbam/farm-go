@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { makeStyles } from '@mui/styles';
+// import { makeStyles } from '@mui/styles';
 
-import SearchBar from '../components/SearchBar';
+// import SearchBar from '../components/SearchBar';
 // import Jumbotron from '../components/Jumbotron';
 import {
 	Typography,
@@ -11,7 +11,7 @@ import {
 	CssBaseline,
 	Grid,
 	Container,
-	CardActions,
+	// CardActions,
 } from '@material-ui/core';
 import useStyles from '../utils/styles';
 

@@ -31,9 +31,15 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 }));
 
 const Cart = () => {
-	const [checkout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 	const [state, dispatch] = useStoreContext();
-
+	const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
+	useEffect(() => {
+		if (data) {
+			stripePromise.then((res) => {
+				res.redirectToCheckout({ sessionId: data.checkout.session });
+			});
+		}
+	}, [data]);
 	useEffect(() => {
 		async function getCart() {
 			const cart = await idbPromise('cart', 'get');
@@ -45,30 +51,23 @@ const Cart = () => {
 		}
 	}, [state.cart.length, dispatch]);
 
-	useEffect(() => {
-		if (data) {
-			stripePromise.then((res) => {
-				res.redirectToCheckout({ sessionId: data.checkout.session });
-			});
-		}
-	}, [data]);
 	function total() {
 		let sum = 0;
 		state.cart.forEach((item) => {
 			sum += item.price * item.purchaseQuantity;
 		});
-		return sum.toFixed;
+		return sum.toFixed(2);
 	}
 
 	function submitCheckout() {
-		const productsIds = [];
+		const productIds = [];
 
 		state.cart.forEach((item) => {
 			for (let i = 0; i < item.purchaseQuantity; i++) {
-				productsIds.push(item._id);
+				productIds.push(item._id);
 			}
-			checkout({
-				variables: { products: productsIds },
+			getCheckout({
+				variables: { products: productIds },
 			});
 		});
 	}
@@ -87,24 +86,43 @@ const Cart = () => {
 							<StyledTableCell>Order Summary</StyledTableCell>
 						</TableHead>
 						<TableBody>
+							{/* TODO: REMOVE HARD CODED TOTAL VALUE WITH TOTAL FUNCTION (total()) */}
 							<StyledTableCell>Total: ${total()}</StyledTableCell>
 						</TableBody>
-						{Auth.loggedIn() ? (
-							<Button
-								onClick={submitCheckout}
-								variant="contained"
-								color="success"
-								style={{
-									margin: '5%',
-									alignSelf: 'center',
-									display: 'grid',
-								}}
-							>
-								Checkout
-							</Button>
-						) : (
-							<span>(log in to check out)</span>
-						)}
+						{/* TODO: UNCOMMENT FROM HERE */}
+						{/* {Auth.loggedIn() ? (
+              <Button
+                onClick={submitCheckout}
+                variant="contained"
+                color="success"
+                style={{
+                  margin: "5%",
+                  alignSelf: "center",
+                  display: "grid",
+                }}
+              >
+                Checkout
+              </Button>
+            ) : (
+              <span>(log in to check out)</span>
+            )} */}
+						{/* TODO: TO HERE */}
+
+						{/* TODO: REMOVE FROM HERE  */}
+						<Button
+							onClick={submitCheckout}
+							variant="contained"
+							color="success"
+							style={{
+								margin: '5%',
+								alignSelf: 'center',
+								display: 'grid',
+							}}
+						>
+							{' '}
+							Checkout
+						</Button>
+						{/* TODO: TO HERE  */}
 					</div>
 				</TableContainer>
 			) : (
