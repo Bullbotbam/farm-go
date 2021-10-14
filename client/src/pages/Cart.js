@@ -9,50 +9,67 @@ import { ADD_MULTIPLE_TO_CART } from "../utils/actions";
 import { idbPromise } from "../utils/helpers";
 import { loadStripe } from "@stripe/stripe-js";
 
-const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
+const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+	[`&.${tableCellClasses.head}`]: {
+		backgroundColor: theme.palette.success.main,
+		color: theme.palette.common.white,
+		fontSize: 25,
+		fontFamily: 'Gabriela , serif',
+	},
+
+	[`&.${tableCellClasses.body}`]: {
+		fontSize: 20,
+		fontFamily: 'Gabriela , serif',
+	},
+}));
 
 const Cart = () => {
-  const [checkout, { data }] = useLazyQuery(QUERY_CHECKOUT);
-  const [state, dispatch] = useStoreContext();
+	const [state, dispatch] = useStoreContext();
+	const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
+	useEffect(() => {
+		if (data) {
+			stripePromise.then((res) => {
+				res.redirectToCheckout({ sessionId: data.checkout.session });
+			});
+		}
+	}, [data]);
+	useEffect(() => {
+		async function getCart() {
+			const cart = await idbPromise('cart', 'get');
+			dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
+		}
 
-  useEffect(() => {
-    async function getCart() {
-      const cart = await idbPromise("cart", "get");
-      dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
-    }
+		if (!state.cart.length) {
+			getCart();
+		}
+	}, [state.cart.length, dispatch]);
 
-    if (!state.cart.length) {
-      getCart();
-    }
-  }, [state.cart.length, dispatch]);
+	function total() {
+		let sum = 0;
+		state.cart.forEach((item) => {
+			sum += item.price * item.purchaseQuantity;
+		});
+		return sum.toFixed(2);
+	}
 
-  useEffect(() => {
-    if (data) {
-      stripePromise.then((res) => {
-        res.redirectToCheckout({ sessionId: data.checkout.session });
-      });
-    }
-  }, [data]);
-  function total() {
-    let sum = 0;
-    state.cart.forEach((item) => {
-      sum += item.price * item.purchaseQuantity;
-    });
-    return sum.toFixed(2);
-  }
+	function submitCheckout() {
+		const productIds = [];
 
-  function submitCheckout() {
-    const productIds = [];
+		state.cart.forEach((item) => {
+			for (let i = 0; i < item.purchaseQuantity; i++) {
+				productIds.push(item._id);
+			}
+			getCheckout({
+				variables: { products: productIds },
+			});
+		});
+	}
 
-    state.cart.forEach((item) => {
-      for (let i = 0; i < item.purchaseQuantity; i++) {
-        productIds.push(item._id);
-      }
-      checkout({
-        variables: { products: productIds },
-      });
-    });
-  }
+	return (
+		<React.Fragment>
+			<h2 style={{ fontSize: '50px' }}> Your Cart</h2>
 
 
   return (
