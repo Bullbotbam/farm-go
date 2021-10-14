@@ -67,10 +67,6 @@ const Cart = () => {
 		});
 	}
 
-	return (
-		<React.Fragment>
-			<h2 style={{ fontSize: '50px' }}> Your Cart</h2>
-
 
   return (
     <React.Fragment>
