@@ -53,7 +53,7 @@ function ProductList() {
         {state.products.length ? (
           <Grid container spacing={2} style={{ marginTop: "3rem" }}>
             {filterProducts().map((product) => (
-              <Grid xs={12} sm={6} md={4}>
+              <Grid xs={12} sm={6} md={4} >
                 <ProductItem
                   key={product._id}
                   _id={product._id}

@@ -121,8 +121,6 @@ const Cart = () => {
             )}
           </div>
         ) : (
-          // <img src={image} alt="sale" style={{ width: "60%"}}/>
-          // <h3>You haven't added anything to your cart yet!</h3>
           <Card style={{ alignContent: "center", backgroundColor: "transparent" }}>
              <Typography gutterBottom variant="h5">
                 <h4 style={{marginLeft: "3.5vw", color: "white"}}>Your cart is empty</h4>
