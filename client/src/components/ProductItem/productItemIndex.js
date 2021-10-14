@@ -10,9 +10,6 @@ import {
   CardContent,
   CardMedia,
   CssBaseline,
-  Grid,
-  Container,
-  // CardActions,
 } from "@material-ui/core";
 import useStyles from "../../utils/styles";
 
@@ -48,41 +45,34 @@ function ProductItem(item) {
       <CssBaseline />
 
       <main>
-        <Container className="card px-1 py-1" maxWidth="xl">
-          <Grid container spacing={2} style={{ marginTop: "3rem" }}>
-            <Grid xs={12} sm={6} md={4}>
-              <Card className={classes.card} style={{ alignContent: "center" }}>
-                <Link to={`/products/${_id}`}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    image={`/images/${image}`}
-                    title="Image title"
-                    alt={name}
-                  />
-                </Link>
-                <CardContent>
-                  <Typography gutterBottom variant="h5">
-                    <h4>{name}</h4>${price}
-                  </Typography>
+        <Card className={classes.card} style={{ alignContent: "center" }}>
+          <Link to={`/products/${_id}`}>
+            <CardMedia
+              className={classes.cardMedia}
+              image={`/images/${image}`}
+              title="Image title"
+              alt={name}
+            />
+          </Link>
+          <CardContent>
+            <Typography gutterBottom variant="h5">
+              <h4>{name}</h4>${price}
+            </Typography>
 
-                  <Typography>{quantity}</Typography>
-                </CardContent>
-                <Button
-                  style={{
-                    color: "green",
-                  }}
-                  onClick={addItem}
-                >
-                  Add to cart
-                </Button>
-              </Card>
-            </Grid>
-          </Grid>
-        </Container>
+            <Typography>{quantity}</Typography>
+          </CardContent>
+          <Button
+            style={{
+              color: "green",
+            }}
+            onClick={addItem}
+          >
+            Add to cart
+          </Button>
+        </Card>
       </main>
     </>
   );
 }
 
 export default ProductItem;
-

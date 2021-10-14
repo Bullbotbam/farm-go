@@ -58,8 +58,8 @@ const CartItem = ({ item }) => {
     }
   };
   return (
-    <Table className="cartItem"  style={{ width: "45%" }}>
-      <TableHead >
+    <Table className="cartItem" style={{ width: "60%" }}>
+      <TableHead>
         <StyledTableCell>{item.name}</StyledTableCell>
         <StyledTableCell align="right">${item.price}</StyledTableCell>
       </TableHead>
@@ -68,7 +68,7 @@ const CartItem = ({ item }) => {
           <img style={{ width: "20%" }} src={`/images/${item.image}`} alt="" />
         </StyledTableCell>
         <StyledTableCell align="right">
-          <Box sx={{ minWidth: 10 }}>
+          <Box sx={{ minWidth: 5 }}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Qty</InputLabel>
               <Select
@@ -79,7 +79,7 @@ const CartItem = ({ item }) => {
                 label="1"
                 onChange={onChange}
               >
-                 <MenuItem value={1}>1</MenuItem>
+                <MenuItem value={1}>1</MenuItem>
                 <MenuItem value={2}>2</MenuItem>
                 <MenuItem value={3}>3</MenuItem>
                 <MenuItem value={4}>4</MenuItem>
@@ -89,23 +89,20 @@ const CartItem = ({ item }) => {
                 <MenuItem value={8}>8</MenuItem>
               </Select>
             </FormControl>
-             <Button
-        variant="contained"
-        color="success"
-        style={{
-          margin: "5%",
-          display: "grid",
-        }}
-        onClick={() => deleteFromCart(item)}
-      >
-        delete
-      </Button>
+            <Button
+              variant="contained"
+              color="success"
+              style={{
+                margin: "5%",
+                display: "grid",
+              }}
+              onClick={() => deleteFromCart(item)}
+            >
+              delete
+            </Button>
           </Box>
         </StyledTableCell>
       </TableBody>
-      
-     
-
     </Table>
   );
 };

@@ -6,7 +6,7 @@ db.once('open', async () => {
   
 	const categories = await Category.insertMany([
 		{ title: 'Fruit' },
-		{ title: 'Vegatable' },
+		{ title: 'Vegetable' },
 		{ title: 'Dairy' },
 		{ title: 'Sea Food' },
 		{ title: 'Bulk' },
@@ -36,7 +36,7 @@ db.once('open', async () => {
 			quantity: 500,
 		},
 		{
-			name: 'Avacado',
+			name: 'Avocado',
 			category: categories[1]._id,
 			description:
 				'Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.',

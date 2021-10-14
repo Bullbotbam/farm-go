@@ -6,8 +6,11 @@ import Typography from "@mui/material/Typography";
 import { Grid } from "@mui/material";
 import { Container } from "@mui/material";
 import photo from "../../assets/cupons/coupon.jpg";
+import useStyles from '../../utils/styles';
 
 function Coupons() {
+  const classes = useStyles();
+
   const sales = [
     {
       name: "Civni Apples",
@@ -82,9 +85,9 @@ function Coupons() {
           <h2>Available instore only</h2>
         </div>
         <div>
-          <img src={photo} className="market" />
+          <img src={photo} alt="market" className="market" />
         </div>
-        <Container maxWidth="xl">
+        <Container className={classes.cardGrid}  maxWidth="xl">
           <Grid container spacing={2} style={{ marginTop: "3rem" }}>
             {sales.map(({ name, sale, price, offer, src }) => (
               <Grid
@@ -95,12 +98,11 @@ function Coupons() {
                 md={4}
               >
                 <Card
-                  className="box"
-                  style={{ alignContent: "center", display: "flex" }}
+                 className={classes.card}
+                 style={{ alignContent: 'center' }}
                 >
                   <CardMedia
                     component="img"
-                    height="400"
                     objectFit="fill"
                     image={src}
                     alt="sales"
@@ -109,6 +111,7 @@ function Coupons() {
                     <Typography
                       gutterBottom
                       variant="h5"
+                      height="250"
                       component="div"
                       className="couponName"
                     >

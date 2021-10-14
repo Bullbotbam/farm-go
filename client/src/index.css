@@ -15,6 +15,7 @@ body {
 code {
   font-family: "Gabriela", serif;
 }
+
 /*HEADER STYLES*/
 .header {
 	color: white;
@@ -29,12 +30,12 @@ code {
 
 
 /*CART STYLES*/
-/* .yourCart {
+.yourCart {
   display: flex;
-  flex-wrap: wrap;
-  margin: 10px 10px;
-  justify-content: stretch;
-}  */
+flex-wrap: wrap;
+justify-content: space-between;
+margin: 10px 10px
+} 
 
 /* .summary { */
   /* border-style: solid;
@@ -74,6 +75,6 @@ code {
 .market {
   width: 100%;
   margin-left: 4px;
-  height: 50vh;
+  height: 55vh;
   margin-top: 5vw;
 }

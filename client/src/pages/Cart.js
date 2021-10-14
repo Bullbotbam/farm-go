@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import CartItem from "../components/CartItem/cartIndex";
-import TableContainer from "@mui/material/TableContainer";
 import { Button } from "@mui/material";
 import Auth from "../utils/auth";
 import { useStoreContext } from "../utils/GlobalState";
@@ -9,7 +8,6 @@ import { QUERY_CHECKOUT } from "../utils/queries";
 import { ADD_MULTIPLE_TO_CART } from "../utils/actions";
 import { idbPromise } from "../utils/helpers";
 import { loadStripe } from "@stripe/stripe-js";
-// import photo from "../assets/cupons/coupon.jpg";
 
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
@@ -56,41 +54,48 @@ const Cart = () => {
     });
   }
 
+
   return (
     <React.Fragment>
       <h2 style={{ fontSize: "50px" }}> Your Cart</h2>
-      <div className="yourCart">
-        {state.cart.length ? (
-          <TableContainer style={{display: "grid"}}>
-            {state.cart.map((item) => (
-              <CartItem key={item._id} item={item} />
-            ))}
-            <div className="summary" style={{ width: "45%" }}>
-              <h2 style={{ backgroundColor: "green", color: "white", fontWeight:"none"}}>
-                Order Summary
-              </h2>
-			 
-              <span style={{fontSize:"20px"}}>Total: ${total()}</span>
-            </div>
-            {Auth.loggedIn() ? (
-              <Button
-                onClick={submitCheckout}
-                variant="contained"
-                color="success"
-              >
-                Checkout
-              </Button>
-            ) : (
-              <span>(Please login or create an account to checkout)</span>
-            )}
-          </TableContainer>
-        ) : (
-          <h3>
-            You haven't added anything to your cart yet!
-          </h3>
-        )}
-      
-      </div>
+      {state.cart.length ? (
+        <div className="yourCart">
+          {state.cart.map((item) => (
+            <CartItem key={item._id} item={item} />
+          ))}
+          <div className="summary" style={{ width: "35%" }}>
+            <h2
+              style={{
+                backgroundColor: "green",
+                color: "white",
+                fontWeight: "none",
+                height: "55px",
+               objectFit: "fill"
+              }}
+            >
+              Order Summary
+            </h2>
+
+            <span style={{ fontSize: "20px" }}>Total: ${total()}</span>
+          </div>
+          {Auth.loggedIn() ? (
+            <Button 
+              onClick={submitCheckout}
+              variant="contained"
+              color="success"
+             style={{marginLeft: "84vw"}}
+          
+            >
+              Checkout
+            </Button>
+          ) : (
+           <span>(Please login or create an account to checkout)</span> 
+            
+          )}
+        </div>
+      ) : (
+        <h3>You haven't added anything to your cart yet!</h3>
+      )}
     </React.Fragment>
   );
 };
