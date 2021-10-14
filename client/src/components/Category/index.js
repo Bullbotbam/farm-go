@@ -4,10 +4,7 @@ import { Typography, Card, CardContent, CardMedia } from "@material-ui/core";
 import useStyles from "../../utils/styles";
 
 function Category(item) {
-  const { image, title, _id } = item;
-
-
-  
+  const { image, title, _id, description } = item;
 
   const classes = useStyles();
 
@@ -25,6 +22,7 @@ function Category(item) {
           <Typography gutterBottom variant="h5">
             <h4>{title}</h4>
           </Typography>
+          <Typography>{description}</Typography>
         </CardContent>
       </Card>
     </>

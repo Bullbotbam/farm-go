@@ -5,11 +5,42 @@ db.once("open", async () => {
   await Category.deleteMany();
 
   const categories = await Category.insertMany([
-    { title: "Fruit", image: "Produce.jpg" },
-    { title: "Vegetable", image: "Flowers.jpg"},
-    { title: "Dairy", image: "Dairy.jpg"},
-    { title: "Sea Food", image: "SpecialtyFoods.jpg"},
-    { title: "Bulk", image: "Art.jpg" },
+    {
+      title: "Fruits",
+      image: "fruitss.jpg",
+      description:
+        "Quo neque error repudiandae fuga? Ipsa laudantium molestias eos sapiente officiis modi at sunt excepturi expedita sint? Sed quibusda recusandae alias error harum maxime adipisci amet laborum.",
+    },
+    {
+      title: "Vegetables",
+      image: "colorful.jpg",
+      description:
+        "Quo neque error repudiandae fuga? Ipsa laudantium molestias eos sapiente officiis modi at sunt excepturi expedita sint? Sed quibusda recusandae alias error harum maxime adipisci amet laborum.",
+    },
+    {
+      title: "Dairy",
+      image: "Dairy.jpg",
+      description:
+        "Quo neque error repudiandae fuga? Ipsa laudantium molestias eos sapiente officiis modi at sunt excepturi expedita sint? Sed quibusda recusandae alias error harum maxime adipisci amet laborum.",
+    },
+    {
+      title: "Fish & Meats",
+      image: "Meat.jpg",
+      description:
+        "Quo neque error repudiandae fuga? Ipsa laudantium molestias eos sapiente officiis modi at sunt excepturi expedita sint? Sed quibusda recusandae alias error harum maxime adipisci amet laborum.",
+    },
+    {
+      title: "Bath Body & Spirit ",
+      image: "BathBody.jpg",
+      description:
+        "Quo neque error repudiandae fuga? Ipsa laudantium molestias eos sapiente officiis modi at sunt excepturi expedita sint? Sed quibusda recusandae alias error harum maxime adipisci amet laborum.",
+    },
+    {
+      title: "Arts & Crafts",
+      image: "Crafts.jpg",
+      description:
+        "Quo neque error repudiandae fuga? Ipsa laudantium molestias eos sapiente officiis modi at sunt excepturi expedita sint? Sed quibusda recusandae alias error harum maxime adipisci amet laborum.",
+    },
   ]);
 
   console.log("categories seeded");
@@ -21,13 +52,13 @@ db.once("open", async () => {
       name: "Watermelon",
       description:
         "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-      image: "",
+      image: "Watermelon.jpg",
       category: categories[1]._id,
       price: 5.99,
       quantity: 500,
     },
     {
-      name: "Apple",
+      name: "Green Apple",
       description:
         "Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.",
       image: "apple.jpg",
@@ -90,13 +121,13 @@ db.once("open", async () => {
       quantity: 100,
     },
     {
-      name: "Pears",
-      category: categories[0]._id,
+      name: "Steak",
+      category: categories[4]._id,
       description:
         "Ut vulputate hendrerit nibh, a placerat elit cursus interdum.",
-      image: "pears.jpg",
-      price: 4.99,
-      quantity: 500,
+      image: "steaks.jpg",
+      price: 12.99,
+      quantity: 50,
     },
     {
       name: "Homemade Jelly",

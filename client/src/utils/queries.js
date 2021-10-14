@@ -45,7 +45,7 @@ export const QUERY_CATEGORIES = gql`
 			_id
 			title
 			image
-	
+			description
 		}
 	}
 `;

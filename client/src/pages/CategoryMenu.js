@@ -5,9 +5,6 @@ import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from "../utils/actions";
 import { QUERY_CATEGORIES } from "../utils/queries";
 import { idbPromise } from "../utils/helpers";
 import Category from "../components/Category";
-
-// import SearchBar from '../components/SearchBar';
-// import Jumbotron from '../components/Jumbotron';
 import { CssBaseline, Grid, Container } from "@material-ui/core";
 import useStyles from "../utils/styles";
 
@@ -49,20 +46,20 @@ const CategoryMenu = () => {
     <>
       <CssBaseline />
 
-      <Container className={classes.cardGrid} maxWidth="xl">
-        <h2>Choose a Category:</h2>
+      <Container className={classes.cardGrid}>
+        <h2 style={{ fontSize: "50px", padding: "30px 30px" }}>
+          Choose products by category:
+        </h2>
         <Grid container spacing={2} style={{ marginTop: "3rem" }}>
-          {categories.map((item) => (
-            <Grid xs={12} sm={6} md={4} >
+          {categories.map((item, id) => (
+            <Grid xs={12} sm={6} md={4}>
               <Category
                 key={item._id}
-				onClick={() => {
-					handleClick(item._id);
-				  }}
                 _id={item._id}
+                onClick={() => handleClick(id)}
                 image={item.image}
                 title={item.title}
-				
+                description={item.description}
               />
             </Grid>
           ))}
@@ -72,15 +69,15 @@ const CategoryMenu = () => {
   );
 };
 
-function ChooseCategory() {
-  function handleClick(e) {
-    e.preventDefault();
-    console.log("The link was clicked");
-  }
-  return (
-    <form onClick={handleClick}>
-      <button type="submit">Submit</button>
-    </form>
-  );
-}
+// function ChooseCategory() {
+//   function handleClick(e) {
+//     e.preventDefault();
+//     console.log("The link was clicked");
+//   }
+//   return (
+//     <form onClick={handleClick}>
+//       <button type="submit">Submit</button>
+//     </form>
+//   );
+// }
 export default CategoryMenu;

@@ -13,7 +13,7 @@ const typeDefs = gql`
     _id: ID
     title: String
     image: String
-    lastName: String
+    description: String
   }
 
   type Order {
