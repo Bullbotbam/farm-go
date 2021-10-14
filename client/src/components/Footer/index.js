@@ -17,15 +17,15 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 // import MailOutlineIcon from '@mui/icons-material/MailOutline';
 // import AgricultureIcon from '@mui/icons-material/Agriculture';
 
-const StyledToolbar = styled(Toolbar)(({ theme }) => ({
-	alignItems: 'center',
-	paddingtTop: theme.spacing(1),
-	paddingtBottom: theme.spacing(5),
-	// override media queries injected by them.mixins.Toolbar
-	'@media all': {
-		minHeight: 128,
-	},
-}));
+// const StyledToolbar = styled(Toolbar)(({ theme }) => ({
+// 	alignItems: 'center',
+// 	paddingtTop: theme.spacing(1),
+// 	paddingtBottom: theme.spacing(5),
+// 	// override media queries injected by them.mixins.Toolbar
+// 	'@media all': {
+// 		minHeight: 128,
+// 	},
+// }));
 
 function Footer() {
 	return (

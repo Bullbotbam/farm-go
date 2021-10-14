@@ -133,7 +133,7 @@ function SignUp(props) {
           style={{ margin: "5%", display: "grid" }}
         />
         <Stack >
-          <Button
+          <Button   type="submit"
             color="success"
             style={{ margin: "5%", alignSelf: "center", display: "grid" }}
           >

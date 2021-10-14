@@ -3,6 +3,7 @@ import { useMutation } from "@apollo/client";
 import Jumbotron from "../components/Jumbotron";
 import { ADD_ORDER } from "../utils/mutations";
 import { idbPromise } from "../utils/helpers";
+import image from "../assets/logo/cow.jpg"
 
 //TODO : REMOVE COMMENTS AFTER DONE WITH REST
 function Success() {
@@ -35,7 +36,7 @@ function Success() {
       <Jumbotron>
         <h1>Success!</h1>
         <h2>Thank you for your purchase!</h2>
-        <h2>You will now be redirected to the homepage</h2>
+        <img src={image} alt="cow" />
       </Jumbotron>
     </div>
   );
