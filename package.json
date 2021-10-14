@@ -15,5 +15,8 @@
 	"license": "ISC",
 	"devDependencies": {
 		"concurrently": "^5.1.0"
+	},
+	"dependencies": {
+		"material-ui-image": "^3.3.2"
 	}
 }

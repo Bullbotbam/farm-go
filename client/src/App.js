@@ -6,7 +6,7 @@ import Coupons from './components/Coupons/couponsIndex';
 import { NoMatch } from './pages/NoMatch';
 import SearchBar from './components/SearchBar';
 // import MapSearch from "./components/MapSearch";
-import Homepage from './pages/Homepage';
+import Home from './components/Home';
 import ProductItem from './components/ProductItem/productItemIndex';
 import ProductList from './components/ProductList/productListIndex';
 import CategoryMenu from './pages/CategoryMenu';
@@ -47,7 +47,7 @@ function App() {
 						<SearchBar />
 
 						<Switch>
-							<Route exact path="/" component={Jumbotron} />
+							<Route exact path="/" component={Home} />
 							<Route exact path="/signup" component={SingUp} />
 							<Route exact path="/products" component={ProductList} />
 							<Route exact path="/category" component={CategoryMenu} />
