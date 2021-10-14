@@ -1,9 +1,9 @@
-import React from 'react';
-import { useStoreContext } from '../../utils/GlobalState';
-import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
-import { idbPromise } from '../../utils/helpers';
-import { Link } from 'react-router-dom';
-import { Button } from '@mui/material';
+import React from "react";
+import { useStoreContext } from "../../utils/GlobalState";
+import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
+import { idbPromise } from "../../utils/helpers";
+import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 import {
   Typography,
   Card,
@@ -14,35 +14,35 @@ import {
 import useStyles from "../../utils/styles";
 
 function ProductItem(item) {
+  const classes = useStyles();
+  const { image, name, _id, price, quantity } = item;
 
-	const classes = useStyles
-	const { image, name, _id, price, quantity } = item;
+  const [state, dispatch] = useStoreContext();
+  const { cart } = state;
 
-	const [state, dispatch] = useStoreContext();
-	const { cart } = state;
   const addItem = () => {
-		const itemInCart = cart.find((cartItem) => cartItem._id === _id);
-		if (itemInCart) {
-			dispatch({
-				type: UPDATE_CART_QUANTITY,
-				_id: _id,
-				purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
-			});
-			idbPromise('cart', 'put', {
-				...itemInCart,
-				purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
-			});
-		} else {
-			dispatch({
-				type: ADD_TO_CART,
-				product: { ...item, purchaseQuantity: 1 },
-			});
-			idbPromise('cart', 'put', { ...item, purchaseQuantity: 1 });
-		}
-	};
-	return (
-		<>
-			<CssBaseline />
+    const itemInCart = cart.find((cartItem) => cartItem._id === _id);
+    if (itemInCart) {
+      dispatch({
+        type: UPDATE_CART_QUANTITY,
+        _id: _id,
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
+      });
+      idbPromise("cart", "put", {
+        ...itemInCart,
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
+      });
+    } else {
+      dispatch({
+        type: ADD_TO_CART,
+        product: { ...item, purchaseQuantity: 1 },
+      });
+      idbPromise("cart", "put", { ...item, purchaseQuantity: 1 });
+    }
+  };
+  return (
+    <>
+      <CssBaseline />
 
       <main>
         <Card className={classes.card} style={{ alignContent: "center" }}>
