@@ -1,72 +1,96 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import Card from '@mui/material/Card';
-import { Grid } from '@mui/material';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
+import { findNearestMarkets } from '../utils/API';
 
-// get nearest locations
-function getLocations() {
+import TextField from "@mui/material/TextField";
+import { Stack, Button } from "@mui/material";
 
-    const userLocation = document.querySelector("#zip-input").value.trim();
-    
-    fetch(
-        "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + userLocation,
-    )
-    .then(function(response) {
-        return response.json()
-    })
-    .then(function(data) {
-
-        const ID = data.results[0].id
-        const marketName = data.reults[0].marketname
-
-        getLocationProducts(ID)
-    })
-    .catch(error => 
-        console.log(error)
-    );
-};
-
-// get nearest location's products
-function getLocationProducts(ID) {
-    fetch(
-        "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + ID
-    )
-    .then(function(response) {
-        return response.json()
-    })
-    .then(function(data) {
-        
-        const marketAddress = data.marketDetails.Address
-        const mapLink = data.marketDetails.GoogleLink
-        const schedule = data.marketDetails.Schedule
-        const products = data.marketDetails.Products
-
-    })
-    .catch(error => 
-        console.log(error)
-    );
-};
 
 function MarketSearch() {
 
+  // create state for holding returned market locations
+  const [searchedLocations, setSearchedLocations] = useState([]);
+  // create state for holding our search field data
+  const [searchInput, setSearchInput] = useState('');
+
+   // create method to search for books and set state on form submit
+   const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    if (!searchInput) {
+      return false;
+    }
+
+    try {
+      const response = await findNearestMarkets(searchInput);
+
+      if (!response.ok) {
+        throw new Error('something went wrong!');
+      }
+
+      const { items } = await response.json();
+
+      const marketData = items.map((market) => ({
+        marketName: market.results.marketname
+      }));
+
+      searchedLocations(marketData);
+      setSearchedLocations('');
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <>
-    <div className='container my-1'>
-    <p>testing market fetch</p>
-    <div class="field has-addons">
-        <div class="control is-expanded has-icons-left">
-            <input class="input is-fullwidth" type="text" placeholder="Search by Zip" id="zip-input" />
-            <p id="recipe-searches"></p>
-            <span class="icon is-small is-left">
-                <i class="fas fa-utensils"></i>
-            </span>
-        </div>                            
-    </div>
-    <button onClick={getLocations} class="button is-primary button is-danger is-light" id="search-btn">Search</button>
-    </div>
+    <form
+        onSubmit={handleFormSubmit}
+        className="loginRoot"
+        style={{
+          border: "solid",
+          borderWidth: "1px 1px",
+          maxWidth: "50%",
+          margin: "0 auto",
+          background: "white",
+        }}
+      >
+        <h2
+          style={{
+            display: "block",
+            color: "white",
+            background: "green",
+            padding: "10px",
+            textAlign: "center",
+          }}
+        >
+          Find a Local Market
+        </h2>
+        <TextField
+          type="zip"
+          label="Find by ZIP"
+          name="searchInput"
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
+          variant="outlined"
+          style={{ margin: "5%", display: "grid" }}
+        />
+
+        <Stack direction="row">
+          <Button
+            color="success"
+            type="submit"
+            style={{ margin: "5%", alignSelf: "center", display: "grid" }}
+          >
+            Find
+          </Button>
+        </Stack>
+      </form>
+
+      {searchedLocations.map((market) => {
+          return (
+              <p>{market.marketName}</p>
+          )
+      })}
 
 </>
   );
