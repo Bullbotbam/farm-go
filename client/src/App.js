@@ -5,10 +5,11 @@ import Cart from './pages/Cart';
 import Coupons from './components/Coupons/couponsIndex';
 import { NoMatch } from './pages/NoMatch';
 import SearchBar from './components/SearchBar';
+import ProductDetail from './pages/productDetail';
 // import MapSearch from "./components/MapSearch";
 import MarketItem from './components/MarketItem';
 import ProductList from './components/ProductList/productListIndex';
-import CategoryMenu from './pages/CategoryMenu';
+import Category from './pages/CategoryMenu';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { StoreProvider } from './utils/GlobalState';
 import { setContext } from '@apollo/client/link/context';
@@ -45,18 +46,19 @@ function App() {
 				<div >
 					<StoreProvider>
 						<Nav />
+							<Category />
 						<Jumbotron />
 						{/* <SingUp /> */}
 						<Cart />
 					<ProductList />
 					<Coupons />
-						<CategoryMenu />
+					
 						<Switch>
 							<Route exact path="/signup" component={SingUp} />
 							{/* <Route component={MapSearch} />
 							<Route exact path="/cart" component={Cart} />
 							<Route exact path="/products" component={MarketItem} />*/}
-							{/* <Route component={ProductDetail} /> */}
+							<Route component={ProductDetail} />
 							<Route component={NoMatch} />
 						</Switch>
 					</StoreProvider>

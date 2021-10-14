@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { useStoreContext } from "../../utils/GlobalState";
+import { useStoreContext } from "../utils/GlobalState";
 import {
   UPDATE_PRODUCTS,
   ADD_TO_CART,
   REMOVE_FROM_CART,
   UPDATE_CART_QUANTITY,
-} from "../../utils/actions";
-import { useParams } from "react-router";
+} from "../utils/actions";
 import { useQuery } from "@apollo/client";
-import { QUERY_PRODUCTS } from "../../utils/queries";
+import { QUERY_PRODUCTS } from "../utils/queries";
 import { Link, useParams } from "react-router-dom";
+import { idbPromise } from "../utils/helpers";
+import Cart from "./Cart";
 
 function ProductDetail() {
   const [state, dispatch] = useStoreContext();
