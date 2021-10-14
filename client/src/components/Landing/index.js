@@ -37,7 +37,7 @@ function Landing() {
         >
           {pictures.map(({ name, src, nav }) => (
             <Grid xs={12} sm={6} md={4}>
-              <Card className={classes.card}  style={{width: "90%"}} key={{ name, src }}>
+              <Card className={classes.card}  style={{width: "90%", marginLeft: "7vw"}} key={{ name, src }}>
                 
                 <img
                   src={src}

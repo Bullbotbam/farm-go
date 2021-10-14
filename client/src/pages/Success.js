@@ -5,32 +5,32 @@ import { ADD_ORDER } from "../utils/mutations";
 import { idbPromise } from "../utils/helpers";
 import image from "../assets/logo/cow.jpg"
 
-//TODO : REMOVE COMMENTS AFTER DONE WITH REST
+
 function Success() {
-  //    const [addOrder] = useMutation(ADD_ORDER);
+     const [addOrder] = useMutation(ADD_ORDER);
 
-  //    useEffect(() => {
-  //      async function saveOrder() {
-  //TO GET ALL ITEMS FROM CART; PRODUCTS MAPS THE CART ITEMS INTO AN ARRAY
-  //        const cart = await idbPromise("cart", "get");
-  //        const products = cart.map((item) => item._id);
+     useEffect(() => {
+       async function saveOrder() {
 
-  //        if (products.length) {
-  //          const { data } = await addOrder({ variables: { products } });
-  //          const productData = data.addOrder.products;
+         const cart = await idbPromise("cart", "get");
+         const products = cart.map((item) => item._id);
 
-  //          productData.forEach((item) => {
-  //            idbPromise("cart", "delete", item);
-  //          });
-  //        }
-  //SET TIMER FOR 5SECONDS
-  //        setTimeout(() => {
-  //          window.location.assign("/");
-  //        }, 5000);
-  //      }
+         if (products.length) {
+           const { data } = await addOrder({ variables: { products } });
+           const productData = data.addOrder.products;
 
-  //      saveOrder();
-  //    }, [addOrder]);
+           productData.forEach((item) => {
+             idbPromise("cart", "delete", item);
+           });
+         }
+
+         setTimeout(() => {
+           window.location.assign("/");
+         }, 5000);
+       }
+
+       saveOrder();
+     }, [addOrder]);
   return (
     <div>
       <Jumbotron>
