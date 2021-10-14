@@ -9,7 +9,6 @@ import SearchBar from './components/SearchBar';
 //import ProductDetail from './pages/productDetail';
 // // import MapSearch from "./components/MapSearch";
 // import Homepage from './pages/Homepage';
-// import ProductItem from './components/ProductItem/productItemIndex';
 import ProductList from './components/ProductList/productListIndex';
 import Category from './pages/CategoryMenu';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
