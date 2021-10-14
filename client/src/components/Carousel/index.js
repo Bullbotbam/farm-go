@@ -2,10 +2,10 @@ import React from 'react';
 import { Carousel } from 'react-material-ui-carousel';
 import { Card } from '@material-ui/core';
 
-import market1 from '../../assets/images/market1.jpg';
-import market2 from '../../assets/images/market2.jpg';
-import market3 from '../../assets/images/market3.jpg';
-import market4 from '../../assets/images/market4.jpg';
+import market1 from '../../assets/market1.jpg';
+import market2 from '../../assets/market2.jpg';
+import market3 from '../../assets/market3.jpg';
+import market4 from '../../assets/market4.jpg';
 
 export default function CarouselImages(props) {
 	const items = [

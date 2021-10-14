@@ -89,7 +89,7 @@ export default function SearchBar() {
 	const handleClose = () => {
 		setAnchorEl(null);
 	};
-	const signup = () => {
+	const SignUp = () => {
 		setAnchorEl('/signup');
 	};
 
@@ -111,20 +111,33 @@ export default function SearchBar() {
 						id="basic-menu"
 						anchorEl={anchorEl}
 						open={open}
-						onClose={handleClose}
+						onClick={handleClose}
 						MenuListProps={{
 							'aria-labelledby': 'basic-button',
 						}}
 					>
-						{MenuOptions.map((option) => (
-							<MenuItem
-								key={option}
-								selected={option === 'Growers'}
-								onClick={handleClose}
-							>
-								{option}
-							</MenuItem>
-						))}
+						<Link to="/">
+							<MenuItem>Home</MenuItem>
+						</Link>
+						<Link to="/signup">
+							<MenuItem>SignUp</MenuItem>
+						</Link>
+						<Link to="/products">
+							<MenuItem>Products</MenuItem>
+						</Link>
+						<Link to="/sales">
+							<MenuItem>Coupons</MenuItem>
+						</Link>
+
+						<Link to="/category">
+							<MenuItem> Categories </MenuItem>
+						</Link>
+						<Link to="/history">
+							<MenuItem> Order History </MenuItem>
+						</Link>
+						<Link to="/cart">
+							<MenuItem> Cart </MenuItem>
+						</Link>
 					</Menu>
 					<Typography
 						variant="h6"

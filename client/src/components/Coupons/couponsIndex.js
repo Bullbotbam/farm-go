@@ -1,5 +1,4 @@
 import * as React from "react";
-import "./style.css";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -9,13 +8,7 @@ import { Container } from "@mui/material";
 
 function Coupons() {
   const sales = [
-    {
-      name: "Milk",
-      sale: "SALE 30 oz $6.00",
-      price: "Regular 30 oz $8.75",
-      offer: "Valid 10/08- 10/15",
-      src: require("../../assets/cupons/milk.jpg"),
-    },
+  
     {
       name: "Civni Apples",
       sale: "SALE 4 for $5.00",
@@ -23,13 +16,7 @@ function Coupons() {
       offer: "Valid 10/08- 10/15",
       src: require("../../assets/cupons/apples.jpg"),
     },
-    {
-      name: "Bosc pears",
-      sale: "SALE  2 for $2.00",
-      price: "Regular 2 for $3.75",
-      offer: "Valid 10/08- 10/15",
-      src: require("../../assets/cupons/pears.jpg"),
-    },
+  
     {
       name: "Chinook Salmon",
       sale: "SALE $17.00",
@@ -91,8 +78,11 @@ function Coupons() {
     <>
       <main>
         <Container maxWidth="xl">
-          <Typography variant="h2">Categories</Typography>
+          <div className="saleHeader">
 
+          <h2>Checkout this week's deals!</h2>
+          <h2>Available instore only</h2>
+</div>
           <Grid container spacing={2} style={{ marginTop: "3rem" }}>
             {sales.map(({ name, sale, price, offer, src }) => (
               <Grid

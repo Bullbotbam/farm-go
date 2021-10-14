@@ -58,8 +58,8 @@ const CartItem = ({ item }) => {
     }
   };
   return (
-    <Table className="cartItem">
-      <TableHead>
+    <Table className="cartItem"  style={{ width: "45%" }}>
+      <TableHead >
         <StyledTableCell>{item.name}</StyledTableCell>
         <StyledTableCell align="right">${item.price}</StyledTableCell>
       </TableHead>
