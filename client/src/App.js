@@ -6,7 +6,7 @@ import Coupons from './components/Coupons/couponsIndex';
 import { NoMatch } from './pages/NoMatch';
 import SearchBar from './components/SearchBar';
 // import MapSearch from "./components/MapSearch";
-// import Homepage from './components/Home/Homepage';
+import Homepage from './pages/Homepage';
 import ProductItem from './components/ProductItem/productItemIndex';
 import ProductList from './components/ProductList/productListIndex';
 import CategoryMenu from './pages/CategoryMenu';
