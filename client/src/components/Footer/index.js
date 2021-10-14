@@ -13,23 +13,13 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import MapIcon from '@mui/icons-material/Map';
 
-const StyledToolbar = styled(Toolbar)(({ theme }) => ({
-	alignItems: 'center',
-	paddingtTop: theme.spacing(1),
-	paddingtBottom: theme.spacing(5),
-	// override media queries injected by them.mixins.Toolbar
-	'@media all': {
-		minHeight: 128,
-	},
-}));
-
 const theme = createTheme({
 	palette: {
 		primary: {
 			main: orange[500],
 		},
 		secondary: {
-			main: '#ffac33',
+			main: '#ed7649',
 		},
 	},
 });
@@ -37,15 +27,18 @@ const theme = createTheme({
 function Footer(theme) {
 	return (
 		<Box sx={{ flexGrow: 1 }}>
-			<AppBar position="static" color="primary">
-				<Container
-					maxWidth="xl"
-					style={{
-						display: 'flex',
-						justifyContent: 'center',
-						backgroundColor: '#ed7649',
-					}}
-				>
+			<AppBar
+				position="static"
+				style={{
+					display: 'flex',
+					justifyContent: 'center',
+					backgroundColor: '#ed7649',
+					alignContent: 'space-between',
+					padding: '0',
+					margin: '0',
+				}}
+			>
+				<Container maxWidth="xl">
 					<Toolbar>
 						<IconButton
 							className="icon-btn"

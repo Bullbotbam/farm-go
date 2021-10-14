@@ -1,13 +1,8 @@
 import React from 'react';
-import CarouselImages from '../Carousel';
-// import Jumbotron from '../components/Jumbotron';
 import Image from 'material-ui-image';
-import { Container, Divider, Paper, Typography, Grid } from '@mui/material';
+import { Container, Paper, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import Jumbotron from '../Jumbotron';
 import FarmersMessage from '../FarmersMessage';
-import { Box } from '@mui/system';
-import Footer from '../Footer';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -18,10 +13,11 @@ const useStyles = makeStyles((theme) => ({
 		textAlign: 'center',
 		height: 560,
 		clear: 'both',
-		paddingTop: 10,
+		paddingTop: 1,
 	},
-	box: {
-		top: '-5rem',
+	homebox: {
+		width: '100%',
+		backgroundSize: 'cover',
 	},
 }));
 
@@ -29,7 +25,7 @@ export default function Home({ children }) {
 	const classes = useStyles();
 
 	return (
-		<Container>
+		<Container className="homebox">
 			<Paper
 				style={{
 					textAlign: 'center',
@@ -45,7 +41,6 @@ export default function Home({ children }) {
 			<Paper backgroundColor="#f5f5f5">
 				<FarmersMessage />
 			</Paper>
-			<CarouselImages />
 		</Container>
 	);
 }
