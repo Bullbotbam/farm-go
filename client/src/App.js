@@ -5,9 +5,9 @@ import Cart from './pages/Cart';
 import Coupons from './components/Coupons/couponsIndex';
 import { NoMatch } from './pages/NoMatch';
 import SearchBar from './components/SearchBar';
-// import MapSearch from "./components/MapSearch";
+import Footer from './components/Footer';
 import Home from './components/Home';
-import ProductItem from './components/ProductItem/productItemIndex';
+import Carousels from './components/Carousel';
 import ProductList from './components/ProductList/productListIndex';
 import CategoryMenu from './pages/CategoryMenu';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -45,7 +45,6 @@ function App() {
 				<div>
 					<StoreProvider>
 						<SearchBar />
-
 						<Switch>
 							<Route exact path="/" component={Home} />
 							<Route exact path="/signup" component={SingUp} />
@@ -55,6 +54,7 @@ function App() {
 							<Route exact path="/cart" component={Cart} />
 							<Route component={NoMatch} />
 						</Switch>
+						<Footer />
 					</StoreProvider>
 				</div>
 			</Router>
