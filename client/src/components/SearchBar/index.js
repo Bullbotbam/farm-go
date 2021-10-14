@@ -89,7 +89,7 @@ export default function SearchBar() {
 	const handleClose = () => {
 		setAnchorEl(null);
 	};
-	const SignUp = () => {
+	const signup = () => {
 		setAnchorEl('/signup');
 	};
 

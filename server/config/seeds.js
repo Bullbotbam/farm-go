@@ -1,15 +1,15 @@
-import { once } from './connection';
-import { Customer, Product, Category } from '../models';
+const db = require('./connection');
+const { Customer, Product, Category } = require('../models');
 
-once('open', async () => {
+db.once('open', async () => {
 	await Category.deleteMany();
-
+  
 	const categories = await Category.insertMany([
-		{ name: 'Fruit' },
-		{ name: 'Vegatable' },
-		{ name: 'Dairy' },
-		{ name: 'Sea Food' },
-		{ name: 'Bulk' },
+		{ title: 'Fruit' },
+		{ title: 'Vegatable' },
+		{ title: 'Dairy' },
+		{ title: 'Sea Food' },
+		{ title: 'Bulk' },
 	]);
 
 	console.log('categories seeded');
@@ -49,7 +49,7 @@ once('open', async () => {
 			category: categories[0]._id,
 			description:
 				'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
-			image: 'bananas.jpg',
+			image: 'toilet-paper.jpg',
 			price: 3.99,
 			quantity: 50,
 		},

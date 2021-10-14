@@ -1,9 +1,3 @@
-.cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
 .projects{
     margin-top: 10vw;
     text-align: center;
@@ -16,14 +10,7 @@
     font-size: 25px;
 }
 
-.sale {
-    color: red;
-    font-weight: bold;
-}
 
-.regularPrice {
-    font-size: 15px;
-}
 
 .offerTime {
     font-size: 10px;

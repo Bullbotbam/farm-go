@@ -2,14 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+   font-family: "Gabriela", serif;
 }
-:root {
-  
-  font-family: "Gabriela", serif;
-}
+
 body {
-  margin: 0;
-  /* font-family: 'Gabriela', serif; */
+
+   font-family: 'Gabriela', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -18,13 +16,15 @@ code {
   font-family: "Gabriela", serif;
 }
 
-section {
-  display: flex;
-  align-items: flex-start;
-  margin: 10px 35px;
-}
+.cart {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+padding: 25px 25px;
+margin-top: 5vw;
+} 
 
-.table {
-  margin-right: 40px;
-
+.productCards {
+  display: block;
+  background-size: cover;
 }

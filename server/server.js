@@ -18,7 +18,7 @@ const startServer = async () => {
   });
 
   await server.start();
-
+  //integrate our Apollo server with the Express application as middleware
   server.applyMiddleware({ app });
 
   console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
@@ -26,8 +26,8 @@ const startServer = async () => {
 
 startServer();
 
-// app.use(express.urlencoded({ extended: false }));
-// app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 // Serve up static assets
 if (process.env.NODE_ENV === "production") {
