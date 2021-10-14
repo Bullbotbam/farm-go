@@ -9,23 +9,9 @@ import { ADD_MULTIPLE_TO_CART } from "../utils/actions";
 import { idbPromise } from "../utils/helpers";
 import { loadStripe } from "@stripe/stripe-js";
 import image from "../assets/cupons/deal.jpg";
-import { Typography, Card, CardContent, CardMedia } from "@material-ui/core";
+import { Typography, Card, CardContent } from "@material-ui/core";
 
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
-
-// const StyledTableCell = styled(TableCell)(({ theme }) => ({
-// 	[`&.${tableCellClasses.head}`]: {
-// 		backgroundColor: theme.palette.success.main,
-// 		color: theme.palette.common.white,
-// 		fontSize: 25,
-// 		fontFamily: 'Gabriela , serif',
-// 	},
-
-// 	[`&.${tableCellClasses.body}`]: {
-// 		fontSize: 20,
-// 		fontFamily: 'Gabriela , serif',
-// 	},
-// }));
 
 const Cart = () => {
   const [state, dispatch] = useStoreContext();
