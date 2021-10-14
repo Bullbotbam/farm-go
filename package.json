@@ -15,5 +15,8 @@
 	"license": "ISC",
 	"devDependencies": {
 		"concurrently": "^5.1.0"
+	},
+	"dependencies": {
+		"react-material-ui-carousel": "^2.3.5"
 	}
 }

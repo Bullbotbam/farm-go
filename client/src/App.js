@@ -52,7 +52,7 @@ function App() {
 							<Route exact path="/" component={Jumbotron} />
 							<Route exact path="/signup" component={SingUp} />
 							<Route exact path="/products" component={ProductList} />
-							<Route exact path="/category" component={CategoryMenu} />
+							<Route exact path="/category" component={Category} />
 							<Route exact path="/sales" component={Coupons} />
 							<Route exact path="/cart" component={Cart} />
 							<Route exact path="/history" component={OrderHistory} />
