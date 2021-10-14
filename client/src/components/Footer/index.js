@@ -6,39 +6,53 @@ import {
 	Typography,
 	Box,
 } from '@mui/material';
+import { styled, alpha, createTheme } from '@mui/material/styles';
+import { orange } from '@material-ui/core/colors';
 import React from 'react';
-import { styled } from '@mui/material/styles';
-// import LinkedInIcon from '@mui/icons-material/LinkedIn';
-// import InstagramIcon from '@mui/icons-material/Instagram';
-// import TwitterIcon from '@mui/icons-material/Twitter';
-// import YouTubeIcon from '@mui/icons-material/YouTube';
+import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
-// import PhoneIcon from '@mui/icons-material/Phone';
-// import MailOutlineIcon from '@mui/icons-material/MailOutline';
-// import AgricultureIcon from '@mui/icons-material/Agriculture';
+import MapIcon from '@mui/icons-material/Map';
 
-// const StyledToolbar = styled(Toolbar)(({ theme }) => ({
-// 	alignItems: 'center',
-// 	paddingtTop: theme.spacing(1),
-// 	paddingtBottom: theme.spacing(5),
-// 	// override media queries injected by them.mixins.Toolbar
-// 	'@media all': {
-// 		minHeight: 128,
-// 	},
-// }));
+const theme = createTheme({
+	palette: {
+		primary: {
+			main: orange[500],
+		},
+		secondary: {
+			main: '#ed7649',
+		},
+	},
+});
 
-function Footer() {
+function Footer(theme) {
 	return (
 		<Box sx={{ flexGrow: 1 }}>
-			<AppBar position="static" color="primary">
-				<Container
-					maxWidth="lg"
-					style={{
-						display: 'flex',
-						justifyContent: 'center',
-					}}
-				>
+			<AppBar
+				position="static"
+				style={{
+					display: 'flex',
+					justifyContent: 'center',
+					backgroundColor: '#ed7649',
+					alignContent: 'space-between',
+					padding: '0',
+					margin: '0',
+				}}
+			>
+				<Container maxWidth="xl">
 					<Toolbar>
+						<IconButton
+							className="icon-btn"
+							aria-label="GitHub.com"
+							onClick={() => window.open('https://twitter.com/fmcorg?lang=en')}
+						>
+							<TwitterIcon fontSize="large" />
+						</IconButton>
+						<Typography
+							variant="button"
+							onClick={() => window.open('https://twitter.com/fmcorg?lang=en')}
+						>
+							Thanks to USDA
+						</Typography>
 						<IconButton
 							className="icon-btn"
 							aria-label="GitHub.com"
@@ -66,24 +80,12 @@ function Footer() {
 							Denisse Rivera
 						</Typography>
 						<br />
-						<Typography
-							variant="body1"
-							color="inherit"
-							style={{ paddingLeft: '2rem', paddingRight: '2rem' }}
-						>
-							<span
-								role="img"
-								aria-label="leaf"
-								style={{ paddingLeft: '.5rem', paddingRight: '.5rem' }}
-							>
+						<Typography variant="body1" color="inherit">
+							<span role="img" aria-label="leaf">
 								🌿
 							</span>
 							<Typography variant="button"> ©2021 FarmGo Market </Typography>
-							<span
-								role="img"
-								aria-label="leaf"
-								style={{ paddingLeft: '.5rem', paddingRight: '.5rem' }}
-							>
+							<span role="img" aria-label="leaf">
 								🌿
 							</span>
 						</Typography>
@@ -114,6 +116,19 @@ function Footer() {
 							onClick={() => window.open('https://github.com/Bullbotbam')}
 						>
 							Donald Bull
+						</Typography>
+						<IconButton
+							className="icon-btn"
+							aria-label="GitHub.com"
+							onClick={() => window.open('https://developers.google.com/maps')}
+						>
+							<MapIcon fontSize="large" />
+						</IconButton>
+						<Typography
+							variant="button"
+							onClick={() => window.open('https://developers.google.com/maps')}
+						>
+							Thanks to Google Maps
 						</Typography>
 					</Toolbar>
 				</Container>

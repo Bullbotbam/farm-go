@@ -1,18 +1,17 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-   font-family: "Gabriela", serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Gabriela', serif;
 }
 body {
-
-   font-family: 'Gabriela', serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	font-family: 'Gabriela', serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: "Gabriela", serif;
+	font-family: 'Gabriela', serif;
 }
 
 /*HEADER STYLES*/
@@ -25,8 +24,8 @@ code {
 	background-size: cover;
 	background-position: 50%;
 	margin: 0;
+	font-family: 'Gabriela', serif;
 }
-
 
 /*CART STYLES*/
 .yourCart {
@@ -37,10 +36,10 @@ margin: 10px 10px
 } 
 
 /* .summary { */
-  /* border-style: solid;
+/* border-style: solid;
   border-width: 1px; */
-  /* padding: 35px; */
-  /* margin: 10px 10px;
+/* padding: 35px; */
+/* margin: 10px 10px;
   font-weight: none; */
 /* } */
 /* .productCards {
@@ -50,25 +49,25 @@ margin: 10px 10px
   flex-wrap: wrap;
 
  /*COUPON STYLES*/
- .saleHeader {
-  text-align: center;
-  font-size: 33px;
- }
+.saleHeader {
+	text-align: center;
+	font-size: 33px;
+}
 
- .projects{
-  margin-top: 10vw;
-  text-align: center;
+.projects {
+	margin-top: 10vw;
+	text-align: center;
 }
 .deals {
-  font-size: 30px;
-  text-align: center;
+	font-size: 40px;
+	text-align: center;
 }
 .couponName {
-  font-size: 25px;
+	font-size: 25px;
 }
 
 .offerTime {
-  font-size: 10px;
+	font-size: 10px;
 }
 
 .market {

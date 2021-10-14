@@ -2,6 +2,10 @@
 
 An e-commerce/social awareness nutrition app
 
+<p style="align-contents: center";>
+<img href='https://farm-gomarket.herokuapp.com/sales' src='client/src/assets/FarmGo.png'Width='196' height='196'>
+FarmGo Market app 🌿
+
 <br>
 
 ## Table of Contents
@@ -56,6 +60,6 @@ There were no issues at time of depolyment!
 
 ## Links
 
-[FarmGo Market App Demo](https://google.com/)
+[FarmGo Market App Demo](https://farm-gomarket.herokuapp.com/sales)
 
 ## Dependencies
