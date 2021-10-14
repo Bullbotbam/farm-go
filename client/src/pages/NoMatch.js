@@ -5,7 +5,7 @@ import empty from '../assets/field-empty.jpg';
 
 export const NoMatch = () => {
 	return (
-		<div
+		<Container
 			style={{
 				backgroundImage: `url(${empty})`,
 				backgroundRepeat: 'no-repeat',
@@ -21,6 +21,6 @@ export const NoMatch = () => {
 					</Typography>
 				</div>
 			</Jumbotron>
-		</div>
+		</Container>
 	);
 };

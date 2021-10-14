@@ -7,7 +7,7 @@ import market2 from '../../assets/market2.jpg';
 import market3 from '../../assets/market3.jpg';
 import market4 from '../../assets/market4.jpg';
 
-export default function CarouselImages(props) {
+function Carousels(props) {
 	const items = [
 		{
 			name: 'Christian Mackie',
@@ -59,3 +59,5 @@ function Item(props) {
 		</Card>
 	);
 }
+
+export default Carousels;
