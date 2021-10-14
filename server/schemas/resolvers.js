@@ -57,7 +57,6 @@ const resolvers = {
 			throw new AuthenticationError('Not logged in');
 		},
 		checkout: async (parent, args, context) => {
-			// const url = new URL(context.headers.referer).origin;
 			const order = new Order({ products: args.products });
 			const line_items = [];
 
@@ -67,7 +66,7 @@ const resolvers = {
 				const product = await stripe.products.create({
 					name: products[i].name,
 					description: products[i].description,
-					// images: [`${url}/images/${products[i].image}`],
+					images: [`https://farm-gomarket.herokuapp.com/images/${products[i].image}`],
 				});
 				//generate price id using the product id
 				const price = await stripe.prices.create({
@@ -87,8 +86,8 @@ const resolvers = {
 				line_items,
 				mode: 'payment',
 				success_url:
-					'http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}',
-				cancel_url: 'https://example.com/cancel',
+					'https://farm-gomarket.herokuapp.com/success?session_id={CHECKOUT_SESSION_ID}',
+				cancel_url: 'https://farm-gomarket.herokuapp.com',
 			});
 
 			return { session: session.id };
