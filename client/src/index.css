@@ -1,13 +1,80 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+   font-family: "Gabriela", serif;
+}
+body {
+
+   font-family: 'Gabriela', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: "Gabriela", serif;
+}
+
+/*HEADER STYLES*/
+.header {
+	color: white;
+	font-size: 50px;
+	padding: 120px 35px;
+	display: flex;
+	background-image: url('./assets/groceries/care.jpg');
+	background-size: cover;
+	background-position: 50%;
+	margin: 0;
+}
+
+
+/*CART STYLES*/
+.yourCart {
+  display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+margin: 10px 10px
+} 
+
+/* .summary { */
+  /* border-style: solid;
+  border-width: 1px; */
+  /* padding: 35px; */
+  /* margin: 10px 10px;
+  font-weight: none; */
+/* } */
+/* .productCards {
+  margin-top: 10vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+ /*COUPON STYLES*/
+ .saleHeader {
+  text-align: center;
+  font-size: 33px;
+ }
+
+ .projects{
+  margin-top: 10vw;
+  text-align: center;
+}
+.deals {
+  font-size: 30px;
+  text-align: center;
+}
+.couponName {
+  font-size: 25px;
+}
+
+.offerTime {
+  font-size: 10px;
+}
+
+.market {
+  display: flex;
+  width: stretch;
+  margin-left: 4px;
+  height: 55vh;
+  margin-top: 5vw;
 }
