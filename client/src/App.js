@@ -6,9 +6,15 @@ import Cart from './pages/Cart';
 import Coupons from './components/Coupons/couponsIndex';
 import { NoMatch } from './pages/NoMatch';
 import SearchBar from './components/SearchBar';
+<<<<<<< HEAD
 import Footer from './components/Footer';
 import Home from './components/Home';
 import Carousels from './components/Carousel';
+=======
+//import ProductDetail from './pages/productDetail';
+// // import MapSearch from "./components/MapSearch";
+// import Homepage from './pages/Homepage';
+>>>>>>> feature/catergory
 import ProductList from './components/ProductList/productListIndex';
 import Category from './pages/CategoryMenu';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';

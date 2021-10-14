@@ -9,7 +9,7 @@ import { ADD_MULTIPLE_TO_CART } from "../utils/actions";
 import { idbPromise } from "../utils/helpers";
 import { loadStripe } from "@stripe/stripe-js";
 
-const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
 // const StyledTableCell = styled(TableCell)(({ theme }) => ({
 // 	[`&.${tableCellClasses.head}`]: {
@@ -26,89 +26,99 @@ const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 // }));
 
 const Cart = () => {
-	const [state, dispatch] = useStoreContext();
-	const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
-	useEffect(() => {
-		if (data) {
-			stripePromise.then((res) => {
-				res.redirectToCheckout({ sessionId: data.checkout.session });
-			});
-		}
-	}, [data]);
-	useEffect(() => {
-		async function getCart() {
-			const cart = await idbPromise('cart', 'get');
-			dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
-		}
+  const [state, dispatch] = useStoreContext();
+  const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
+  useEffect(() => {
+    if (data) {
+      stripePromise.then((res) => {
+        res.redirectToCheckout({ sessionId: data.checkout.session });
+      });
+    }
+  }, [data]);
+  useEffect(() => {
+    async function getCart() {
+      const cart = await idbPromise("cart", "get");
+      dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
+    }
 
-		if (!state.cart.length) {
-			getCart();
-		}
-	}, [state.cart.length, dispatch]);
+    if (!state.cart.length) {
+      getCart();
+    }
+  }, [state.cart.length, dispatch]);
 
-	function total() {
-		let sum = 0;
-		state.cart.forEach((item) => {
-			sum += item.price * item.purchaseQuantity;
-		});
-		return sum.toFixed(2);
-	}
+  function total() {
+    let sum = 0;
+    state.cart.forEach((item) => {
+      sum += item.price * item.purchaseQuantity;
+    });
+    return sum.toFixed(2);
+  }
 
-	function submitCheckout() {
-		const productIds = [];
+  function submitCheckout() {
+    const productIds = [];
 
-		state.cart.forEach((item) => {
-			for (let i = 0; i < item.purchaseQuantity; i++) {
-				productIds.push(item._id);
-			}
-			getCheckout({
-				variables: { products: productIds },
-			});
-		});
-	}
-
+    state.cart.forEach((item) => {
+      for (let i = 0; i < item.purchaseQuantity; i++) {
+        productIds.push(item._id);
+      }
+      getCheckout({
+        variables: { products: productIds },
+      });
+    });
+  }
 
   return (
     <React.Fragment>
-      <h2 style={{ fontSize: "50px" }}> Your Cart</h2>
-      {state.cart.length ? (
-        <div className="yourCart">
-          {state.cart.map((item) => (
-            <CartItem key={item._id} item={item} />
-          ))}
-          <div className="summary" style={{ width: "35%" }}>
-            <h2
-              style={{
-                backgroundColor: "green",
-                color: "white",
-                fontWeight: "none",
-                height: "55px",
-               objectFit: "fill"
-              }}
+      <div className="shoppingCart">
+        <h2 style={{ fontSize: "50px", padding: "40px 40px", color: "white"}}> Shopping Cart</h2>
+        {state.cart.length ? (
+          <div className="cart">
+            {state.cart.map((item) => (
+              <CartItem key={item._id} item={item} />
+            ))}
+            <div
+              className="summary"
+              style={{ width: "90%", backgroundColor: "white" }}
             >
-              Order Summary
-            </h2>
+              <h2
+                style={{
+                  backgroundColor: "green",
+                  color: "white",
+                  fontWeight: "none",
+                  height: "45px",
+                  objectFit: "fill",
+                }}
+              >
+                Order Summary
+              </h2>
 
-            <span style={{ fontSize: "20px" }}>Total: ${total()}</span>
+              <h3
+                style={{
+                  fontSize: "22px",
+                  backgroundColor: "white",
+                  padding: "20px 25px",
+                }}
+              >
+                Total: ${total()}
+              </h3>
+            </div>
+            {Auth.loggedIn() ? (
+              <Button
+                onClick={submitCheckout}
+                variant="contained"
+                backgroundColor="white"
+                color="success"
+              >
+                Checkout
+              </Button>
+            ) : (
+              <span>(Please login or create an account to checkout)</span>
+            )}
           </div>
-          {Auth.loggedIn() ? (
-            <Button 
-              onClick={submitCheckout}
-              variant="contained"
-              color="success"
-             style={{marginLeft: "84vw"}}
-          
-            >
-              Checkout
-            </Button>
-          ) : (
-           <span>(Please login or create an account to checkout)</span> 
-            
-          )}
-        </div>
-      ) : (
-        <h3>You haven't added anything to your cart yet!</h3>
-      )}
+        ) : (
+          <h3>You haven't added anything to your cart yet!</h3>
+        )}
+      </div>
     </React.Fragment>
   );
 };
