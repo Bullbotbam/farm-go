@@ -73,7 +73,8 @@ margin: 10px 10px
 }
 
 .market {
-  width: 100%;
+  display: flex;
+  width: stretch;
   margin-left: 4px;
   height: 55vh;
   margin-top: 5vw;
