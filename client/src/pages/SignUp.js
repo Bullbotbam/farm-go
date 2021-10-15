@@ -84,11 +84,11 @@ function SignUp(props) {
         style={{
           border: "solid",
           borderWidth: "1px 1px",
-          maxWidth: "50%",
+          width: "40%",
           display: "block",
           marginLeft: "auto",
           marginRight: "auto",
-        marginTop: "2vw"
+        marginTop: "10vw"
         }}
       >
         <h2

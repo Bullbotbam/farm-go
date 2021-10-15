@@ -15,13 +15,13 @@ function Landing() {
     },
 
     {
-      name: "Checkout our weekly deals",
+      name: "Checkout Our Weekly Deals",
       src: require("../../assets/chili.jpg"),
       nav: "/sales",
     },
 
     {
-      name: "Shop by category",
+      name: "Shop By Category",
       src: require("../../assets/groceries/bread.jpg"),
       nav: "/category",
     },
@@ -37,7 +37,7 @@ function Landing() {
         >
           {pictures.map(({ name, src, nav }) => (
             <Grid xs={12} sm={6} md={4}>
-              <Card className={classes.card}  style={{width: "90%", marginLeft: "4vw"}} key={{ name, src }}>
+              <Card className={classes.card}  style={{width: "90%", marginLeft: "8vw"}} key={{ name, src }}>
                 
                 <img
                   src={src}

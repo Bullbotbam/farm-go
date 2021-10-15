@@ -3,7 +3,8 @@
 
 <p style="align-contents: center";>
 <img href='https://farm-gomarket.herokuapp.com/sales' src='client/src/assets/FarmGo.png'Width='196' height='196'>
-FarmGo Market app 🌿
+
+## FarmGo Market app 🌿
 
 <br>
 
@@ -11,8 +12,8 @@ FarmGo Market app 🌿
 ## Description 
  Farm Go Market is an ecommerce app that allows a user to search for a farmer's market location and save it. By creating an account the user will be able to select their products and save them for checkout. This application is built using the MERN sack and REACT front end. The database is composed with MONGODB and Node.js/ Express.js server and API. The app is also constructed with a GraphQL using RESTful API through Apollo Server. 
 
-![gif]
-* [Heroku Link]()
+
+* [Heroku Link](https://farm-gomarket.herokuapp.com/)
 
 
 ## User Story 
