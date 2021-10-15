@@ -1,13 +1,13 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Gabriela', serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gabriela", serif;
 }
 body {
-	font-family: 'Gabriela', serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  font-family: "Gabriela", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 code {
@@ -16,37 +16,32 @@ code {
 
 /*HEADER STYLES*/
 .header {
-	color: white;
-	font-size: 50px;
-	padding: 120px 35px;
-	display: flex;
-	background-image: url('./assets/groceries/care.jpg');
-	background-size: cover;
-	background-position: 50%;
-	margin: 0;
-	font-family: 'Gabriela', serif;
+  color: white;
+  font-size: 50px;
+  padding: 120px 35px;
+  display: flex;
+  background-image: url("./assets/groceries/care.jpg");
+  background-size: cover;
+  background-position: 50%;
+  margin: 0;
 }
 
 /*CART STYLES*/
-.yourCart {
-  display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
-margin: 10px 10px
-} 
+.shoppingCart {
+  background-image: url("./assets/logo/shelf.jpg");
+  background-size: cover;
+  margin: 0;
+  display:block;
+  padding: 180px 35px;
+  
+}
 
-/* .summary { */
-/* border-style: solid;
-  border-width: 1px; */
-/* padding: 35px; */
-/* margin: 10px 10px;
-  font-weight: none; */
-/* } */
-/* .productCards {
-  margin-top: 10vw;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+.cart {
+  margin-left: 10vw;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+}
+
 
  /*COUPON STYLES*/
 .saleHeader {
@@ -76,4 +71,12 @@ margin: 10px 10px
   margin-left: 4px;
   height: 55vh;
   margin-top: 5vw;
+}
+
+/*SIGN UP FORM STYLES*/
+h5 {
+  margin-left: 5%;
+  padding-top: 1em;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: lighter;
 }

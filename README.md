@@ -1,65 +1,70 @@
-# FarmGo Market
-
-An e-commerce/social awareness nutrition app
+# ![Farm-Go](client/src/assets/logo.jpg)
 
 <p style="align-contents: center";>
-<img href='https://farm-gomarket.herokuapp.com/sales' src='client/src/assets/FarmGo.png'Width='196' height='196'>
-FarmGo Market app 🌿
+<img href='https://farm-gomarket.herokuapp.com' src='client/src/assets/FarmGo.png'Width='196' height='196'>
+
+FarmGo Market🌿 App Demo
 
 <br>
 
-## Table of Contents
-
-- [Description](#description)
-- [Installation](#installation)
-- [Purpose](#purpose)
-- [Contributing](#contributing)
-- [Issues](#issues)
-- [Links](#links)
-- [Dependencies_Used](#dependencies)
-
 ## Description
 
-A e-commerce application with a focus on nutrition and finding quality foods that are prevalent at your local farmers market.
+Farm Go Market is an ecommerce app that allows a user to search for a farmer's market location and save it. By creating an account the user will be able to select their products and save them for checkout. This application is built using the MERN sack and REACT front end. The database is composed with MONGODB and Node.js/ Express.js server and API. The app is also constructed with a GraphQL using RESTful API through Apollo Server.
 
-## Installation
+![gif]
 
-For developers looking to develop something similar to this app, you must install [Node.js](https://nodejs.org/en/). Once you have Node.js installed, then install Node Package Manager(npm).
+- [Heroku Link]()
 
-first...
+## User Story
 
-```
-npm init -y
-```
+As a user
+I want to be able to create a user profile and search for farmer’s market by location
+So that I can
+Save the market on my profile
 
-then...
+Find market’s information (location, hours of operation)
 
-```
-npm install create-react-app
-```
+Buy items from a specific market and pickup or have the items delivered
 
-Other dependencies added are graphql, mongoose, node.js, express, react, apollo-server-express, jsonwebtoken, material-ui, bcrypt, stripe, google-maps, date-fns, @reach/combobox, use-places-autocomplete.
+## Acceptance Criteria
 
-## Purpose
+WHEN I load the page
+THEN I am presented with a menu with the options to Search a Farmer’s Market by location and Login/Signup and an input field to search for farmer’s market
+WHEN I click on the Search by location
+THEN I am presented with an input field to search by location and a submit button
+WHEN I am not logged in and enter a location and click the submit button
+THEN I am presented with several search results, each featuring the farmer’s market name, location […]
+WHEN I click on the Login/Signup option
+THEN a modal will appear with option to log in or sign up
+WHEN Signup is selected
+THEN I am presented with username, email address and password (we can change this)
+WHEN as valid email address is entered, and create a password and click on the signup button
+THEN my user account is created, and I am logged in to the site
+WHEN Login is selected
+THEN I am presented with two inputs (??)
+WHEN I enter my [??} and click on the login button
+THEN I am logged in to the site
 
-This project was built to bring awareness to the healthier options found at the local farmers markets in your area.
+## Table of Contents (Optional)
 
-## License
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
 
-![Not Licensed](https://img.shields.io/badge/license--tertiary)
-<br />
-This application is not currently covered by any license, but was crafted with the open source community in mind.
+## Usage
 
-## Contributing
+![FarmGo Market App Demo](https://farm-gomarket.herokuapp.com/)
 
-With support and assistance from the developer community at large.
+🏆
 
-## Issues
+## Badges
 
-There were no issues at time of depolyment!
+![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
 
-## Links
+## Contributing / Credits
 
-[FarmGo Market App Demo](https://farm-gomarket.herokuapp.com/)
-
-## Dependencies
+- [chasemcquown](https://github.com/chasemcquown)
+- [RiveraDenisse](https://github.com/RiveraDenisse)
+- [Bullbotbam](https://github.com/Bullbotbam)
+- [mariamv29](https://github.com/mariamv29/README-generator.git)

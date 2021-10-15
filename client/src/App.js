@@ -14,6 +14,7 @@ import Category from './pages/CategoryMenu';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { StoreProvider } from './utils/GlobalState';
 import { setContext } from '@apollo/client/link/context';
+import Success from "./pages/Success"
 import {
 	ApolloClient,
 	createHttpLink,
@@ -54,6 +55,7 @@ function App() {
 							<Route exact path="/sales" component={Coupons} />
 							<Route exact path="/cart" component={Cart} />
 							<Route exact path="/history" component={OrderHistory} />
+							<Route exact path="/success" component={Success} />
 							<Route component={NoMatch} />
 						</Switch>
 						<Footer />

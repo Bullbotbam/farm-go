@@ -45,9 +45,11 @@ function ProductItem(item) {
       <CssBaseline />
 
       <main>
-        <Card className={classes.card} style={{ alignContent: "center" }}>
+        <Card className={classes.card} style={{ width: "380px"}}>
           <Link to={`/products/${_id}`}>
             <CardMedia
+            // style={{  width: "400px",
+            // height: "260px",}}
               className={classes.cardMedia}
               image={`/images/${image}`}
               title="Image title"

@@ -5,6 +5,7 @@ import { useMutation } from "@apollo/client";
 import { LOGIN } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 
+
 function Login(props) {
   const [customerFormState, setCustomerFormState] = useState({
     email: "",
@@ -36,6 +37,8 @@ function Login(props) {
   };
 
   return (
+
+
     <React.Fragment>
       <form
         onSubmit={handleFormSubmit}
@@ -85,6 +88,7 @@ function Login(props) {
         <Stack direction="row">
           <Button
             color="success"
+            type="submit"
             style={{ margin: "5%", alignSelf: "center", display: "grid" }}
           >
             Login

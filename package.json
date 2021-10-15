@@ -17,6 +17,7 @@
 		"concurrently": "^5.1.0"
 	},
 	"dependencies": {
+		"material-ui-image": "^3.3.2",
 		"react-material-ui-carousel": "^2.3.5"
 	}
 }

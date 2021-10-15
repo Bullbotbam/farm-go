@@ -63,6 +63,7 @@ function SignUp(props) {
 
   return (
     <React.Fragment>
+
       <Modal
         fluid
         isOpen={modalIsOpen}
@@ -76,6 +77,7 @@ function SignUp(props) {
           <Login handleModalClose={() => setIsOpen(false)} />
         </div>
       </Modal>
+      
       <form
         onSubmit={handleFormSubmit}
         className="signRoot"
@@ -83,7 +85,10 @@ function SignUp(props) {
           border: "solid",
           borderWidth: "1px 1px",
           maxWidth: "50%",
-          margin: "0 auto",
+          display: "block",
+          marginLeft: "auto",
+          marginRight: "auto",
+        marginTop: "2vw"
         }}
       >
         <h2
@@ -97,35 +102,35 @@ function SignUp(props) {
         >
           Register
         </h2>
+        <h5>First Name </h5>
         <TextField
            type="text"
-          label="First Name"
           name="firstName"
           onChange={handleInputChange}
           variant="outlined"
           style={{ margin: "5%", display: "grid" }}
         />
-
+    <h5>Last Name </h5>  
         <TextField
          type="text"
-          label="Last Name"
           name="lastName"
           onChange={handleInputChange}
           variant="outlined"
-          style={{ margin: "5%", display: "grid" }}
-        />
+          style={{ margin: "5%", display: "grid" }} >
+       
+        </TextField>
+        <h5>Email Address*</h5>
         <TextField
           type="email"
-          label="Email Address"
           name="email"
           onChange={handleInputChange}
           variant="outlined"
           required={true}
           style={{ margin: "5%", display: "grid" }}
         />
+        <h5> Create Password*</h5>
         <TextField
           type="password"
-          label="Create Password"
           name="password"
           onChange={handleInputChange}
           variant="outlined"
@@ -133,7 +138,7 @@ function SignUp(props) {
           style={{ margin: "5%", display: "grid" }}
         />
         <Stack >
-          <Button
+          <Button   type="submit"
             color="success"
             style={{ margin: "5%", alignSelf: "center", display: "grid" }}
           >
