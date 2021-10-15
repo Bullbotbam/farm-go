@@ -60,6 +60,6 @@ There were no issues at time of depolyment!
 
 ## Links
 
-[FarmGo Market App Demo](https://farm-gomarket.herokuapp.com/sales)
+[FarmGo Market App Demo](https://farm-gomarket.herokuapp.com/)
 
 ## Dependencies
