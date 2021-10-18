@@ -1,15 +1,14 @@
 import React from 'react';
 import SingUp from './pages/SignUp';
-import OrderHistory from './pages/OrderHistory'
+import OrderHistory from './pages/OrderHistory';
 import Jumbotron from './components/Jumbotron/jumboIndex';
 import Cart from './pages/Cart';
 import Coupons from './components/Coupons/couponsIndex';
 import { NoMatch } from './pages/NoMatch';
 import SearchBar from './components/SearchBar';
-//import ProductDetail from './pages/productDetail';
-// // import MapSearch from "./components/MapSearch";
-// import Homepage from './pages/Homepage';
-// import ProductItem from './components/ProductItem/productItemIndex';
+import Footer from './components/Footer';
+import Home from './components/Home';
+import Carousels from './components/Carousel';
 import ProductList from './components/ProductList/productListIndex';
 import Category from './pages/CategoryMenu';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -49,7 +48,7 @@ function App() {
 					<StoreProvider>
 						<SearchBar />
 						<Switch>
-							<Route exact path="/" component={Jumbotron} />
+							<Route exact path="/" component={Home} />
 							<Route exact path="/signup" component={SingUp} />
 							<Route exact path="/products" component={ProductList} />
 							<Route exact path="/category" component={Category} />
@@ -59,6 +58,7 @@ function App() {
 							<Route exact path="/success" component={Success} />
 							<Route component={NoMatch} />
 						</Switch>
+						<Footer />
 					</StoreProvider>
 				</div>
 			</Router>

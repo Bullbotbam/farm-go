@@ -23,6 +23,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   },
 
   [`&.${tableCellClasses.body}`]: {
+    backgroundColor: theme.palette.common.white,
     fontSize: 20,
     fontFamily: "Gabriela , serif",
   },
@@ -58,7 +59,7 @@ const CartItem = ({ item }) => {
     }
   };
   return (
-    <Table className="cartItem"  style={{ width: "60%" }}>
+    <Table className="cartItem"  style={{ width: "90%" }}>
       <TableHead >
         <StyledTableCell>{item.name}</StyledTableCell>
         <StyledTableCell align="right">${item.price}</StyledTableCell>

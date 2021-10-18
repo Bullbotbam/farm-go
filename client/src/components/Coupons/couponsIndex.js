@@ -99,7 +99,7 @@ function Coupons() {
               >
                 <Card
                  className={classes.card}
-                 style={{ alignContent: 'center' }}
+                 style={{ alignContent: 'center', marginTop: "6vw" }}
                 >
                   <CardMedia
                     component="img"
