@@ -66,7 +66,7 @@ THEN I am presented with a list of current items on sale
 ## Usage 
 * Run `npm i` 
 * Run `npm start` 
-* `naviagte on browser!` 
+* `navigate on browser!` 
 
 [FarmGo Market App Demo](https://farm-gomarket.herokuapp.com/sales)
 
